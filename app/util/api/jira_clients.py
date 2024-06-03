@@ -1,6 +1,7 @@
 from selenium.common.exceptions import WebDriverException
 
-from util.api.abstract_clients import RestClient, LOGIN_POST_HEADERS, JSM_EXPERIMENTAL_HEADERS
+from util.api.abstract_clients import RestClient, JSM_EXPERIMENTAL_HEADERS
+from selenium_ui.conftest import retry
 
 BATCH_SIZE_BOARDS = 1000
 BATCH_SIZE_USERS = 1000
@@ -46,6 +47,7 @@ class JiraRestClient(RestClient):
 
         return boards_list
 
+    @retry()
     def get_users(self, username='.', start_at=0, max_results=1000, include_active=True, include_inactive=False):
         """
         Returns a list of users that match the search string. This resource cannot be accessed anonymously.
@@ -78,6 +80,8 @@ class JiraRestClient(RestClient):
 
         return users_list
 
+
+    @retry()
     def issues_search(self, jql='order by key', start_at=0, max_results=1000, fields=None):
         """
         Searches for issues using JQL.
@@ -118,6 +122,7 @@ class JiraRestClient(RestClient):
 
         return issues
 
+    @retry()
     def get_total_issues_count(self, jql: str = ''):
         api_url = f'{self.host}/rest/api/2/search'
         body = {"jql": jql if jql else "order by key",
@@ -169,49 +174,38 @@ class JiraRestClient(RestClient):
 
         return response.json()
 
-    def get_nodes_count_via_rest(self):
-        # Works for Jira version >= 8.1.0
+    def get_nodes(self):
         api_url = f'{self.host}/rest/api/2/cluster/nodes'
         response = self.get(api_url, 'Could not get Jira nodes count', expected_status_codes=[200, 405])
         if response.status_code == 405 and 'This Jira instance is not clustered' in response.text:
             return 'Server'
-        nodes = [1 if node['state'] == "ACTIVE" and node['alive'] else 0 for node in response.json()]
-        return nodes.count(1)
+        nodes = [node['nodeId'] for node in response.json() if node['state'] == "ACTIVE" and node['alive']]
+        return nodes
 
     def get_system_info_page(self):
-        session = self._session
         login_url = f'{self.host}/login.jsp'
         auth_url = f'{self.host}/secure/admin/WebSudoAuthenticate.jspa'
-        login_body = {
-            'atl_token': '',
-            'os_destination': '/secure/admin/ViewSystemInfo.jspa',
-            'os_password': self.password,
-            'os_username': self.user,
-            'user_role': 'ADMIN'
-        }
         auth_body = {
             'webSudoDestination': '/secure/admin/ViewSystemInfo.jspa',
             'webSudoIsPost': False,
             'webSudoPassword': self.password
         }
-        headers = LOGIN_POST_HEADERS
-        headers['Origin'] = self.host
+        self.post(login_url, error_msg='Could not login in')
+        auth_body['atl_token'] = self.session.cookies.get_dict()['atlassian.xsrf.token']
+        system_info_html = self._session.post(auth_url, data=auth_body)
+        return system_info_html.content.decode("utf-8")
 
-        session.post(url=login_url, data=login_body, headers=headers)
-        auth_request = session.post(url=auth_url, data=auth_body, headers=headers)
-        system_info_html = auth_request.content.decode("utf-8")
-        return system_info_html
-
-    def get_cluster_nodes_count(self, jira_version):
-        html_pattern = '<td><strong>Nodestate:</strong></td><td>Active</td>'
-        if jira_version >= '8.1.0':
-            return self.get_nodes_count_via_rest()
-        else:
-            jira_system_page = self.get_system_info_page()
-            nodes_count = jira_system_page.replace(' ', '').replace('\n', '').count(html_pattern)
-            if nodes_count == 0:
-                return 'Server'
-            return nodes_count
+    def get_available_processors(self):
+        try:
+            node_id = self.get_nodes()[0]
+            api_url = f'{self.host}/rest/atlassian-cluster-monitoring/cluster/suppliers/data/com.atlassian.cluster' \
+                      f'.monitoring.cluster-monitoring-plugin/runtime-information/{node_id}'
+            response = self.get(api_url, "Could not get Available Processors information")
+            processors = response.json()['data']['rows']['availableProcessors'][1]
+        except Exception as e:
+            print(f"Warning: Could not get Available Processors information. Error: {e}")
+            return 'N/A'
+        return processors
 
     def get_locale(self):
         api_url = f'{self.host}/rest/api/2/myself'
@@ -241,7 +235,9 @@ class JiraRestClient(RestClient):
         app_properties = self.get(api_url, "Could not retrieve user permissions")
         return app_properties.json()
 
-    def get_service_desk_info(self):
-        api_url = f'{self.host}/rest/plugins/applications/1.0/installed/jira-servicedesk'
-        service_desk_info = self.get(api_url, "Could not retrieve JSM info", headers=JSM_EXPERIMENTAL_HEADERS)
-        return service_desk_info.json()
+    def get_deployment_type(self):
+        html_pattern = 'com.atlassian.dcapt.deployment=terraform'
+        jira_system_page = self.get_system_info_page()
+        if jira_system_page.count(html_pattern):
+            return 'terraform'
+        return 'other'

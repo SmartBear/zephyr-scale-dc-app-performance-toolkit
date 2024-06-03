@@ -1,8 +1,9 @@
+import time
 
 from selenium_ui.base_page import BasePage
 
 from selenium_ui.confluence.pages.selectors import UrlManager, LoginPageLocators, AllUpdatesLocators, PopupLocators,\
-    PageLocators, DashboardLocators, TopPanelLocators, EditorLocators, LogoutLocators
+    PageLocators, DashboardLocators, TopPanelLocators, EditorLocators, LogoutLocators, XsrfTokenLocators
 
 
 class Login(BasePage):
@@ -34,6 +35,17 @@ class Login(BasePage):
             self.wait_until_any_element_visible(LoginPageLocators.skip_find_content)[0].click()
             self.wait_until_clickable(LoginPageLocators.finish_setup).click()
 
+    def get_app_version(self):
+        text = self.get_element(LoginPageLocators.footer_build_info).text
+        return text
+
+    def get_node_id(self):
+        if self.get_elements(LoginPageLocators.footer_node_info):
+            text = self.get_element(LoginPageLocators.footer_node_info).text
+            return text.split(':')[-1].replace(')', '').replace(' ', '')
+        else:
+            return "SERVER"
+
 
 class Logout(BasePage):
     page_url = UrlManager().logout_url()
@@ -63,12 +75,31 @@ class Page(BasePage):
         url_manager = UrlManager(page_id=page_id)
         self.page_url = url_manager.page_url()
 
+    def wait_for_page_loaded(self):
+        self.wait_until_visible(self.page_loaded_selector)
+        self.wait_for_js_statement(key='document.readyState', value='complete',
+                                   exception_msg=f"Page {self.page_url} could not be loaded. Please check the UI.")
+
     def click_add_comment(self):
         css_selector = PageLocators.comment_text_field[1]
         self.execute_js(f"document.querySelector('{css_selector}').click()")
 
     def wait_for_comment_field(self):
         self.wait_until_visible(PageLocators.comment_text_field)
+
+    def click_edit(self):
+        self.wait_until_clickable(PageLocators.edit_page_button).click()
+
+    def wait_for_resources_loaded(self, timeout=5):
+        start_time = time.time()
+        print(f'Waiting for resources to be loaded: {timeout} s.')
+        while time.time() - start_time < timeout:
+            loaded = self.execute_js("return require('confluence-editor-loader/editor-loader').resourcesLoaded();")
+            if loaded:
+                print(f'Resources are loaded after {time.time() - start_time} s.')
+                break
+        else:
+            print(f'WARNING: confluence-editor-loader resources were not loaded in {timeout} s')
 
 
 class Dashboard(BasePage):
@@ -87,7 +118,9 @@ class Editor(BasePage):
     def __init__(self, driver, page_id=None):
         BasePage.__init__(self, driver)
         url_manager = UrlManager(page_id=page_id)
-        self.page_url = url_manager.edit_page_url()
+
+        xsrf_token = self.get_element(XsrfTokenLocators.xsrf_token).get_attribute('content')
+        self.page_url = url_manager.edit_page_url() + "&atl_token=" + xsrf_token
 
     def wait_for_create_page_open(self):
         self.wait_until_clickable(EditorLocators.publish_button)
@@ -115,8 +148,9 @@ class Editor(BasePage):
         self.get_element(EditorLocators.publish_button).click()
 
     def wait_for_editor_open(self):
-        self.wait_until_any_ec_text_presented_in_el(selector_names=[(EditorLocators.status_indicator, 'Ready to go'),
-                                                                    (EditorLocators.status_indicator, 'Changes saved')])
+        self.wait_until_any_ec_text_presented_in_el(
+            selector_text_list=[(EditorLocators.status_indicator, 'Ready to go'),
+                                (EditorLocators.status_indicator, 'Changes saved')])
 
     def save_edited_page(self):
         self.get_element(EditorLocators.publish_button).click()
@@ -124,5 +158,5 @@ class Editor(BasePage):
             if self.get_element(EditorLocators.confirm_publishing_button).is_displayed():
                 self.get_element(EditorLocators.confirm_publishing_button).click()
         self.wait_until_invisible(EditorLocators.save_spinner)
-        self.wait_until_any_ec_presented(selector_names=[PageLocators.page_title,
-                                                         EditorLocators.confirm_publishing_button])
+        self.wait_until_any_ec_presented(selectors=[PageLocators.page_title,
+                                                    EditorLocators.confirm_publishing_button])

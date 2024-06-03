@@ -1,14 +1,17 @@
 import random
 from datetime import datetime
+
+from packaging import version
 from selenium.webdriver.common.keys import Keys
 
 from selenium_ui.base_page import BasePage
 from selenium_ui.jsm.pages.customer_selectors import UrlManager, LoginPageLocators, TopPanelSelectors, \
-    CustomerPortalsSelectors, CustomerPortalSelectors, RequestSelectors, RequestsSelectors
+    CustomerPortalsSelectors, CustomerPortalSelectors, RequestSelectors, RequestsSelectors, InsightSelectors
 
 
 class Login(BasePage):
     page_url = LoginPageLocators.login_url
+    base_url = UrlManager().host
     page_loaded_selector = LoginPageLocators.login_submit_button
 
     def set_credentials(self, username, password):
@@ -21,6 +24,10 @@ class Login(BasePage):
         elements = self.get_elements(CustomerPortalsSelectors.welcome_logged_in_page)
         return True if elements else False
 
+    def get_app_version(self):
+        version_str = self.get_element(LoginPageLocators.app_version).get_attribute('content')
+        return version.parse(version_str)
+
 
 class TopPanel(BasePage):
 
@@ -30,7 +37,7 @@ class TopPanel(BasePage):
 
     def logout(self):
         self.get_element(TopPanelSelectors.logout_button).click()
-        self.wait_until_invisible(TopPanelSelectors.profile_icon)
+        self.wait_until_visible(LoginPageLocators.login_field)
 
 
 class CustomerPortals(BasePage):
@@ -39,7 +46,7 @@ class CustomerPortals(BasePage):
     def browse_projects(self):
         self.wait_until_visible(CustomerPortalsSelectors.browse_portals_button)
         self.get_element(CustomerPortalsSelectors.browse_portals_button).click()
-        self.wait_until_visible(CustomerPortalsSelectors.full_portals_list)
+        self.wait_until_visible(self.get_selector(CustomerPortalsSelectors.full_portals_list))
 
     def open_random_portal(self):
         portals = self.get_elements(CustomerPortalsSelectors.portal_from_list)
@@ -71,8 +78,8 @@ class CustomerPortal(BasePage):
     def create_and_submit_request(self):
         self.get_element(CustomerPortalSelectors.summary_field).\
             send_keys(f'Selenium - {self.generate_random_string(5)}')
-        self.get_element(CustomerPortalSelectors.description_field).\
-            send_keys(f'Selenium - Description {self.generate_random_string(5)}')
+        selector = self.get_selector(CustomerPortalSelectors.description_field)
+        self.wait_until_visible(selector).send_keys(f'Selenium - Description {self.generate_random_string(5)}')
 
         # If required dropdown
         required_dropdown_elements = self.get_elements(CustomerPortalSelectors.required_dropdown_field)
@@ -92,7 +99,7 @@ class CustomerPortal(BasePage):
             self.get_element(CustomerPortalSelectors.required_calendar_input_field).send_keys(date_now)
 
         self.get_element(CustomerPortalSelectors.create_request_button).click()
-        self.wait_until_visible(CustomerPortalSelectors.comment_request_field)
+        self.wait_until_visible(self.get_selector(RequestSelectors.comment_request_field))
 
 
 class CustomerRequest(BasePage):
@@ -105,13 +112,33 @@ class CustomerRequest(BasePage):
     page_loaded_selector = RequestSelectors.request_option
 
     def comment_request(self):
-        self.wait_until_visible(RequestSelectors.comment_request_field)
-        self.get_element(RequestSelectors.comment_request_field).click()
-        self.get_element(RequestSelectors.comment_request_field).\
+        self.wait_until_visible(self.get_selector(RequestSelectors.comment_field_minimized)).click()
+        self.wait_until_visible(self.get_selector(RequestSelectors.comment_request_field)).\
             send_keys(f'Selenium comment - {self.generate_random_string(10)}')
         self.wait_until_clickable(RequestSelectors.add_comment_button)
         self.get_element(RequestSelectors.add_comment_button).click()
         self.wait_until_invisible(RequestSelectors.add_comment_button)
+
+    def search_for_customer_to_share_with_react_ui(self, customer_name):
+        self.wait_until_visible(RequestSelectors.share_request_button).click()
+        self.wait_until_visible(RequestSelectors.share_request_search_field_react)
+        self.action_chains().move_to_element(
+            self.get_element(RequestSelectors.share_request_search_field_react)).click().perform()
+        self.action_chains().move_to_element(self.get_element(RequestSelectors.share_request_search_field_react)).\
+            send_keys(customer_name).perform()
+        self.wait_until_visible(RequestSelectors.share_request_dropdown_one_elem_react)
+
+        random_customer_name = random.choice(
+            [i.text for i in self.get_elements(RequestSelectors.share_request_dropdown_one_elem_react)])
+
+        self.action_chains().move_to_element(
+            self.get_element(RequestSelectors.share_request_search_field_arrow_react)).click().perform()
+        self.wait_until_invisible(RequestSelectors.share_request_dropdown_react)
+        self.action_chains().move_to_element(self.get_element(
+            RequestSelectors.share_request_search_field_react)).send_keys(
+            random_customer_name).perform()
+        self.wait_until_visible(RequestSelectors.share_request_dropdown_one_elem_react).click()
+
 
     def search_for_customer_to_share_with(self, customer_name):
         if not self.element_exists(RequestSelectors.share_request_button):
@@ -148,6 +175,10 @@ class CustomerRequest(BasePage):
         self.wait_until_visible(RequestSelectors.share_request_modal_button).click()
         self.wait_until_invisible(RequestSelectors.share_request_modal_button)
 
+    def share_request_react(self):
+        self.wait_until_invisible(RequestSelectors.share_request_dropdown_one_elem_react)
+        self.wait_until_clickable(RequestSelectors.share_request_button_request_widget).click()
+
 
 class Requests(BasePage):
 
@@ -157,3 +188,21 @@ class Requests(BasePage):
         self.page_url = url_manager.all_requests_url() if all_requests else url_manager.my_requests_url()
 
     page_loaded_selector = RequestsSelectors.requests_label
+
+
+class ViewRequestWithInsight(BasePage):
+
+    def __init__(self, driver, portal_id):
+        BasePage.__init__(self, driver)
+        url_manager = UrlManager(portal_id=portal_id)
+        self.page_url = url_manager.portal_url()
+
+    def choose_request_type(self):
+        self.wait_until_visible(RequestSelectors.list_of_requests_types)
+        request_types = self.get_elements(CustomerPortalSelectors.request_type)
+        request_type = request_types[1]
+        request_type.click()
+        self.wait_until_visible(CustomerPortalSelectors.create_request_button)
+
+    def check_insight_field(self):
+        self.wait_until_visible(InsightSelectors.insight_field_icon)

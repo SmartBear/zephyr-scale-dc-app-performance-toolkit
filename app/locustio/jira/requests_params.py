@@ -20,7 +20,7 @@ def jira_datasets():
 
 
 class JiraResource(BaseResource):
-    
+
     def __init__(self, resource_file='locustio/jira/resources.json'):
         super().__init__(resource_file)
 
@@ -28,18 +28,20 @@ class JiraResource(BaseResource):
 class Login(JiraResource):
     action_name = 'login_and_view_dashboard'
     atl_token_pattern = r'name="atlassian-token" content="(.+?)">'
+
     login_body = {
         'os_username': '',
         'os_password': '',
         'os_destination': '',
+        'os_cookie': True,
         'user_role': '',
         'atl_token': '',
         'login': 'Log in'
     }
 
 
-
 class BrowseIssue(JiraResource):
+    action_name = "view_issue"
     issue_id_pattern = r'id="key-val" rel="(.+?)">'
     project_avatar_id_pattern = r'projectavatar\?avatarId\=(.+?)" '
     edit_allow_pattern = "secure\/EditLabels\!default"  # noqa W605
@@ -51,6 +53,7 @@ class ViewDashboard(JiraResource):
 
 
 class CreateIssue(JiraResource):
+    action_name = 'create_issue'
     atl_token_pattern = '"atl_token":"(.+?)"'
     form_token_pattern = '"formToken":"(.+?)"'
     issue_type_pattern = '\{&quot;label&quot;:&quot;Story&quot;,&quot;value&quot;:&quot;([0-9]*)&quot;'  # noqa W605
@@ -58,8 +61,8 @@ class CreateIssue(JiraResource):
     resolution_done_pattern = r'<option value=\\"([0-9]*)\\">\\n            Done\\n'
     fields_to_retain_pattern = '"id":"([a-z]*)","label":"[A-Za-z0-9\- ]*","required":(false|true),'  # noqa W605
     custom_fields_to_retain_pattern = '"id":"customfield_([0-9]*)","label":"[A-Za-z0-9\- ]*","required":(false|true),'  # noqa W605
-    user_preferences_payload = {"useQuickForm": False, "fields": ["summary", "description",
-                                                                  "priority", "versions", "components"],
+    user_preferences_payload = {"useQuickForm": False,
+                                "fields": ["summary", "description", "priority", "versions", "components"],
                                 "showWelcomeScreen": True}
     create_issue_key_pattern = '"issueKey":"(.+?)"'
     err_message_create_issue = 'Issue was not created'
@@ -80,6 +83,7 @@ class CreateIssue(JiraResource):
         form_token = issue_body_dict['form_token']
         issue_type = issue_body_dict['issue_type']
         resolution_done = issue_body_dict['resolution_done']
+        resolution_string = f'&resolution={resolution_done}' if resolution_done else ''
         fields_to_retain = issue_body_dict['fields_to_retain']
         custom_fields_to_retain = issue_body_dict['custom_fields_to_retain']
 
@@ -88,7 +92,7 @@ class CreateIssue(JiraResource):
                        f"&description={description}&timetracking_originalestimate={timetracking_originalestimate}" \
                        f"&timetracking_remainingestimate={timetracking_remainingestimate}" \
                        f"&is_create_issue={is_create_issue}" \
-                       f"&hasWorkStarted={has_work_started}&resolution={resolution_done}"
+                       f"&hasWorkStarted={has_work_started}{resolution_string}"
         fields_to_retain_body = ''
         custom_fields_to_retain_body = ''
         for field in fields_to_retain:
@@ -142,6 +146,7 @@ class AddComment(JiraResource):
     action_name = 'add_comment'
     form_token_pattern = 'name="formToken"\s*type="hidden"\s*value="(.+?)"'  # noqa W605
     atl_token_pattern = r'name="atlassian-token" content="(.+?)">'
+    browse_project_payload = {"id": "com.atlassian.jira.jira-projects-issue-navigator:sidebar-issue-navigator"}
 
 
 class BrowseProjects(JiraResource):
@@ -149,7 +154,11 @@ class BrowseProjects(JiraResource):
 
 
 class ViewBoard(JiraResource):
-    action_name = 'view_kanban_board'
+
+    def __init__(self, action_name):
+        self.action_name = action_name
+        super().__init__()
+
     project_key_pattern = '\["project-key"\]=\"\\\\"(.+?)\\\\""'  # noqa W605
     project_id_pattern = '\["project-id"\]=\"(.+?)\"'  # noqa W605
     project_plan_pattern = 'com.pyxis.greenhopper.jira:project-sidebar-(.+?)-(.+?)"'
