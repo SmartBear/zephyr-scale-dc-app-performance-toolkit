@@ -5,10 +5,10 @@ runs:
   # E.g. relativePath: "./app/results/jira/2024-01-01_10-10-10"
   - runName: "without app"
     runType: "baseline"
-    relativePath: "./app/results/{PRODUCT}/{TIMESTAMP}"
+    relativePath: "./app/results/confluence/2024-06-12_09-31-46"
   - runName: "with app"
     runType: "experiment"
-    relativePath: "./app/results/{PRODUCT}/{TIMESTAMP}"
+    relativePath: "./app/results/confluence/2024-06-12_10-56-53"
 
 # Chart generation config
 index_col: "Action"
