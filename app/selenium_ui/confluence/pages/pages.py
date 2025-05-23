@@ -3,20 +3,39 @@ import time
 from selenium_ui.base_page import BasePage
 
 from selenium_ui.confluence.pages.selectors import UrlManager, LoginPageLocators, AllUpdatesLocators, PopupLocators,\
-    PageLocators, DashboardLocators, TopPanelLocators, EditorLocators, LogoutLocators, XsrfTokenLocators
+    PageLocators, DashboardLocators, TopPanelLocators, EditorLocators, LogoutLocators, XsrfTokenLocators, AdminLocators
 
 
 class Login(BasePage):
     page_url = LoginPageLocators.login_page_url
-    page_loaded_selector = LoginPageLocators.login_button
+    page_loaded_selector = [LoginPageLocators.login_button, LoginPageLocators.login_button_2sv]
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.is_2sv_login = False
+
+    def wait_for_page_loaded(self):
+        self.wait_until_visible(LoginPageLocators.sidebar)
+        if not self.get_elements(LoginPageLocators.login_button):
+            self.is_2sv_login = True
+            print("INFO: 2sv login form")
 
     def set_credentials(self, username, password):
-        self.get_element(LoginPageLocators.login_username_field).send_keys(username)
-        self.get_element(LoginPageLocators.login_password_field).send_keys(password)
+        if self.is_2sv_login:
+            username_field = LoginPageLocators.login_username_field_2sv
+            password_field = LoginPageLocators.login_password_field_2sv
+        else:
+            username_field = LoginPageLocators.login_username_field
+            password_field = LoginPageLocators.login_password_field
+
+        self.get_element(username_field).send_keys(username)
+        self.get_element(password_field).send_keys(password)
 
     def click_login_button(self):
-        self.wait_until_visible(LoginPageLocators.login_button).click()
-        self.wait_until_invisible(LoginPageLocators.login_button)
+        if self.is_2sv_login:
+            self.wait_until_visible(LoginPageLocators.login_button_2sv).click()
+        else:
+            self.wait_until_visible(LoginPageLocators.login_button).click()
 
     def is_first_login(self):
         elements = self.get_elements(LoginPageLocators.first_login_setup_page)
@@ -51,7 +70,7 @@ class Logout(BasePage):
     page_url = UrlManager().logout_url()
 
     def wait_for_logout(self):
-        self.wait_until_visible(LogoutLocators.logout_msg)
+        self.wait_until_visible(LoginPageLocators.sidebar)
 
 
 class AllUpdates(BasePage):
@@ -61,10 +80,7 @@ class AllUpdates(BasePage):
 class PopupManager(BasePage):
 
     def dismiss_default_popup(self):
-        return self.dismiss_popup(PopupLocators.timezone_popups, PopupLocators.skip_onbording_1,
-                                  PopupLocators.skip_onboarding_2,
-                                  PopupLocators.time_saving_template,
-                                  PopupLocators.welcome_to_confluence)
+        return self.dismiss_popup(PopupLocators.popup_selectors)
 
 
 class Page(BasePage):
@@ -160,3 +176,22 @@ class Editor(BasePage):
         self.wait_until_invisible(EditorLocators.save_spinner)
         self.wait_until_any_ec_presented(selectors=[PageLocators.page_title,
                                                     EditorLocators.confirm_publishing_button])
+
+
+class AdminPage(BasePage):
+    page_url = AdminLocators.admin_system_page_url
+    page_loaded_selector = AdminLocators.login_form
+
+    def is_websudo(self):
+        return True if self.get_elements(AdminLocators.web_sudo_password) else False
+
+    def do_websudo(self, password):
+        self.wait_until_clickable(AdminLocators.web_sudo_password).send_keys(password)
+        self.wait_until_clickable(AdminLocators.web_sudo_submit_btn).click()
+        self.wait_until_visible(AdminLocators.edit_baseurl)
+
+    def go_to(self, password=None):
+        super().go_to()
+        self.wait_for_page_loaded()
+        if self.is_websudo():
+            self.do_websudo(password)

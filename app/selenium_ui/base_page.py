@@ -6,6 +6,7 @@ import time
 from packaging import version
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -131,12 +132,16 @@ class BasePage:
 
         return WebDriverWait(self.driver, time_out).until(expected_condition, message=message)
 
-    def dismiss_popup(self, *args):
-        for elem in args:
-            try:
-                self.driver.execute_script(f"document.querySelector(\'{elem}\').click()")
-            except(WebDriverException, Exception):
-                pass
+    def dismiss_popup(self, popup_selectors):
+        for selector_type, selector_value in popup_selectors:
+            if self.driver.find_elements(by=selector_type, value=selector_value):
+                try:
+                    if selector_type == By.CSS_SELECTOR:
+                        self.driver.execute_script(f"document.querySelector('{selector_value}').click()")
+                    elif selector_type == By.XPATH:
+                        self.driver.find_element(by=selector_type, value=selector_value).click()
+                except (WebDriverException, Exception):
+                    pass
 
     def return_to_parent_frame(self):
         return self.driver.switch_to.parent_frame()
@@ -159,6 +164,10 @@ class BasePage:
     def generate_random_string(length):
         return "".join([random.choice(string.digits + string.ascii_letters + ' ') for _ in range(length)])
 
+    @staticmethod
+    def generate_no_whitespace_string(length):
+        return "".join([random.choice(string.digits + string.ascii_letters) for _ in range(length)])
+
     def select(self, element):
         return Select(element)
 
@@ -167,6 +176,9 @@ class BasePage:
 
     def delete_all_cookies(self):
         self.driver.delete_all_cookies()
+
+    def scroll_down_till_bottom(self):
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
 
 class AnyEc:

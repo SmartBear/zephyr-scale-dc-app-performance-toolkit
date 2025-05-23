@@ -12,6 +12,9 @@ import uuid
 logger = init_logger(app_type='confluence')
 confluence_dataset = confluence_datasets()
 
+TWO_WORDS_CQL = 'confluence agreement'
+THREE_WORDS_CQL = 'shoulder trip discussion'
+
 
 @confluence_measure('locust_login_and_view_dashboard')
 def login_and_view_dashboard(locust):
@@ -25,15 +28,43 @@ def login_and_view_dashboard(locust):
     username = user[0]
     password = user[1]
 
-    login_body = params.login_body
-    login_body['os_username'] = username
-    login_body['os_password'] = password
 
-    # 10 dologin.action
-    locust.post('/dologin.action',
-                login_body,
-                TEXT_HEADERS,
-                catch_response=True)
+    # 10 get dologin.action
+    r = locust.get('/dologin.action', catch_response=True)
+    content = r.content.decode('utf-8')
+    is_legacy_login_form = 'loginform' in content
+    logger.locust_info(f"Is legacy login form: {is_legacy_login_form}")
+
+    if is_legacy_login_form:
+        logger.locust_info(f"Legacy login flow for user {username}")
+
+        login_body = params.login_body
+        login_body['os_username'] = username
+        login_body['os_password'] = password
+
+        # 16 dologin.action
+        locust.post('/dologin.action',
+                    login_body,
+                    TEXT_HEADERS,
+                    catch_response=True)
+    else:
+        logger.locust_info(f"2SV login flow for user {username}")
+
+        login_body = {'username': username,
+                      'password': password,
+                      'rememberMe': 'True',
+                      'targetUrl': ''
+                      }
+
+        headers = {
+            "Content-Type": "application/json"
+        }
+
+        # 15 /rest/tsv/1.0/authenticate
+        locust.post('/rest/tsv/1.0/authenticate',
+                    json=login_body,
+                    headers=headers,
+                    catch_response=True)
 
     r = locust.get(url='/', catch_response=True)
     content = r.content.decode('utf-8')
@@ -48,40 +79,6 @@ def login_and_view_dashboard(locust):
 
     # 20 index.action
     locust.get('/index.action', catch_response=True)
-
-    # 30 rest/webResources/1.0/resources
-    locust.post('/rest/webResources/1.0/resources',
-                json=params.resources_body.get("30"),
-                headers=RESOURCE_HEADERS,
-                catch_response=True)
-
-    # 40 rest/shortcuts/latest/shortcuts/{ajs-build-number}/{ajs-keyboardshortcut-hash}
-    locust.get(f'/rest/shortcuts/latest/shortcuts/{build_number}/{keyboard_hash}', catch_response=True)
-
-    # 50 rest/mywork/latest/status/notification/count
-    locust.get('/rest/mywork/latest/status/notification/count', catch_response=True)
-
-    # 60 rest/dashboardmacros/1.0/updates
-    locust.get('/rest/dashboardmacros/1.0/updates?maxResults=40&tab=all&showProfilePic=true&labels='
-               '&spaces=&users=&types=&category=&spaceKey=',
-               catch_response=True)
-
-    # 70 rest/experimental/search
-    locust.get(f'/rest/experimental/search?cql=type=space%20and%20space.type=favourite%20order%20by%20'
-               f'favourite%20desc&expand=space.icon&limit=100&_={timestamp_int()}',
-               catch_response=True)
-
-    # 80 rest/analytics/1.0/publish/bulk
-    locust.post('/rest/analytics/1.0/publish/bulk',
-                json=params.resources_body.get("80"),
-                headers=RESOURCE_HEADERS,
-                catch_response=True)
-
-    # 90 rest/analytics/1.0/publish/bulk
-    locust.post('/rest/analytics/1.0/publish/bulk',
-                json=params.resources_body.get("90"),
-                headers=RESOURCE_HEADERS,
-                catch_response=True)
 
     locust.session_data_storage['build_number'] = build_number
     locust.session_data_storage['keyboard_hash'] = keyboard_hash
@@ -98,7 +95,7 @@ def view_page(locust):
     page_id = page[0]
 
     # 100 pages/viewpage.action
-    r = locust.get(f'/pages/viewpage.action?pageId={page_id}', catch_response=True)
+    r = locust.get(f'/pages/viewpage.action?pageId={page_id}&noRedirect=true', catch_response=True)
 
     content = r.content.decode('utf-8')
     if 'Created by' not in content or 'Save for later' not in content:
@@ -297,7 +294,7 @@ def view_blog(locust):
 
     # 340 pages/viewpage.action
     r = locust.get(f'/pages/viewpage.action'
-                   f'?pageId={blog_id}',
+                   f'?pageId={blog_id}&noRedirect=true',
                    catch_response=True)
 
     content = r.content.decode('utf-8')
@@ -408,9 +405,8 @@ def view_blog(locust):
                catch_response=True)
 
 
-def search_cql_and_view_results(locust):
+def search_cql_two_words_and_view_results(locust):
     raise_if_login_failed(locust)
-    cql = random.choice(confluence_dataset["cqls"])[0]
 
     @confluence_measure('locust_search_cql:recently_viewed')
     def search_recently_viewed():
@@ -419,11 +415,11 @@ def search_cql_and_view_results(locust):
                    '?limit=8',
                    catch_response=True)
 
-    @confluence_measure('locust_search_cql:search_results')
+    @confluence_measure('locust_search_cql:search_results_2_words')
     def search_cql():
         # 530 rest/api/search
         r = locust.get(f"/rest/api/search"
-                       f"?cql=siteSearch~'{cql}'"
+                       f"?cql=siteSearch~'{TWO_WORDS_CQL}'"
                        f"&start=0"
                        f"&limit=20",
                        catch_response=True)
@@ -440,6 +436,31 @@ def search_cql_and_view_results(locust):
 
     search_recently_viewed()
     search_cql()
+
+def search_cql_three_words(locust):
+    raise_if_login_failed(locust)
+
+    @confluence_measure('locust_search_cql:search_results_3_words')
+    def search_cql():
+        # 530 rest/api/search
+        r = locust.get(f"/rest/api/search"
+                       f"?cql=siteSearch~'{THREE_WORDS_CQL}'"
+                       f"&start=0"
+                       f"&limit=20",
+                       catch_response=True)
+
+        if '{"results":[' not in r.content.decode('utf-8'):
+            logger.locust_info(r.content.decode('utf-8'))
+        content = r.content.decode('utf-8')
+        if 'results' not in content:
+            logger.error(f"Search cql failed: {content}")
+        assert 'results' in content, "Search cql failed."
+
+        # 540 rest/mywork/latest/status/notification/count
+        locust.get('/rest/mywork/latest/status/notification/count', catch_response=True)
+
+    search_cql()
+
 
 
 def open_editor_and_create_blog(locust):
@@ -940,7 +961,7 @@ def create_and_edit_page(locust):
                     catch_response=True)
 
         # 1160 display/{space_key}/{page_title}
-        locust.get(f'/display/{space_key}/{page_title}', catch_response=True)
+        locust.get(f'/pages/viewpage.action?spaceKey={space_key}&title={page_title}', catch_response=True)
 
         # 1170 json/startheartbeatactivity.action
         locust.post('/json/startheartbeatactivity.action',
@@ -1204,7 +1225,7 @@ def create_and_edit_page(locust):
                     catch_response=True)
 
         # 1490 /display/${space_key}/${page_title}
-        locust.get(f'/display/{space_key}/{page_title}',
+        locust.get(f'/pages/viewpage.action?spaceKey={space_key}&title={page_title}',
                    catch_response=True)
 
         # 1500 rest/webResources/1.0/resources
@@ -1490,7 +1511,7 @@ def upload_attachments(locust):
     page_id = page[0]
     space_key = page[1]
 
-    r = locust.get(f'/pages/viewpage.action?pageId={page_id}', catch_response=True)
+    r = locust.get(f'/pages/viewpage.action?pageId={page_id}&noRedirect=true', catch_response=True)
     content = r.content.decode('utf-8')
     if not('Created by' in content and 'Save for later' in content):
         logger.error(f'Failed to open page {page_id}: {content}')

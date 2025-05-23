@@ -70,6 +70,8 @@ def login(webdriver, datasets):
         @print_timing("selenium_login:open_login_page")
         def sub_measure():
             login_page.go_to()
+            login_page.wait_for_login_page_loaded()
+
         sub_measure()
 
         @print_timing("selenium_login:login_and_view_dashboard")
@@ -77,6 +79,7 @@ def login(webdriver, datasets):
             login_page.set_credentials(
                 username=datasets['current_session']['username'],
                 password=datasets['current_session']['password'])
+            login_page.wait_for_dashboard_or_first_login_loaded()
             if login_page.is_first_login():
                 login_page.first_login_setup()
             if login_page.is_first_login_second_page():
@@ -124,6 +127,7 @@ def view_project_summary(webdriver, datasets):
 
 def create_issue(webdriver, dataset):
     issue_modal = Issue(webdriver)
+    webdriver.refresh()         # page refresh is needed for small dataset run stability
 
     @print_timing("selenium_create_issue")
     def measure():
@@ -178,13 +182,16 @@ def edit_issue(webdriver, datasets):
 
         sub_measure()
 
+        issue_page.set_epic_name()  # Set epic name if any
+        issue_page.set_resolution()  # Set resolution if there is such field
         issue_page.fill_summary_edit()  # edit summary
         issue_page.fill_description_edit(rte_status)  # edit description
 
         @print_timing("selenium_edit_issue:save_edit_issue_form")
         def sub_measure():
+            issue_page.scroll_down_till_bottom()
             issue_page.edit_issue_submit()  # submit edit issue
-            issue_page.wait_for_issue_title()
+            issue_page.wait_for_issue_loaded()
 
         sub_measure()
 
