@@ -3,24 +3,51 @@ from packaging import version
 from selenium_ui.base_page import BasePage
 from selenium_ui.bitbucket.pages.selectors import LoginPageLocators, GetStartedLocators, \
     DashboardLocators, ProjectsLocators, ProjectLocators, RepoLocators, RepoNavigationPanelLocators, PopupLocators, \
-    PullRequestLocator, BranchesLocator, RepoCommitsLocator, LogoutPageLocators, UrlManager
+    PullRequestLocator, BranchesLocator, RepoCommitsLocator, LogoutPageLocators, UrlManager, AdminLocators
 
 
 class LoginPage(BasePage):
     page_url = UrlManager().login_url()
+    page_loaded_selector = LoginPageLocators.footer_panel
+
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.is_2sv_login = False
+
+    def wait_for_page_loaded(self):
+        self.wait_until_visible(LoginPageLocators.footer_panel)
+        if not self.get_elements(LoginPageLocators.submit_button):
+            self.is_2sv_login = True
+            print("INFO: 2sv login form")
+
 
     def fill_username(self, username):
         self.get_element(LoginPageLocators.username_textfield).send_keys(username)
+
+    def fill_2sv_username(self, username):
+        self.wait_until_visible(LoginPageLocators.login_username_field_2sv)
+        self.get_element(LoginPageLocators.login_username_field_2sv).send_keys(username)
+
+    def fill_2sv_password(self, username):
+        self.wait_until_visible(LoginPageLocators.login_username_field_2sv)
+        self.get_element(LoginPageLocators.login_password_field_2sv).send_keys(username)
 
     def fill_password(self, password):
         self.get_element(LoginPageLocators.password_textfield).send_keys(password)
 
     def submit_login(self):
-        self.wait_until_visible(LoginPageLocators.submit_button).click()
+        if self.is_2sv_login:
+            self.wait_until_visible(LoginPageLocators.login_button_2sv).click()
+        else:
+            self.wait_until_visible(LoginPageLocators.submit_button).click()
 
     def set_credentials(self, username, password):
-        self.fill_username(username)
-        self.fill_password(password)
+        if self.is_2sv_login:
+            self.fill_2sv_username(username)
+            self.fill_2sv_password(password)
+        else:
+            self.fill_username(username)
+            self.fill_password(password)
 
     def get_node_id(self):
         text = self.get_element(LoginPageLocators.node_id).text
@@ -38,6 +65,12 @@ class LogoutPage(BasePage):
 class GetStarted(BasePage):
     page_url = GetStartedLocators.get_started_url
     page_loaded_selector = GetStartedLocators.user_profile_icon
+
+    def close_whats_new_window(self):
+        popup_window = self.get_elements(GetStartedLocators.whats_new_window_close_button)
+        if popup_window:
+            self.wait_until_visible(GetStartedLocators.whats_new_window_close_button).click()
+            self.wait_until_invisible(GetStartedLocators.whats_new_window_close_button)
 
 
 class Dashboard(BasePage):
@@ -70,9 +103,7 @@ class RepoNavigationPanel(BasePage):
 class PopupManager(BasePage):
 
     def dismiss_default_popup(self):
-        return self.dismiss_popup(PopupLocators.default_popup, PopupLocators.popup_1, PopupLocators.popup_2,
-                                  PopupLocators.popup_3, PopupLocators.popup_4, PopupLocators.popup_5,
-                                  PopupLocators.popup_6)
+        return self.dismiss_popup(PopupLocators.popup_selectors)
 
 
 class Repository(BasePage):
@@ -108,6 +139,11 @@ class RepoPullRequests(BasePage):
         title.send_keys('Selenium test pull request')
         self.wait_until_visible(self.get_selector(RepoLocators.pr_submit_button)).click()
         self.wait_until_visible(PullRequestLocator.pull_request_activity_content)
+        updates_banners = self.get_elements(PullRequestLocator.updates_info_banner)
+        while updates_banners:
+            updates_banners[0].click()
+            self.driver.refresh()
+            updates_banners = self.get_elements(PullRequestLocator.updates_info_banner)
         self.wait_until_clickable(PullRequestLocator.pull_request_page_merge_button)
 
 
@@ -175,6 +211,12 @@ class PullRequest(BasePage):
         self.wait_until_clickable(PullRequestLocator.pull_request_modal_merge_button).click()
         self.wait_until_invisible(PullRequestLocator.del_branch_checkbox_selector)
 
+    def dismiss_updates_info_popup(self):
+        updates_banners = self.get_elements(PullRequestLocator.updates_info_banner)
+        while updates_banners:
+            updates_banners[0].click()
+            self.driver.refresh()
+            updates_banners = self.get_elements(PullRequestLocator.updates_info_banner)
 
 class RepositoryBranches(BasePage):
     page_loaded_selector = BranchesLocator.branches_name
@@ -212,3 +254,22 @@ class RepositoryCommits(BasePage):
         BasePage.__init__(self, driver)
         url_manager = UrlManager(project_key=project_key, repo_slug=repo_slug)
         self.page_url = url_manager.commits_url()
+
+
+class AdminPage(BasePage):
+    page_url = AdminLocators.admin_system_page_url
+    page_loaded_selector = AdminLocators.login_form
+
+    def is_websudo(self):
+        return True if self.get_elements(AdminLocators.web_sudo_password) else False
+
+    def do_websudo(self, password):
+        self.wait_until_clickable(AdminLocators.web_sudo_password).send_keys(password)
+        self.wait_until_clickable(AdminLocators.web_sudo_submit_btn).click()
+        self.wait_until_visible(AdminLocators.administration_link)
+
+    def go_to(self, password=None):
+        super().go_to()
+        self.wait_for_page_loaded()
+        if self.is_websudo():
+            self.do_websudo(password)

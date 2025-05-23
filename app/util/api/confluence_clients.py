@@ -193,17 +193,37 @@ class ConfluenceRestClient(RestClient):
     def get_system_info_page(self):
         login_url = f'{self.host}/dologin.action'
         auth_url = f'{self.host}/doauthenticate.action'
-        auth_body = {
-            'destination': '/admin/systeminfo.action',
-            'authenticate': 'Confirm',
-            'password': self.password
+        tsv_auth_url = f'{self.host}/rest/tsv/1.0/authenticate'
+        tsv_login_body = {
+            'username': self.user,
+            'password': self.password,
+            'rememberMe': True,
+            'targetUrl': ''
         }
-        self.post(url=login_url, error_msg='Could not get login in')
-        system_info_html = self._session.post(url=auth_url, data=auth_body)
+
+        auth_body = {
+            'authenticate': 'Confirm',
+            'destination': '/admin/systeminfo.action',
+            'password': self.password,
+        }
+
+        login_page_response = self.session.get(login_url)
+        if login_page_response.status_code == 200:
+            login_page_content = login_page_response.text
+            is_legacy_login_form = 'loginform' in login_page_content
+        else:
+            raise Exception(f"Failed to fetch login page. Status code: {login_page_response.status_code}")
+
+        if is_legacy_login_form:
+            self.session.post(url=login_url)
+        else:
+            self.session.post(url=tsv_auth_url, json=tsv_login_body)
+
+        system_info_html = self.session.post(url=auth_url, data=auth_body, headers={'X-Atlassian-Token': 'no-check'}, verify=self.verify)
         return system_info_html.content.decode("utf-8")
 
     def get_deployment_type(self):
-        html_pattern = 'com.atlassian.dcapt.deployment=terraform'
+        html_pattern = 'deployment=terraform'
         confluence_system_page = self.get_system_info_page()
         if confluence_system_page.count(html_pattern):
             return 'terraform'
@@ -232,6 +252,26 @@ class ConfluenceRestClient(RestClient):
             url=create_user_url,
             body=payload,
             error_msg='ERROR: Could not create user')
+        return r.json()
+
+    @retry()
+    def get_status(self):
+        api_url = f'{self.host}/status'
+        status = self.get(api_url, "Could not get status")
+        if status.ok:
+            return status.text
+        else:
+            print(f"Warning: failed to get {api_url}: Error: {e}")
+            return False
+
+    def get_license_details(self):
+        api_url = f'{self.host}/rest/license/1.0/license/details'
+        r = self.get(api_url, "Could not get license details")
+        return r.json()
+
+    def get_license_remaining_seats(self):
+        api_url = f'{self.host}/rest/license/1.0/license/remainingSeats'
+        r = self.get(api_url, "Could not get license remaining seats")
         return r.json()
 
 

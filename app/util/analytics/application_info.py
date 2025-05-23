@@ -34,7 +34,9 @@ class BaseApplication:
 
     def __init__(self, api_client, config_yml):
         self.client = api_client(host=config_yml.server_url,
-                                 user=config_yml.admin_login, password=config_yml.admin_password)
+                                 user=config_yml.admin_login,
+                                 password=config_yml.admin_password,
+                                 verify=config_yml.secure)
         self.config = config_yml
 
     def get_default_actions(self):
@@ -69,6 +71,10 @@ class BaseApplication:
     @property
     def java_version(self):
         return None  # TODO: Add Java version to results_summary.log for all supported products
+
+    @property
+    def status(self):
+        return self.client.get_status()
 
 
 class Jira(BaseApplication):
