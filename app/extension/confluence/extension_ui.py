@@ -51,7 +51,7 @@ def app_specific_action(webdriver, datasets):
 
 def zscale_view_test_cases_by_status_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
-    zscale_specific_page_id = 35622100
+    zscale_specific_page_id = 45185783
 
     @print_timing("zscale_specific_user_login")
     def measure():
@@ -80,7 +80,7 @@ def zscale_view_test_cases_by_status_macro_in_page(webdriver, datasets):
 
 def zscale_view_test_cases_by_project_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
-    zscale_specific_page_id = 36596167
+    zscale_specific_page_id = 45185785
 
     @print_timing("zscale_specific_user_login")
     def measure():
@@ -109,7 +109,7 @@ def zscale_view_test_cases_by_project_macro_in_page(webdriver, datasets):
 
 def zscale_view_test_cases_by_folder_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
-    zscale_specific_page_id = 12499286
+    zscale_specific_page_id = 45185787
 
     @print_timing("zscale_specific_user_login")
     def measure():
