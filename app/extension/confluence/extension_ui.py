@@ -53,6 +53,27 @@ def zscale_view_test_cases_by_status_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
     zscale_specific_page_id = 45185783
 
+    @print_timing("zscale_specific_user_login")
+    def measure():
+        def zscale_specific_user_login(username='admin', password='admin'):
+            login_page = Login(webdriver)
+            login_page.delete_all_cookies()
+            login_page.go_to()
+            login_page.wait_for_page_loaded()
+            login_page.set_credentials(username=username, password=password)
+            login_page.click_login_button()
+            if login_page.is_first_login():
+                login_page.first_user_setup()
+            all_updates_page = AllUpdates(webdriver)
+            all_updates_page.wait_for_page_loaded()
+
+        try:
+            zscale_specific_user_login(username='admin', password='admin')
+        except Exception as e:
+            zscale_specific_user_login(username='admin', password='admin')
+
+    measure()
+
     @print_timing("view_test_cases_by_status_action")
     def measure():
         check_zscale_content(page, zscale_specific_page_id)
@@ -64,6 +85,27 @@ def zscale_view_test_cases_by_project_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
     zscale_specific_page_id = 45185785
 
+    @print_timing("zscale_specific_user_login")
+    def measure():
+        def zscale_specific_user_login(username='admin', password='admin'):
+            login_page = Login(webdriver)
+            login_page.delete_all_cookies()
+            login_page.go_to()
+            login_page.wait_for_page_loaded()
+            login_page.set_credentials(username=username, password=password)
+            login_page.click_login_button()
+            if login_page.is_first_login():
+                login_page.first_user_setup()
+            all_updates_page = AllUpdates(webdriver)
+            all_updates_page.wait_for_page_loaded()
+
+        try:
+            zscale_specific_user_login(username='admin', password='admin')
+        except Exception as e:
+            zscale_specific_user_login(username='admin', password='admin')
+
+    measure()
+
     @print_timing("view_test_cases_by_project_action")
     def measure():
         check_zscale_content(page, zscale_specific_page_id)
@@ -74,6 +116,27 @@ def zscale_view_test_cases_by_project_macro_in_page(webdriver, datasets):
 def zscale_view_test_cases_by_folder_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
     zscale_specific_page_id = 45185787
+
+    @print_timing("zscale_specific_user_login")
+    def measure():
+        def zscale_specific_user_login(username='admin', password='admin'):
+            login_page = Login(webdriver)
+            login_page.delete_all_cookies()
+            login_page.go_to()
+            login_page.wait_for_page_loaded()
+            login_page.set_credentials(username=username, password=password)
+            login_page.click_login_button()
+            if login_page.is_first_login():
+                login_page.first_user_setup()
+            all_updates_page = AllUpdates(webdriver)
+            all_updates_page.wait_for_page_loaded()
+
+        try:
+            zscale_specific_user_login(username='admin', password='admin')
+        except Exception as e:
+            zscale_specific_user_login(username='admin', password='admin')
+
+    measure()
 
     @print_timing("view_test_cases_by_folder_action")
     def measure():
