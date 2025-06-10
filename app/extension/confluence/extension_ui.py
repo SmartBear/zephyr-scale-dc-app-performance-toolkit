@@ -53,24 +53,6 @@ def zscale_view_test_cases_by_status_macro_in_page(webdriver, datasets):
     page = BasePage(webdriver)
     zscale_specific_page_id = 45185783
 
-    @print_timing("zscale_specific_user_login")
-    def measure():
-        def zscale_specific_user_login(username='admin', password='admin'):
-            login_page = Login(webdriver)
-            login_page.delete_all_cookies()
-            login_page.go_to()
-            login_page.wait_for_page_loaded()
-            login_page.set_credentials(username=username, password=password)
-            login_page.click_login_button()
-            if login_page.is_first_login():
-                login_page.first_user_setup()
-            all_updates_page = AllUpdates(webdriver)
-            all_updates_page.wait_for_page_loaded()
-
-        zscale_specific_user_login(username='admin', password='admin')
-
-    measure()
-
     @print_timing("view_test_cases_by_status_action")
     def measure():
         check_zscale_content(page, zscale_specific_page_id)
@@ -101,14 +83,13 @@ def zscale_view_test_cases_by_folder_macro_in_page(webdriver, datasets):
 
 
 def check_zscale_content(page, zscale_specific_page_id):
-
     page.go_to_url(f"{CONFLUENCE_SETTINGS.server_url}/pages/viewpage.action?pageId={zscale_specific_page_id}")
 
-    if zscale_specific_page_id == 35622100:
+    if zscale_specific_page_id == 45185783:
         page.wait_until_visible((By.TAG_NAME, "reports-viewer-test-cases-summary-by-status"))
-    elif zscale_specific_page_id == 36596167:
+    elif zscale_specific_page_id == 45185785:
         page.wait_until_visible((By.TAG_NAME, "reports-viewer-test-cases-created-by-project-list"))
-    elif zscale_specific_page_id == 12499286:
+    elif zscale_specific_page_id == 45185787:
         page.wait_until_visible((By.TAG_NAME, "reports-viewer-test-cases-created-by-folder-list"))
     else:
         page.wait_until_visible((By.TAG_NAME, "macro-view"))
