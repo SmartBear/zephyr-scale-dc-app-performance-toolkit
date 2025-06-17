@@ -1,6 +1,5 @@
 .idea/
 outputs/
-**/results/
 **/datasets/*/*.csv
 *venv*
 .DS_Store

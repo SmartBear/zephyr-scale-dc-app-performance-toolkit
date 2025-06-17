@@ -1,0 +1,147 @@
+04-28-2022, 10:01:52, 1651140112939, Action: test_1_selenium_zscale_view_test_case_in_issue_view, Error: jira_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="d0b7af0243cdee777d0909f40a4eb687")>
+jira_datasets = {'custom_issues': [], 'issue_id': '208917', 'issue_key': 'AAFAIA-3409', 'issues': [['AABIS-1', '914565', 'AABIS'], ['A...', 'AABIS'], ['AABIS-4', '914568', 'AABIS'], ['AABIS-5', '914569', 'AABIS'], ['AABIS-6', '914570', 'AABIS'], ...], ...}
+jira_screen_shots = None
+
+    def test_1_selenium_zscale_view_test_case_in_issue_view(jira_webdriver, jira_datasets, jira_screen_shots):
+>       extension_ui.zscale_view_test_case_in_issue_view(jira_webdriver, jira_datasets)
+
+selenium_ui/jira_ui.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+extension/jira/extension_ui.py:53: in zscale_view_test_case_in_issue_view
+    measure()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @functools.wraps(func)
+    def wrapper():
+        if LOGIN_ACTION_NAME in interaction:
+            globals.login_failed = False
+        if globals.login_failed:
+            pytest.skip(f"login is failed")
+        start = time.time()
+        error_msg = 'Success'
+        full_exception = ''
+        try:
+            func()
+            success = True
+        except Exception:
+            success = False
+            # https://docs.python.org/2/library/sys.html#sys.exc_info
+            exc_type, full_exception = sys.exc_info()[:2]
+            error_msg = f"Failed measure: {interaction} - {exc_type.__name__}"
+        end = time.time()
+        timing = str(int((end - start) * 1000))
+    
+        lockfile = f'{selenium_results_file}.lock'
+    
+        with filelock.SoftFileLock(lockfile):
+            with open(selenium_results_file, "a+") as jtl_file:
+                timestamp = round(time.time() * 1000)
+                jtl_file.write(f"{timestamp},{timing},{interaction},,{error_msg},,{success},0,0,0,0,,0\n")
+    
+        print(f"{timestamp},{timing},{interaction},{error_msg},{success}")
+    
+        if not success:
+            if LOGIN_ACTION_NAME in interaction:
+                globals.login_failed = True
+>           raise Exception(error_msg, full_exception)
+E           Exception: ('Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException', TimeoutException('Error in wait_until: Timed out after 20 sec waiting for <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7fc23d222d90>. \nLocator: (\'xpath\', \'//li[@data-testid="testcase-item"]\')', None, None))
+
+selenium_ui/conftest.py:155: Exception
+04-28-2022, 10:02:14, 1651140134573, Action: test_1_selenium_zscale_view_test_cycle_in_issue_view, Error: jira_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="d0b7af0243cdee777d0909f40a4eb687")>
+jira_datasets = {'custom_issues': [], 'issue_id': '208917', 'issue_key': 'AAFAIA-3409', 'issues': [['AABIS-1', '914565', 'AABIS'], ['A...', 'AABIS'], ['AABIS-4', '914568', 'AABIS'], ['AABIS-5', '914569', 'AABIS'], ['AABIS-6', '914570', 'AABIS'], ...], ...}
+jira_screen_shots = None
+
+    def test_1_selenium_zscale_view_test_cycle_in_issue_view(jira_webdriver, jira_datasets, jira_screen_shots):
+>       extension_ui.zscale_view_test_cycle_in_issue_view(jira_webdriver, jira_datasets)
+
+selenium_ui/jira_ui.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+extension/jira/extension_ui.py:63: in zscale_view_test_cycle_in_issue_view
+    measure()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @functools.wraps(func)
+    def wrapper():
+        if LOGIN_ACTION_NAME in interaction:
+            globals.login_failed = False
+        if globals.login_failed:
+            pytest.skip(f"login is failed")
+        start = time.time()
+        error_msg = 'Success'
+        full_exception = ''
+        try:
+            func()
+            success = True
+        except Exception:
+            success = False
+            # https://docs.python.org/2/library/sys.html#sys.exc_info
+            exc_type, full_exception = sys.exc_info()[:2]
+            error_msg = f"Failed measure: {interaction} - {exc_type.__name__}"
+        end = time.time()
+        timing = str(int((end - start) * 1000))
+    
+        lockfile = f'{selenium_results_file}.lock'
+    
+        with filelock.SoftFileLock(lockfile):
+            with open(selenium_results_file, "a+") as jtl_file:
+                timestamp = round(time.time() * 1000)
+                jtl_file.write(f"{timestamp},{timing},{interaction},,{error_msg},,{success},0,0,0,0,,0\n")
+    
+        print(f"{timestamp},{timing},{interaction},{error_msg},{success}")
+    
+        if not success:
+            if LOGIN_ACTION_NAME in interaction:
+                globals.login_failed = True
+>           raise Exception(error_msg, full_exception)
+E           Exception: ('Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException', TimeoutException('Error in wait_until: Timed out after 20 sec waiting for <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7fc23d244b80>. \nLocator: (\'xpath\', \'//li[@data-testid="testrun-item"]\')', None, None))
+
+selenium_ui/conftest.py:155: Exception
+04-28-2022, 10:02:36, 1651140156072, Action: test_1_selenium_zscale_view_test_plan_in_issue_view, Error: jira_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="d0b7af0243cdee777d0909f40a4eb687")>
+jira_datasets = {'custom_issues': [], 'issue_id': '208917', 'issue_key': 'AAFAIA-3409', 'issues': [['AABIS-1', '914565', 'AABIS'], ['A...', 'AABIS'], ['AABIS-4', '914568', 'AABIS'], ['AABIS-5', '914569', 'AABIS'], ['AABIS-6', '914570', 'AABIS'], ...], ...}
+jira_screen_shots = None
+
+    def test_1_selenium_zscale_view_test_plan_in_issue_view(jira_webdriver, jira_datasets, jira_screen_shots):
+>       extension_ui.zscale_view_test_plan_in_issue_view(jira_webdriver, jira_datasets)
+
+selenium_ui/jira_ui.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+extension/jira/extension_ui.py:73: in zscale_view_test_plan_in_issue_view
+    measure()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @functools.wraps(func)
+    def wrapper():
+        if LOGIN_ACTION_NAME in interaction:
+            globals.login_failed = False
+        if globals.login_failed:
+            pytest.skip(f"login is failed")
+        start = time.time()
+        error_msg = 'Success'
+        full_exception = ''
+        try:
+            func()
+            success = True
+        except Exception:
+            success = False
+            # https://docs.python.org/2/library/sys.html#sys.exc_info
+            exc_type, full_exception = sys.exc_info()[:2]
+            error_msg = f"Failed measure: {interaction} - {exc_type.__name__}"
+        end = time.time()
+        timing = str(int((end - start) * 1000))
+    
+        lockfile = f'{selenium_results_file}.lock'
+    
+        with filelock.SoftFileLock(lockfile):
+            with open(selenium_results_file, "a+") as jtl_file:
+                timestamp = round(time.time() * 1000)
+                jtl_file.write(f"{timestamp},{timing},{interaction},,{error_msg},,{success},0,0,0,0,,0\n")
+    
+        print(f"{timestamp},{timing},{interaction},{error_msg},{success}")
+    
+        if not success:
+            if LOGIN_ACTION_NAME in interaction:
+                globals.login_failed = True
+>           raise Exception(error_msg, full_exception)
+E           Exception: ('Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException', TimeoutException('Error in wait_until: Timed out after 20 sec waiting for <selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7fc23d222520>. \nLocator: (\'xpath\', \'//li[@data-testid="testplan-item"]\')', None, None))
+
+selenium_ui/conftest.py:155: Exception

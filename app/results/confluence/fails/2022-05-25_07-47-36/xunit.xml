@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="sample_labels" package_name="bzt">
+    <testcase classname="bzt-8736965386608" name="jmeter_comment_page"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_and_edit_page:create_page"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_and_edit_page:create_page_editor"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_and_edit_page:edit_page"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_and_edit_page:open_editor"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_blog:blog_editor"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_create_blog:feel_and_publish"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_like_page"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_login_and_view_dashboard"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_search_cql:recently_viewed"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_search_cql:search_results"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_upload_attachment"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_view_attachment"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_view_blog"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_view_dashboard"/>
+    <testcase classname="bzt-8736965386608" name="jmeter_view_page:open_page"/>
+    <testcase classname="bzt-8736965386608" name="selenium_a_login"/>
+    <testcase classname="bzt-8736965386608" name="selenium_create_comment"/>
+    <testcase classname="bzt-8736965386608" name="selenium_create_page"/>
+    <testcase classname="bzt-8736965386608" name="selenium_edit_page"/>
+    <testcase classname="bzt-8736965386608" name="selenium_view_blog"/>
+    <testcase classname="bzt-8736965386608" name="selenium_view_dashboard"/>
+    <testcase classname="bzt-8736965386608" name="selenium_view_page"/>
+    <testcase classname="bzt-8736965386608" name="selenium_z_log_out"/>
+    <testcase classname="bzt-8736965386608" name="selenium_zscale_view_test_cases_by_folder_macro_in_page">
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed22500d0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed22500d0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20e66d0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20e66d0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20aaa30&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20aaa30&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 4)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2092a90&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2092a90&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 2)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed201ef70&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed201ef70&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fb6fd0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fb6fd0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 4)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f547f0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f547f0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 8)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1ed1940&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_folder_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1ed1940&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 17)</error>
+    </testcase>
+    <testcase classname="bzt-8736965386608" name="selenium_zscale_view_test_cases_by_project_macro_in_page">
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed21dba30&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed21dba30&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 3)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2162b50&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2162b50&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 2)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2185190&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2185190&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed21821c0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed21821c0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 2)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2000c40&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2000c40&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 5)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fe1dc0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fe1dc0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 12)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f459a0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f459a0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 7)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f8fa60&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_project_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f8fa60&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 6)</error>
+    </testcase>
+    <testcase classname="bzt-8736965386608" name="selenium_zscale_view_test_cases_by_status_macro_in_page">
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2250310&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2250310&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed217d610&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed217d610&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 6)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed213d580&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed213d580&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 3)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20cb160&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20cb160&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 5)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2090d90&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed2090d90&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 2)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fd8430&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1fd8430&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 12)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20765e0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed20765e0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f473a0&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1f473a0&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 4)</error>
+      <error message="Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1ed9490&gt;. \nLocator: ('tag name', 'macro-view')&quot;, None, None))" type="Error">Exception: ('Failed measure: view_test_cases_by_status_action - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f6ed1ed9490&gt;. \nLocator: ('tag name', 'macro-view')", None, None))
+(status code is 400)
+(total errors of this type: 4)</error>
+    </testcase>
+  </testsuite>
+</testsuites>

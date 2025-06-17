@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="25001" lt="0" ts="1718186392279" s="false" lb="jmeter_search_cql:search_results" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Number of samples in transaction : 1, number of failing samples : 1" tn="Confluence-ThreadStarter 1-49" dt="" de="" by="2620" ng="200" na="200">
+  <httpSample t="25001" lt="0" ts="1718186392279" s="false" lb="530 rest/api/search" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Confluence-ThreadStarter 1-49" dt="text" de="" by="2620" ng="200" na="200">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: text expected to contain /{&quot;results&quot;:[/</failureMessage>
+    </assertionResult>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+X-Requested-With: XMLHttpRequest
+Accept-Encoding: gzip, deflate
+Accept: application/json, text/javascript, */*; q=0.01
+Origin: http://a832b9406866444208c6d72648e56876-100308878.us-east-2.elb.amazonaws.com:80
+Host: a832b9406866444208c6d72648e56876-100308878.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.13 (Java/11.0.23)
+</requestHeader>
+    <responseData class="java.lang.String">java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:939)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:650)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1301)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1290)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:651)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:570)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:501)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:268)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String">INGRESSCOOKIE=9bf370d6f35e345db5be0ceda83e97af|bc7938bbab5da9ce7e6ee05df935b659; JSESSIONID=038B05EA4CB3741FA1C48B93C33E9019; seraph.confluence=43974915%3A8484c900d50068db1616bc82a8b2eb0174e5aceb</cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>http://a832b9406866444208c6d72648e56876-100308878.us-east-2.elb.amazonaws.com/confluence/rest/api/search?cql=siteSearch%7E%27sit+up+sister%27&amp;start=0&amp;limit=20</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
+</testResults>

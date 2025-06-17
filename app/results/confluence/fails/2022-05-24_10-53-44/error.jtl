@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="20062" lt="0" ts="1653390786747" s="false" lb="jmeter_upload_attachment" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Number of samples in transaction : 10, number of failing samples : 3" tn="Confluence 1-158" dt="" de="" by="125342" ng="200" na="200">
+  <httpSample t="20011" lt="0" ts="1653390786747" s="false" lb="1900 pages/doattachfile.action?pageId=16597272" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Confluence 1-158" dt="text" de="" by="3087" ng="200" na="200">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: text expected to contain /Upload file/</failureMessage>
+    </assertionResult>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 349652
+Content-Type: multipart/form-data; boundary=7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <responseData class="java.lang.String">java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1374)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:985)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:935)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:646)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String">JSESSIONID=A28665686216D639135E3ECF5BB924F1; seraph.confluence=40337657%3A50b0a872c6277433146cfdfcc1bf454d0ed55818; AWSALB=vCPcwFKhclFPyUZzrKAo7AAXkU7x8eLDLaNaTV5XbQ8Uaq20pwURKvuySaBJx+tcFXQHKfoev1gdTz7vYClhmkF8uQdgQoERPAhxb1O9Dhqe7p6wPE1cRIdjWoQM; AWSALBCORS=vCPcwFKhclFPyUZzrKAo7AAXkU7x8eLDLaNaTV5XbQ8Uaq20pwURKvuySaBJx+tcFXQHKfoev1gdTz7vYClhmkF8uQdgQoERPAhxb1O9Dhqe7p6wPE1cRIdjWoQM</cookies>
+    <method class="java.lang.String">POST</method>
+    <queryString class="java.lang.String">--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;atl_token&quot;&#xd;
+&#xd;
+9f871c64439981a77df1737191593fc3139197e5&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;comment_0&quot;&#xd;
+&#xd;
+&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;comment_1&quot;&#xd;
+&#xd;
+&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;comment_2&quot;&#xd;
+&#xd;
+&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;comment_3&quot;&#xd;
+&#xd;
+&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;comment_4&quot;&#xd;
+&#xd;
+&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;confirm&quot;&#xd;
+&#xd;
+Attach&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM&#xd;
+Content-Disposition: form-data; name=&quot;test1.png&quot;; filename=&quot;test1.png&quot;&#xd;
+Content-Type: image/png&#xd;
+&#xd;
+&lt;actual file content, not shown here&gt;&#xd;
+--7p_l2cgTWXdJ7MnzhH-g_BOpV6VDOh4J-bHUM--&#xd;
+</queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/pages/doattachfile.action?pageId=16597272</java.net.URL>
+  </httpSample>
+  <httpSample t="10" lt="10" ts="1653390806758" s="true" lb="1910 rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="9368" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=Ku5R+HdR/4+RGTffuwG7gJgfXRshVovoK0+MUvaOl6l204asQto46meyZ9j55AzKRi3z51X4uFovHbKtUm9AsJdyqugkfSmo9KZCx0cXThij2mYf36JfZz0vXtOu; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=Ku5R+HdR/4+RGTffuwG7gJgfXRshVovoK0+MUvaOl6l204asQto46meyZ9j55AzKRi3z51X4uFovHbKtUm9AsJdyqugkfSmo9KZCx0cXThij2mYf36JfZz0vXtOu; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+Cache-Control: no-transform, max-age=2147483647
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3?_=1653390806759</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653390806769" s="false" lb="1920 plugins/pagetree/naturalchildren.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16597272&amp;_=1653390806769" tn="Confluence 1-158" dt="text" de="" by="1448" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16597272&amp;_=1653390806769
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16597272&amp;_=1653390806769</java.net.URL>
+  </httpSample>
+  <httpSample t="5" lt="5" ts="1653390806769" s="true" lb="1930 rest/mywork/latest/status/notification/count" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="783" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=jKapIdprWfDSTUVxNGqnXmnqVkCVFH/2ynwHsyfwugn4+PIQL3Kjx+0KWoeNkv7mHZRxxEL/2y0jTg+zYlmCA+iD3PJJIvsHOrz3gYvt3hf8OZUHY/rXEsSwg5CV; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=jKapIdprWfDSTUVxNGqnXmnqVkCVFH/2ynwHsyfwugn4+PIQL3Kjx+0KWoeNkv7mHZRxxEL/2y0jTg+zYlmCA+iD3PJJIvsHOrz3gYvt3hf8OZUHY/rXEsSwg5CV; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+Cache-Control: no-cache, no-store, no-transform
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/mywork/latest/status/notification/count?pageid=16597272&amp;_=1653390806770</java.net.URL>
+  </httpSample>
+  <httpSample t="7" lt="7" ts="1653390806775" s="true" lb="1940 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="1506" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=3N5NMesK8+u29u9q9utMmWwPHsJhwmFFpLlKx4NrBusl1kKxTe04wx2RnoxboyHL1q6/GDyeOmhe1xLb6jW4V0nhDxJ3XwX87SO3kX3V8SlkJ8MdpPVfuvL94pY0; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=3N5NMesK8+u29u9q9utMmWwPHsJhwmFFpLlKx4NrBusl1kKxTe04wx2RnoxboyHL1q6/GDyeOmhe1xLb6jW4V0nhDxJ3XwX87SO3kX3V8SlkJ8MdpPVfuvL94pY0; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1109
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="3" lt="3" ts="1653390806782" s="true" lb="1950 rest/analytics/1.0/publish/bulk" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="673" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Content-Length: 0
+Connection: keep-alive
+Set-Cookie: AWSALB=t/4h43JtKUtBzgUvLWo0DSyj7t2tTL1v7aUmAHLKysBS4KsHUZVohNaBFnTi2t1A2XHCkl3CJG7MZ45fFsLXA94C8ZSq1HZLxcvtxMyx1JmmtJSBh9Q8sYkiB8sF; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=t/4h43JtKUtBzgUvLWo0DSyj7t2tTL1v7aUmAHLKysBS4KsHUZVohNaBFnTi2t1A2XHCkl3CJG7MZ45fFsLXA94C8ZSq1HZLxcvtxMyx1JmmtJSBh9Q8sYkiB8sF; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 248
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/analytics/1.0/publish/bulk</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653390806785" s="false" lb="1960 plugins/editor-loader/editor.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16597272&amp;timeout=12000&amp;_=1653390806786" tn="Confluence 1-158" dt="text" de="" by="1376" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16597272&amp;timeout=12000&amp;_=1653390806786
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16597272&amp;timeout=12000&amp;_=1653390806786</java.net.URL>
+  </httpSample>
+  <httpSample t="11" lt="10" ts="1653390806786" s="true" lb="1970 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="66535" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=8qej9Jx/RIs6QbdHIZEw1SDyEUqoVINUg84riqSDlQt5Xrztyd7AgjkNFhZ1sZBIzwM6h/lcB7iERtIzpQFOmpWYvFJEd73sVb2AaEMFLO0HiS37X5wuNIkPnbbc; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=8qej9Jx/RIs6QbdHIZEw1SDyEUqoVINUg84riqSDlQt5Xrztyd7AgjkNFhZ1sZBIzwM6h/lcB7iERtIzpQFOmpWYvFJEd73sVb2AaEMFLO0HiS37X5wuNIkPnbbc; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1164
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="7" lt="6" ts="1653390806797" s="true" lb="1980 plugins/macrobrowser/browse-macros.action" rc="200" rm="" tn="Confluence 1-158" dt="text" de="UTF-8" by="36425" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=vClvUoBWl2G7x9csc1+rRxFp9jcdEqGXv8p/pHyVTgN04Sm5/tXCSaaUCPAUq0HLk9ucTdupJjQvZFrq+7oLtkD65gErjJqyQ+g6pF2+/8mvFVcYiWLxxgRgwQaR; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=vClvUoBWl2G7x9csc1+rRxFp9jcdEqGXv8p/pHyVTgN04Sm5/tXCSaaUCPAUq0HLk9ucTdupJjQvZFrq+7oLtkD65gErjJqyQ+g6pF2+/8mvFVcYiWLxxgRgwQaR; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+Cache-Control: public, max-age=315360000
+Expires: Fri, 21 May 2032 11:13:26 GMT
+X-Confluence-Request-Time: 1653390806799
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors &apos;self&apos;
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/macrobrowser/browse-macros.action?macroMetadataClientCacheKey=1618624163503&amp;detailed=false</java.net.URL>
+  </httpSample>
+  <httpSample t="8" lt="8" ts="1653390806804" s="true" lb="1990 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-158" dt="text" de="" by="4141" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:13:26 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=MTU2NFiAemyCQeW7uEihWcuw+JF4N75USSQCFmPgAvcHcQK2ofvcWR55kACyaUvvWlIVI4XlA06CTUtCAEcb+nn5NpQMh0A+KVwZT6MzXCU8ZrMGK+1yA79fazKA; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/
+Set-Cookie: AWSALBCORS=MTU2NFiAemyCQeW7uEihWcuw+JF4N75USSQCFmPgAvcHcQK2ofvcWR55kACyaUvvWlIVI4XlA06CTUtCAEcb+nn5NpQMh0A+KVwZT6MzXCU8ZrMGK+1yA79fazKA; Expires=Tue, 31 May 2022 11:13:26 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_gnnlzeurue
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 9424
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="20076" lt="0" ts="1653392436587" s="false" lb="jmeter_upload_attachment" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Number of samples in transaction : 10, number of failing samples : 3" tn="Confluence 1-68" dt="" de="" by="125334" ng="200" na="200">
+  <httpSample t="20024" lt="0" ts="1653392436587" s="false" lb="1900 pages/doattachfile.action?pageId=16606295" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Confluence 1-68" dt="text" de="" by="3087" ng="200" na="200">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: text expected to contain /Upload file/</failureMessage>
+    </assertionResult>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 491328
+Content-Type: multipart/form-data; boundary=AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <responseData class="java.lang.String">java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1374)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:985)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:935)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:646)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String">JSESSIONID=C529F1BD1F301A1A4E3E375853B9664A; seraph.confluence=40337560%3Aa04fc277a7b9ac76cd0c267bf2523d19a901b705; AWSALB=Hi9woVKd8Odz+YmTSckG5stUhItmkgOmBSOtIUep4mq5qsSuNaabZ7sSeMg2ZnDxz1Q7I91KwgF7PTtCSOI4xyKWG53e10U1cb5HD4u0VwHQlCFUNSpNTkTILihJ; AWSALBCORS=Hi9woVKd8Odz+YmTSckG5stUhItmkgOmBSOtIUep4mq5qsSuNaabZ7sSeMg2ZnDxz1Q7I91KwgF7PTtCSOI4xyKWG53e10U1cb5HD4u0VwHQlCFUNSpNTkTILihJ</cookies>
+    <method class="java.lang.String">POST</method>
+    <queryString class="java.lang.String">--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;atl_token&quot;&#xd;
+&#xd;
+c182edacbc5377842fe5192979a0ed2098642d23&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;comment_0&quot;&#xd;
+&#xd;
+&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;comment_1&quot;&#xd;
+&#xd;
+&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;comment_2&quot;&#xd;
+&#xd;
+&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;comment_3&quot;&#xd;
+&#xd;
+&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;comment_4&quot;&#xd;
+&#xd;
+&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;confirm&quot;&#xd;
+&#xd;
+Attach&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8&#xd;
+Content-Disposition: form-data; name=&quot;test5.jpg&quot;; filename=&quot;test5.jpg&quot;&#xd;
+Content-Type: image/jpeg&#xd;
+&#xd;
+&lt;actual file content, not shown here&gt;&#xd;
+--AIMC0c5KkGBHN8MzCUQ0c79MTsFViQdSr8--&#xd;
+</queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/pages/doattachfile.action?pageId=16606295</java.net.URL>
+  </httpSample>
+  <httpSample t="11" lt="11" ts="1653392456612" s="true" lb="1910 rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="9368" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=379ORluSH7YRMB8SWV7ctO2WApzTAft3+B+eL0gMktlNnebOHED/UWIoe/OEsDYz3iqMTwYKJ/YoYAP6+VQYd2f46OMvgyyMGPwU0WLVT6iIfEU3RXlgo5yRUrjj; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=379ORluSH7YRMB8SWV7ctO2WApzTAft3+B+eL0gMktlNnebOHED/UWIoe/OEsDYz3iqMTwYKJ/YoYAP6+VQYd2f46OMvgyyMGPwU0WLVT6iIfEU3RXlgo5yRUrjj; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+Cache-Control: no-transform, max-age=2147483647
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3?_=1653392456612</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653392456623" s="false" lb="1920 plugins/pagetree/naturalchildren.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16606295&amp;_=1653392456623" tn="Confluence 1-68" dt="text" de="" by="1448" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16606295&amp;_=1653392456623
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16606295&amp;_=1653392456623</java.net.URL>
+  </httpSample>
+  <httpSample t="5" lt="5" ts="1653392456624" s="true" lb="1930 rest/mywork/latest/status/notification/count" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="783" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=eSrbUkONl+1m9bi/Ss/Zjr2Z+IkVDyTY741c8/INK5yDPZTkdj7I2U0bqA7MqkrXF9msluApUFur+Sq1GfLr/uRH4F2WYGzc5bxmN4levV6rKE2RHMdn44uiJIqX; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=eSrbUkONl+1m9bi/Ss/Zjr2Z+IkVDyTY741c8/INK5yDPZTkdj7I2U0bqA7MqkrXF9msluApUFur+Sq1GfLr/uRH4F2WYGzc5bxmN4levV6rKE2RHMdn44uiJIqX; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+Cache-Control: no-cache, no-store, no-transform
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/mywork/latest/status/notification/count?pageid=16606295&amp;_=1653392456623</java.net.URL>
+  </httpSample>
+  <httpSample t="7" lt="7" ts="1653392456629" s="true" lb="1940 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="1506" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=mNXiULnMC0nvKJZfIpndg3Pc71qMJq4ZerfOA0DMViYr7SAVWB25vY3xwyYnDmzQ/TLx5u9zc7sHQYBOeDbwHs8iDhiVaZHDHbJdYlG7aRcx1vTIiDODU1f5f49z; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=mNXiULnMC0nvKJZfIpndg3Pc71qMJq4ZerfOA0DMViYr7SAVWB25vY3xwyYnDmzQ/TLx5u9zc7sHQYBOeDbwHs8iDhiVaZHDHbJdYlG7aRcx1vTIiDODU1f5f49z; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1109
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="3" lt="3" ts="1653392456637" s="true" lb="1950 rest/analytics/1.0/publish/bulk" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="673" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Content-Length: 0
+Connection: keep-alive
+Set-Cookie: AWSALB=UWMtkN2Gzr0yNtJ61xybZZQNH8vleroa9T2/qluHPjAvZnOBqaYIH78+Vjg4pgPa/oHZ9AbXEhST/zlTHH48c3XzCbZ9Yg1Fes8KtJDukc9mgzFqcCil7nT/BcDu; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=UWMtkN2Gzr0yNtJ61xybZZQNH8vleroa9T2/qluHPjAvZnOBqaYIH78+Vjg4pgPa/oHZ9AbXEhST/zlTHH48c3XzCbZ9Yg1Fes8KtJDukc9mgzFqcCil7nT/BcDu; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 248
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/analytics/1.0/publish/bulk</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653392456640" s="false" lb="1960 plugins/editor-loader/editor.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16606295&amp;timeout=12000&amp;_=1653392456640" tn="Confluence 1-68" dt="text" de="" by="1376" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16606295&amp;timeout=12000&amp;_=1653392456640
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16606295&amp;timeout=12000&amp;_=1653392456640</java.net.URL>
+  </httpSample>
+  <httpSample t="11" lt="10" ts="1653392456641" s="true" lb="1970 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="66527" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=ligZLXrGKmgblKZwtIJI3UHzfAzb4A8jsOpmrG3EskQWmMmowvr6lbJezyS9HSBrpCrKUuR/DK7Qzfxm6eUYTD4tdhYL1bqkpXYhfVWTMjKVcyScnmNBEbmbw6Ch; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=ligZLXrGKmgblKZwtIJI3UHzfAzb4A8jsOpmrG3EskQWmMmowvr6lbJezyS9HSBrpCrKUuR/DK7Qzfxm6eUYTD4tdhYL1bqkpXYhfVWTMjKVcyScnmNBEbmbw6Ch; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1164
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="7" lt="6" ts="1653392456653" s="true" lb="1980 plugins/macrobrowser/browse-macros.action" rc="200" rm="" tn="Confluence 1-68" dt="text" de="UTF-8" by="36425" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=FcXFqrdOEFLqGPENaOB6BRaaHMk8CaoQFHbHVtyfbxDsr/DFVA2l+vkKY8lN6LDjOywp/ywvd+605PFDFYrHtCq/DSQh/6AEuEzUyWyue8rYuJHF12H8xXoIVRVE; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=FcXFqrdOEFLqGPENaOB6BRaaHMk8CaoQFHbHVtyfbxDsr/DFVA2l+vkKY8lN6LDjOywp/ywvd+605PFDFYrHtCq/DSQh/6AEuEzUyWyue8rYuJHF12H8xXoIVRVE; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+Cache-Control: public, max-age=315360000
+Expires: Fri, 21 May 2032 11:40:56 GMT
+X-Confluence-Request-Time: 1653392456654
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors &apos;self&apos;
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/macrobrowser/browse-macros.action?macroMetadataClientCacheKey=1618624163503&amp;detailed=false</java.net.URL>
+  </httpSample>
+  <httpSample t="8" lt="8" ts="1653392456660" s="true" lb="1990 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-68" dt="text" de="" by="4141" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:40:56 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=CxQRf/RMLjSXg/VVlIfmJqIJX4SJSpTmrrBz+Sv9XVV7zelz4LjreAux/Njf+n/FOJj7J9BFAei49g6YtYXlknvsazScqfBSqHj00KWHu0yAPBwUKA6vRbegtLj6; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/
+Set-Cookie: AWSALBCORS=CxQRf/RMLjSXg/VVlIfmJqIJX4SJSpTmrrBz+Sv9XVV7zelz4LjreAux/Njf+n/FOJj7J9BFAei49g6YtYXlknvsazScqfBSqHj00KWHu0yAPBwUKA6vRbegtLj6; Expires=Tue, 31 May 2022 11:40:56 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_grtqfqvrpb
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 9424
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+<sample t="20069" lt="0" ts="1653392531570" s="false" lb="jmeter_upload_attachment" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Number of samples in transaction : 10, number of failing samples : 3" tn="Confluence 1-141" dt="" de="" by="125333" ng="200" na="200">
+  <httpSample t="20014" lt="0" ts="1653392531570" s="false" lb="1900 pages/doattachfile.action?pageId=16613106" rc="Non HTTP response code: java.net.SocketTimeoutException" rm="Non HTTP response message: Read timed out" tn="Confluence 1-141" dt="text" de="" by="3087" ng="200" na="200">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>true</failure>
+      <error>false</error>
+      <failureMessage>Test failed: text expected to contain /Upload file/</failureMessage>
+    </assertionResult>
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 349607
+Content-Type: multipart/form-data; boundary=osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <responseData class="java.lang.String">java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:472)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1374)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:985)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163)
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.executeRequest(HTTPHC4Impl.java:935)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:646)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String">JSESSIONID=359803BF9D4C5A3BF879FB15B81A460E; seraph.confluence=40337638%3A5ce9e5ec0dd94b11e574e5f17fbb058b49451f85; AWSALB=R3iDUmc9AJVsFutNIw5o5dyj4g7klJsez6NSeNG/8HFaSxNBMWZQ4q33LHJYwG1UFJOTR7x13KMzYBckeTNlgO449gVKdjDlDmFGCarpskbfYoZeZ3IrkWzUoofU; AWSALBCORS=R3iDUmc9AJVsFutNIw5o5dyj4g7klJsez6NSeNG/8HFaSxNBMWZQ4q33LHJYwG1UFJOTR7x13KMzYBckeTNlgO449gVKdjDlDmFGCarpskbfYoZeZ3IrkWzUoofU</cookies>
+    <method class="java.lang.String">POST</method>
+    <queryString class="java.lang.String">--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;atl_token&quot;&#xd;
+&#xd;
+d4efadfda716f43b64c9465eb5282197fd63c8c5&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;comment_0&quot;&#xd;
+&#xd;
+&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;comment_1&quot;&#xd;
+&#xd;
+&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;comment_2&quot;&#xd;
+&#xd;
+&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;comment_3&quot;&#xd;
+&#xd;
+&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;comment_4&quot;&#xd;
+&#xd;
+&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;confirm&quot;&#xd;
+&#xd;
+Attach&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ-&#xd;
+Content-Disposition: form-data; name=&quot;test1.png&quot;; filename=&quot;test1.png&quot;&#xd;
+Content-Type: image/png&#xd;
+&#xd;
+&lt;actual file content, not shown here&gt;&#xd;
+--osZ2sEa2iegnypNcYNkkiWMkPLW-kHQ---&#xd;
+</queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/pages/doattachfile.action?pageId=16613106</java.net.URL>
+  </httpSample>
+  <httpSample t="11" lt="10" ts="1653392551585" s="true" lb="1910 rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="9368" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=tk24w9Y+VXe5o49tL2pM4OMmqu6HgGqBik5WsbtoufUtvAoS4mKfnKhOCq4Zn2EZMYcjGHVmI+rT8JdY+O39/NpEaJfDHM57ZO6+nEa6zXf5xzCrpx9bCbDHZGqc; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=tk24w9Y+VXe5o49tL2pM4OMmqu6HgGqBik5WsbtoufUtvAoS4mKfnKhOCq4Zn2EZMYcjGHVmI+rT8JdY+O39/NpEaJfDHM57ZO6+nEa6zXf5xzCrpx9bCbDHZGqc; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+Cache-Control: no-transform, max-age=2147483647
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/shortcuts/latest/shortcuts/8402/561a89061f49c6245859ac9044c192f3?_=1653392551584</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653392551596" s="false" lb="1920 plugins/pagetree/naturalchildren.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16613106&amp;_=1653392551595" tn="Confluence 1-141" dt="text" de="" by="1448" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 180: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16613106&amp;_=1653392551595
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/pagetree/naturalchildren.action?decorator=none&amp;expandCurrent=true&amp;mobile=false&amp;sort=position&amp;reverse=false&amp;spaceKey=NOT FOUND&amp;treeId=0&amp;hasRoot=false&amp;startDepth=0&amp;disableLinks=false&amp;excerpt=false&amp;ancestors=NOT FOUND&amp;treePageId=16613106&amp;_=1653392551595</java.net.URL>
+  </httpSample>
+  <httpSample t="5" lt="5" ts="1653392551596" s="true" lb="1930 rest/mywork/latest/status/notification/count" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="783" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=0DYSsYHwgiyXlldWuMBwX0SKqg1O+Ws+Cq4lzPmYNo2rqBAMw0sMxo4i1sgXXQYFZkTYp7pKl1g7urnpjyTatnZ5MB9RWdi1DkIsSCjiNxJwGTNvElh7RKWt1DyF; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=0DYSsYHwgiyXlldWuMBwX0SKqg1O+Ws+Cq4lzPmYNo2rqBAMw0sMxo4i1sgXXQYFZkTYp7pKl1g7urnpjyTatnZ5MB9RWdi1DkIsSCjiNxJwGTNvElh7RKWt1DyF; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+Cache-Control: no-cache, no-store, no-transform
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/mywork/latest/status/notification/count?pageid=16613106&amp;_=1653392551596</java.net.URL>
+  </httpSample>
+  <httpSample t="8" lt="8" ts="1653392551601" s="true" lb="1940 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="1506" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=ZNpXQSyxBviBtEXIASMhJ0d9s7xdP2dcBXyIhnY67wDHbpLhfBjZF8c1/08rsC7hbnd00HgNaLrHM1pFGYFkTi7Hz/zCQCgnugQdKMQHSvUOAf/1Qv2k7mR1q4Gs; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=ZNpXQSyxBviBtEXIASMhJ0d9s7xdP2dcBXyIhnY67wDHbpLhfBjZF8c1/08rsC7hbnd00HgNaLrHM1pFGYFkTi7Hz/zCQCgnugQdKMQHSvUOAf/1Qv2k7mR1q4Gs; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1109
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="4" lt="4" ts="1653392551609" s="true" lb="1950 rest/analytics/1.0/publish/bulk" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="673" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Content-Length: 0
+Connection: keep-alive
+Set-Cookie: AWSALB=FhcJBKLXoB99ghDzys+L4GTb6Cexx2e14toRBlw4nJuZVFSgUOurPFuCZ+SW75xs0e9KrcGkdrPzNnKLNBL4IyqPH2ggJ9MWOM7pox7PIMD5tUrXew9tL/Jl6hZZ; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=FhcJBKLXoB99ghDzys+L4GTb6Cexx2e14toRBlw4nJuZVFSgUOurPFuCZ+SW75xs0e9KrcGkdrPzNnKLNBL4IyqPH2ggJ9MWOM7pox7PIMD5tUrXew9tL/Jl6hZZ; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 248
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/analytics/1.0/publish/bulk</java.net.URL>
+  </httpSample>
+  <httpSample t="0" lt="0" ts="1653392551613" s="false" lb="1960 plugins/editor-loader/editor.action" rc="Non HTTP response code: java.net.URISyntaxException" rm="Non HTTP response message: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16613106&amp;timeout=12000&amp;_=1653392551612" tn="Confluence 1-141" dt="text" de="" by="1376" ng="200" na="200">
+    <responseHeader class="java.lang.String"></responseHeader>
+    <requestHeader class="java.lang.String"></requestHeader>
+    <responseData class="java.lang.String">java.net.URISyntaxException: Illegal character in query at index 101: https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16613106&amp;timeout=12000&amp;_=1653392551612
+	at java.base/java.net.URI$Parser.fail(URI.java:2913)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3084)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3172)
+	at java.base/java.net.URI$Parser.parse(URI.java:3114)
+	at java.base/java.net.URI.&lt;init&gt;(URI.java:600)
+	at java.base/java.net.URL.toURI(URL.java:1061)
+	at org.apache.jmeter.protocol.http.sampler.HTTPHC4Impl.sample(HTTPHC4Impl.java:620)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerProxy.sample(HTTPSamplerProxy.java:66)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1296)
+	at org.apache.jmeter.protocol.http.sampler.HTTPSamplerBase.sample(HTTPSamplerBase.java:1285)
+	at org.apache.jmeter.threads.JMeterThread.doSampling(JMeterThread.java:638)
+	at org.apache.jmeter.threads.JMeterThread.executeSamplePackage(JMeterThread.java:558)
+	at org.apache.jmeter.threads.JMeterThread.processSampler(JMeterThread.java:489)
+	at org.apache.jmeter.threads.JMeterThread.run(JMeterThread.java:256)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+</responseData>
+    <cookies class="java.lang.String"></cookies>
+    <method class="java.lang.String">GET</method>
+    <queryString class="java.lang.String"></queryString>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/editor-loader/editor.action?spaceKey=NOT FOUND&amp;parentPageId=NOT FOUND&amp;atl_after_login_redirect=%2Fpages%2Fviewpageattachments.action&amp;pageId=16613106&amp;timeout=12000&amp;_=1653392551612</java.net.URL>
+  </httpSample>
+  <httpSample t="12" lt="11" ts="1653392551613" s="true" lb="1970 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="66527" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=9838LlXoKkN0UiLa2YNeQw4nzE00/ujnSl3pOFrZqit4F+Uxe3uxGqBfu2Xh9WqdHATUyNSQQNmf9/X5Qm2VgrYPFSIuwa3AYeX7R9RYv3qWY6RsjnwuYXDy/pqF; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=9838LlXoKkN0UiLa2YNeQw4nzE00/ujnSl3pOFrZqit4F+Uxe3uxGqBfu2Xh9WqdHATUyNSQQNmf9/X5Qm2VgrYPFSIuwa3AYeX7R9RYv3qWY6RsjnwuYXDy/pqF; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 1164
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="7" lt="6" ts="1653392551625" s="true" lb="1980 plugins/macrobrowser/browse-macros.action" rc="200" rm="" tn="Confluence 1-141" dt="text" de="UTF-8" by="36424" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json;charset=UTF-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=RVRfb/Kmc2u7S68xj5Wm8Zi3HzKyS1di7X768f6rv5opQI+m/gnena7DOy1+CnV8EreA2uewPL8zaO4xocInZ1mHK7KgjIfXz/Q/OFwDEH1zMzTjTozAKnaQOoHV; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=RVRfb/Kmc2u7S68xj5Wm8Zi3HzKyS1di7X768f6rv5opQI+m/gnena7DOy1+CnV8EreA2uewPL8zaO4xocInZ1mHK7KgjIfXz/Q/OFwDEH1zMzTjTozAKnaQOoHV; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+Cache-Control: public, max-age=315360000
+Expires: Fri, 21 May 2032 11:42:31 GMT
+X-Confluence-Request-Time: 1653392551627
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors &apos;self&apos;
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/plugins/macrobrowser/browse-macros.action?macroMetadataClientCacheKey=1618624163503&amp;detailed=false</java.net.URL>
+  </httpSample>
+  <httpSample t="8" lt="8" ts="1653392551632" s="true" lb="1990 rest/webResources/1.0/resources" rc="200" rm="" tn="Confluence 1-141" dt="text" de="" by="4141" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Date: Tue, 24 May 2022 11:42:31 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: AWSALB=ZC80enY2uO30tXZUSA8FmxIvNqzQV4IVhhfKv9dUyeL5XmWrDKVU8qgZ6JzPXETdTMN+smhBpXtJ9iCV9ZrcLy1GzCBB1bnVDcCc941j43TQEH58iyKJ0A9+LJ+j; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/
+Set-Cookie: AWSALBCORS=ZC80enY2uO30tXZUSA8FmxIvNqzQV4IVhhfKv9dUyeL5XmWrDKVU8qgZ6JzPXETdTMN+smhBpXtJ9iCV9ZrcLy1GzCBB1bnVDcCc941j43TQEH58iyKJ0A9+LJ+j; Expires=Tue, 31 May 2022 11:42:31 GMT; Path=/; SameSite=None; Secure
+X-Confluence-Cluster-Node: 392647f2
+X-Seraph-LoginReason: OK
+X-AUSERNAME: performance_ktkuksbobq
+X-Content-Type-Options: nosniff
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: https://scale-confluence-testdc.zephyr4jiracloud.net:443
+Content-Length: 9424
+Host: scale-confluence-testdc.zephyr4jiracloud.net
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.13)
+</requestHeader>
+    <java.net.URL>https://scale-confluence-testdc.zephyr4jiracloud.net/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
+</testResults>

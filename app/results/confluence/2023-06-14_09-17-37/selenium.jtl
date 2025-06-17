@@ -1,0 +1,749 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,success,bytes,grpThreads,allThreads,Latency,Hostname,Connect
+1686734338036,651,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734339003,793,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734341523,2344,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734341804,258,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734342922,1057,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734343361,373,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734345647,1813,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734346793,404,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734348713,556,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734350001,448,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734352335,331,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734353464,272,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734355832,1260,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734356414,581,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734356414,2948,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734357136,720,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734377426,20289,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734378551,629,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734398767,20215,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734399838,611,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734420091,20253,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734420780,232,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734421159,122,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734421612,296,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734424508,2804,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734424769,225,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734425306,475,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734425677,293,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734426410,289,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734427424,225,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734430547,436,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734432590,481,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734435186,362,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734436851,343,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734437881,705,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734438505,624,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734438505,1652,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734439148,641,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734459597,20449,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734460708,660,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734481210,20501,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734482272,620,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734502760,20487,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734503496,260,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734503886,132,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734504389,353,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734505657,1100,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734505872,191,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734506381,434,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734506756,295,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734507602,311,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734508540,222,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734510341,357,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734511681,357,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734513571,258,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734514729,271,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734515835,636,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734516487,651,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734516487,1757,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734517117,629,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734537289,20171,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734538418,661,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734558757,20339,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734559851,634,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734580073,20221,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734580734,214,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734581123,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734581593,314,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734583061,1282,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734583289,206,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734583798,426,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734584139,265,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734584964,273,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734585849,225,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734587501,289,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734588663,388,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734590527,277,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734591910,247,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734592916,613,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734593551,635,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734593551,1640,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734594219,666,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734614627,20408,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734615752,670,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734636197,20444,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734637321,675,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734657758,20437,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734658413,214,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734658777,123,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734659242,298,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734661539,1952,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734661762,195,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734662091,253,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734662368,220,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734663199,254,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734664086,209,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734667917,850,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734670000,550,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734671953,349,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734673640,355,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734675748,1329,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734676442,693,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734676442,2800,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734677100,657,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734697270,20169,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734698369,651,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734718560,20191,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734719653,644,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734739844,20190,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734740539,247,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734740906,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734741369,254,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734742954,1174,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734743225,246,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734743752,442,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734744183,326,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734745172,272,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734746190,215,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734749420,439,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734751198,446,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734753691,371,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734755354,358,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734757068,1291,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734757652,583,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734757652,2296,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734758393,740,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734778821,20427,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734779920,646,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734800368,20448,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734801571,756,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734822025,20454,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734822723,256,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734823092,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734823563,293,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734824392,391,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734824678,265,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734825147,384,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734825443,238,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734826447,278,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734827911,196,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734829697,337,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734830877,313,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734832723,246,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734833866,244,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734834999,686,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734835576,577,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734835576,1709,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734836244,667,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734856397,20152,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734857510,670,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734878201,20690,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734879291,637,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734899448,20157,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734900158,243,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734900524,123,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734901015,301,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734902790,1326,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734903016,174,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734903377,278,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734903668,236,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734904764,302,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734905800,213,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734907434,282,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734908392,268,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734910186,244,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734911092,243,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734912064,629,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734912732,668,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734912732,1639,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734913404,670,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734933788,20383,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686734934884,650,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734955318,20434,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686734956413,664,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686734976845,20432,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686734977546,218,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734977915,119,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734978414,265,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734979479,585,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686734979695,193,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686734980024,246,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734980333,250,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686734981361,263,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734982801,216,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734984453,312,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734985593,318,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734987337,231,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686734988504,246,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686734989546,711,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734990209,663,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734990209,1703,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686734990886,676,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735011679,20792,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735012861,676,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735033637,20775,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735034852,771,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735055669,20816,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735056387,251,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735056749,116,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735057239,295,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735058918,1201,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735059145,176,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735059493,267,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735059783,236,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735060862,253,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735061882,213,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735065225,351,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735066662,289,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735069066,271,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735070415,286,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735072123,1266,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735072710,586,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735072710,2294,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735073431,719,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735093851,20419,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735094999,690,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735115445,20445,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735116592,698,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735137042,20449,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735137718,246,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735138245,120,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735138730,285,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735140411,1160,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735140635,196,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735140970,255,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735141261,238,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735142402,292,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735143648,201,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735144786,272,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735145676,256,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735147500,239,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735148494,254,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735149446,652,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735150038,591,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735150038,1541,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735150734,694,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735171370,20636,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735172510,695,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735193245,20734,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735194389,687,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735215102,20712,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735215792,239,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735216154,118,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735216716,261,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735218478,1237,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735218816,316,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735219341,394,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735219629,230,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735220698,252,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735221857,212,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735222986,293,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735223961,271,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735225777,239,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735226647,251,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735227723,697,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735228387,664,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735228387,1739,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735229100,712,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735249451,20350,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735250596,705,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735270985,20389,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735272158,731,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735292487,20328,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735293159,226,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735293529,123,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735294092,306,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735296198,1531,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735296432,183,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735296815,264,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735297146,223,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735298123,252,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735299157,204,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735300872,288,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735302018,260,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735304396,245,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735305683,263,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735306679,658,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735307332,652,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735307332,1648,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735308053,720,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735328610,20556,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735329871,706,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735350395,20524,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735351532,692,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735372119,20586,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735372802,244,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735373168,123,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735373711,310,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735375785,1465,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735376003,169,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735376515,435,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735376795,229,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735377990,302,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735379206,209,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735380895,301,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735381904,263,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735383686,245,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735384685,245,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735385816,771,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735386396,579,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735386397,1710,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735387101,703,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735407895,20793,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735409050,708,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735429820,20770,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735430966,706,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735451801,20834,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735452473,223,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735452862,126,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735453414,299,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735455295,1292,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735455515,171,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735456020,418,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735456313,237,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735457444,258,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735458576,249,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735460279,299,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735461505,304,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735463410,284,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735464686,277,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735465891,743,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735466473,581,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735466473,1785,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735467188,713,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735487640,20451,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735488794,700,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735509205,20410,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735510350,701,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735530780,20429,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735531461,235,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735531822,115,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735532370,309,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735534078,1066,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735534290,190,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735534613,242,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735534904,231,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735536051,254,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735537243,200,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735539623,342,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735541021,296,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735542974,315,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735544439,312,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735546484,1514,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735547115,630,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735547115,2675,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735547986,869,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735568632,20645,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735569801,722,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735590467,20666,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735591626,711,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735612318,20691,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735612974,216,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735613341,122,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735613896,294,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735615831,1312,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735616053,171,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735616601,506,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735616989,368,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735618208,265,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735619347,201,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735620994,269,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735622036,263,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735623884,256,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735624898,249,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735625981,776,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735626564,583,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735626565,1665,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735627293,727,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735647528,20234,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735648919,934,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735669080,20160,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735670208,694,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735691077,20869,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735691769,237,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735692140,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735692719,307,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735694807,1447,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735695181,322,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735695692,426,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735695979,235,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735697257,259,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735698557,206,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735701248,274,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735702164,296,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735704001,237,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735705060,240,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735706148,756,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735706726,578,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735706726,1664,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735707500,773,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735727972,20472,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735729132,717,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735749595,20462,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735750769,740,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735771219,20449,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735771896,220,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735772273,126,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735772866,319,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735774713,1183,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735774996,238,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735775431,355,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735775717,236,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735776989,271,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735778278,210,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735779988,316,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735781300,262,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735783279,233,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735784437,273,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735785722,727,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735786300,577,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735786300,1861,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735787044,742,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735807684,20640,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735808874,740,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735829521,20646,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735830750,757,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735851418,20668,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735852111,248,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735852482,120,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735853056,263,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735854390,578,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735854638,221,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735855181,415,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735855465,232,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735856787,262,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735858075,211,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735859690,284,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735860704,259,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735862517,231,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735863548,260,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735865626,1396,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735866283,657,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735866283,2734,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735867044,759,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735887279,20235,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735888494,766,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735908790,20295,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735909980,748,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735930394,20413,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686735931055,222,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735931514,201,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735932171,297,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735934056,1149,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686735934279,200,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686735934653,288,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735934956,252,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686735936173,279,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735937626,211,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735939381,312,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735940528,286,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735942349,240,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686735943494,270,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686735944603,792,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735945181,577,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735945181,1686,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686735945950,767,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735966455,20505,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686735967668,793,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686735988110,20441,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686735989295,749,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736009727,20432,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736010425,243,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736010796,120,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736011399,300,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736013670,1506,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736013931,235,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736014433,444,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736014806,318,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736016039,267,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736017343,208,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736018982,271,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736020075,263,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736021791,223,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736022844,246,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736024438,777,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736025018,580,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736025018,2172,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736025945,925,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736046593,20647,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736047935,925,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736068546,20610,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736069983,967,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736090643,20659,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736091339,245,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736091713,129,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736092320,264,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736094004,810,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736094229,179,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736094592,269,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736094940,267,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736096450,264,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736098129,210,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736099873,336,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736101321,313,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736103091,237,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736104291,251,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736105850,733,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736106429,579,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736106429,2136,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736107409,979,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736127622,20212,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736129065,1011,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736149265,20198,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736150625,930,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736170869,20244,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736171557,244,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736171961,151,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736172730,298,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736175021,1546,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736175241,175,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736175599,276,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736175930,252,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736177340,261,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736178740,226,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736180462,286,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736181621,294,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736183438,272,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736184585,263,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736186482,1485,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736187142,659,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736187142,2555,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736187965,821,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736208434,20469,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736209833,961,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736230248,20415,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736231768,1090,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736252186,20417,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736252850,225,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736253215,119,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736254029,481,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736256058,1224,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736256301,212,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736256931,469,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736257339,297,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736258726,261,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736260204,208,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736261804,242,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736262933,255,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736264774,232,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736265939,248,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736267072,805,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736267655,583,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736267656,1715,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736268624,967,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736289235,20610,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736290661,995,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736310821,20159,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736312221,955,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736332813,20592,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736333565,304,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736333938,122,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736334582,265,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736336796,1341,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736337022,198,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736337618,480,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736338027,278,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736339460,276,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736340945,207,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736342625,316,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736344037,387,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736345805,283,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736347225,348,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736348340,810,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736348915,575,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736348915,1689,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736349889,972,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736370062,20172,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736371461,957,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736391681,20219,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736393079,948,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736413295,20215,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736413996,256,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736414365,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736415163,290,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736417156,1157,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736417384,202,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736417920,415,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736418236,239,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736419758,293,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736421302,256,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736423029,366,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736424186,253,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736425951,240,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736427107,259,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736428267,824,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736428842,574,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736428842,1733,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736429828,984,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736450204,20375,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736451643,986,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736472007,20363,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736473423,934,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736493818,20395,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736494509,239,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736494866,117,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736495710,309,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736497855,1259,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736498076,195,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736498448,264,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736498739,237,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736500235,266,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736501723,204,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736503458,334,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736504921,353,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736506911,331,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736508450,388,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736509745,760,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736510321,575,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736510321,1869,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736511287,964,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736531904,20616,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736533307,984,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736553956,20649,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736555371,983,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736575996,20624,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736576697,247,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736577076,126,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736577889,297,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736580170,1381,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736580388,168,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736580997,589,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736581424,368,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736583185,264,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736584861,210,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736586675,406,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736588131,286,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736589666,264,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736590839,262,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736592189,983,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736592771,581,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736592771,1931,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736593739,967,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736614558,20818,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736615976,991,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736636776,20799,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736638242,1027,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736659008,20766,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736659716,244,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736660082,121,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736660907,323,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736662919,1084,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736663143,201,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736663666,442,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736663988,250,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736665642,275,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736667170,210,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736668408,380,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736669665,252,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736671471,228,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736672565,241,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736673980,783,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736674555,575,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736674555,1989,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736675514,957,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736695807,20292,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736697243,1003,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736717481,20237,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736718892,977,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736739207,20315,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736739905,243,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736740269,122,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736741105,317,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736743340,1270,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736743605,240,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736744049,361,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736744358,254,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736746020,268,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736747559,224,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736749173,274,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736750383,279,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736752183,243,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736753367,251,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736754684,988,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736755259,574,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736755259,1891,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736756256,995,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736776738,20482,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736778318,1155,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736798804,20486,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736800252,990,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736820744,20491,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736821443,244,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736821806,123,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736822603,307,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736824290,702,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736824553,239,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736824995,357,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736825349,243,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736826964,258,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736828540,213,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736830182,262,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736831282,241,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736833041,229,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736834147,234,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736835401,911,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736835978,577,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736835978,1830,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736836968,988,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736857660,20691,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736858993,879,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736879855,20861,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736881269,965,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736901923,20653,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736902616,249,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736902984,122,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736903842,343,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736906752,1883,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736907008,236,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736907564,527,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736908145,531,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736909674,274,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736911279,205,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736914613,317,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736916081,302,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736918032,314,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736919166,298,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736920391,825,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736920966,574,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736920966,1799,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736921988,1020,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736942864,20875,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686736944314,1010,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736965192,20877,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686736966641,962,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686736986796,20154,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686736987464,220,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0
+1686736987830,119,selenium_login:open_login_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736988640,300,selenium_login:login_and_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736990987,1312,selenium_view_blog,,,,True,0,0,0,0,10.0.0.156,0
+1686736991225,187,selenium_view_dashboard,,,,True,0,0,0,0,10.0.0.156,0
+1686736991951,706,selenium_view_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736992395,380,selenium_view_page_from_cache,,,,True,0,0,0,0,10.0.0.156,0
+1686736994042,261,selenium_create_page:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736995708,204,selenium_create_page:save_created_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736996805,259,selenium_edit_page_by_url:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686736997979,256,selenium_edit_page_by_url:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686736999752,228,selenium_quick_edit_page_click:open_create_page_editor,,,,True,0,0,0,0,10.0.0.156,0
+1686737000953,244,selenium_quick_edit_page_click:save_edited_page,,,,True,0,0,0,0,10.0.0.156,0
+1686737002360,1002,selenium_create_comment:write_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686737002942,581,selenium_create_comment:save_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686737002942,1987,selenium_create_comment,,Success,,True,0,0,0,0,10.0.0.156,0
+1686737003960,1016,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686737024306,20346,view_test_cases_by_status_action,,Failed measure: view_test_cases_by_status_action - TimeoutException,,False,0,0,0,0,,0
+1686737025754,1007,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686737046072,20317,view_test_cases_by_project_action,,Failed measure: view_test_cases_by_project_action - TimeoutException,,False,0,0,0,0,,0
+1686737047464,952,zscale_specific_user_login,,Success,,True,0,0,0,0,,0
+1686737067867,20403,view_test_cases_by_folder_action,,Failed measure: view_test_cases_by_folder_action - TimeoutException,,False,0,0,0,0,,0
+1686737068535,222,selenium_log_out,,Success,,True,0,0,0,0,10.0.0.156,0

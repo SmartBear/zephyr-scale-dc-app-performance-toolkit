@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="sample_labels" package_name="bzt">
+    <testcase classname="bzt-8750278432645" name="jmeter_comment_page"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_and_edit_page:create_page"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_and_edit_page:create_page_editor"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_and_edit_page:edit_page"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_and_edit_page:open_editor"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_and_edit_page:quick_edit_page"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_blog:blog_editor"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_create_blog:feel_and_publish"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_like_page"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_login_and_view_dashboard"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_search_cql:recently_viewed"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_search_cql:search_results">
+      <error message="Number of samples in transaction : 1, number of failing samples : 1" type="Error">Number of samples in transaction : 1, number of failing samples : 1
+(status code is Non HTTP response code: java.net.SocketTimeoutException)
+(total errors of this type: 10)</error>
+    </testcase>
+    <testcase classname="bzt-8750278432645" name="jmeter_upload_attachment"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_upload_emoji"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_view_attachment"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_view_blog"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_view_dashboard"/>
+    <testcase classname="bzt-8750278432645" name="jmeter_view_page:open_page"/>
+    <testcase classname="bzt-8750278432645" name="selenium_a_login"/>
+    <testcase classname="bzt-8750278432645" name="selenium_cql_search">
+      <error message="Exception: (&quot;Failed measure: selenium_cql_search - TimeoutException - ('id' 'search-result-container')&lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x7f0622647100&gt;&quot;, TimeoutException())" type="Error">Exception: ("Failed measure: selenium_cql_search - TimeoutException - ('id' 'search-result-container')&lt;function visibility_of_element_located.&lt;locals&gt;._predicate at 0x7f0622647100&gt;", TimeoutException())
+(status code is 400)
+(total errors of this type: 1)</error>
+    </testcase>
+    <testcase classname="bzt-8750278432645" name="selenium_create_inline_comment"/>
+    <testcase classname="bzt-8750278432645" name="selenium_create_page"/>
+    <testcase classname="bzt-8750278432645" name="selenium_edit_by_url"/>
+    <testcase classname="bzt-8750278432645" name="selenium_edit_page_quick_edit">
+      <error message="selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {&quot;code&quot;:-32000,&quot;message&quot;:&quot;Node with given id does not belong to the document&quot;}&#10;  (Session info: chrome-headless-shell=125.0.6422.141)&#10;Stacktrace:&#10;#0 0x5576b0621e3a &lt;unknown&gt;&#10;#1 0x5576b030b45c &lt;unknown&gt;&#10;#2 0x5576b02f1ab6 &lt;unknown&gt;&#10;#3 0x5576b02f01b8 &lt;unknown&gt;&#10;#4 0x5576b02f09af &lt;unknown&gt;&#10;#5 0x5576b031bcd6 &lt;unknown&gt;&#10;#6 0x5576b031c21a &lt;unknown&gt;&#10;#7 0x5576b0311555 &lt;unknown&gt;&#10;#8 0x5576b031c24b &lt;unknown&gt;&#10;#9 0x5576b0311555 &lt;unknown&gt;&#10;#10 0x5576b030f889 &lt;unknown&gt;&#10;#11 0x5576b0312bdc &lt;unknown&gt;&#10;#12 0x5576b039a289 &lt;unknown&gt;&#10;#13 0x5576b037a4b2 &lt;unknown&gt;&#10;#14 0x5576b03992cc &lt;unknown&gt;&#10;#15 0x5576b037a253 &lt;unknown&gt;&#10;#16 0x5576b034a1c7 &lt;unknown&gt;&#10;#17 0x5576b034ab3e &lt;unknown&gt;&#10;#18 0x5576b05e827b &lt;unknown&gt;&#10;#19 0x5576b05ec327 &lt;unknown&gt;&#10;#20 0x5576b05d4dae &lt;unknown&gt;&#10;#21 0x5576b05ecdf2 &lt;unknown&gt;&#10;#22 0x5576b05b974f &lt;unknown&gt;&#10;#23 0x5576b0611128 &lt;unknown&gt;&#10;#24 0x5576b06112fb &lt;unknown&gt;&#10;#25 0x5576b0620f6c &lt;unknown&gt;&#10;#26 0x7f3d0bad2ea7 start_thread" type="Error">selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+  (Session info: chrome-headless-shell=125.0.6422.141)
+Stacktrace:
+#0 0x5576b0621e3a &lt;unknown&gt;
+#1 0x5576b030b45c &lt;unknown&gt;
+#2 0x5576b02f1ab6 &lt;unknown&gt;
+#3 0x5576b02f01b8 &lt;unknown&gt;
+#4 0x5576b02f09af &lt;unknown&gt;
+#5 0x5576b031bcd6 &lt;unknown&gt;
+#6 0x5576b031c21a &lt;unknown&gt;
+#7 0x5576b0311555 &lt;unknown&gt;
+#8 0x5576b031c24b &lt;unknown&gt;
+#9 0x5576b0311555 &lt;unknown&gt;
+#10 0x5576b030f889 &lt;unknown&gt;
+#11 0x5576b0312bdc &lt;unknown&gt;
+#12 0x5576b039a289 &lt;unknown&gt;
+#13 0x5576b037a4b2 &lt;unknown&gt;
+#14 0x5576b03992cc &lt;unknown&gt;
+#15 0x5576b037a253 &lt;unknown&gt;
+#16 0x5576b034a1c7 &lt;unknown&gt;
+#17 0x5576b034ab3e &lt;unknown&gt;
+#18 0x5576b05e827b &lt;unknown&gt;
+#19 0x5576b05ec327 &lt;unknown&gt;
+#20 0x5576b05d4dae &lt;unknown&gt;
+#21 0x5576b05ecdf2 &lt;unknown&gt;
+#22 0x5576b05b974f &lt;unknown&gt;
+#23 0x5576b0611128 &lt;unknown&gt;
+#24 0x5576b06112fb &lt;unknown&gt;
+#25 0x5576b0620f6c &lt;unknown&gt;
+#26 0x7f3d0bad2ea7 start_thread
+(status code is 400)
+(total errors of this type: 1)</error>
+    </testcase>
+    <testcase classname="bzt-8750278432645" name="selenium_view_blog"/>
+    <testcase classname="bzt-8750278432645" name="selenium_view_dashboard"/>
+    <testcase classname="bzt-8750278432645" name="selenium_view_page"/>
+    <testcase classname="bzt-8750278432645" name="selenium_view_page_from_cache"/>
+    <testcase classname="bzt-8750278432645" name="selenium_z_log_out"/>
+    <testcase classname="bzt-8750278432645" name="selenium_zscale_view_test_cases_by_folder_macro_in_page"/>
+    <testcase classname="bzt-8750278432645" name="selenium_zscale_view_test_cases_by_project_macro_in_page"/>
+    <testcase classname="bzt-8750278432645" name="selenium_zscale_view_test_cases_by_status_macro_in_page"/>
+  </testsuite>
+</testsuites>

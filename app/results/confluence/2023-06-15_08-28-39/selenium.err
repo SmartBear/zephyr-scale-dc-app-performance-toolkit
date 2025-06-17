@@ -1,0 +1,68 @@
+06-15-2023, 08:56:22, 1686819382343, Action: test_2_selenium_z_log_out, Error: confluence_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="69fcd53aa4fa22465ce84fbbe27494dd")>
+confluence_datasets = {'blog_id': '36889591', 'blogs': [['37508310', 'SMO', '1'], ['37508433', 'VSSEM', '1'], ['37507125', 'HRBH', '1'], ['3...6', 'IAC', '1'], ...], 'create_comment_page': ['18997945', 'PBICD', 'small_text_7'], 'custom_page_id': '43548673', ...}
+confluence_screen_shots = None
+
+    def test_2_selenium_z_log_out(confluence_webdriver, confluence_datasets, confluence_screen_shots):
+>       modules.log_out(confluence_webdriver, confluence_datasets)
+
+selenium_ui/confluence_ui.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+selenium_ui/confluence/modules.py:282: in log_out
+    measure(webdriver)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (<selenium.webdriver.chrome.webdriver.WebDriver (session="69fcd53aa4fa22465ce84fbbe27494dd")>,)
+kwargs = {}, node_ip = '10.0.0.156', start = 1686819361.6050544
+error_msg = 'Failed measure: selenium_log_out - TimeoutException'
+full_exception = TimeoutException()
+driver = [<selenium.webdriver.chrome.webdriver.WebDriver (session="69fcd53aa4fa22465ce84fbbe27494dd")>]
+success = False
+exc_type = <class 'selenium.common.exceptions.TimeoutException'>
+end = 1686819382.3032913, timing = '20698'
+lockfile = '/dc-app-performance-toolkit/app/results/confluence/2023-06-15_08-28-39/selenium.jtl.lock'
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if LOGIN_ACTION_NAME in interaction:
+            globals.login_failed = False
+        if globals.login_failed:
+            pytest.skip("login is failed")
+        node_ip = ""
+        start = time.time()
+        error_msg = 'Success'
+        full_exception = ''
+        if args:
+            driver = [arg for arg in args if isinstance(arg, Chrome)]
+            node_ip = "" if not driver else getattr(driver[0], "node_ip", "")
+        try:
+            func(*args, **kwargs)
+            success = True
+        except Exception:
+            success = False
+            # https://docs.python.org/2/library/sys.html#sys.exc_info
+            exc_type, full_exception = sys.exc_info()[:2]
+            error_msg = f"Failed measure: {interaction} - {exc_type.__name__}"
+        end = time.time()
+        timing = str(int((end - start) * 1000))
+    
+        lockfile = f'{selenium_results_file}.lock'
+    
+        with filelock.SoftFileLock(lockfile):
+            with open(selenium_results_file, "a+") as jtl_file:
+                timestamp = round(time.time() * 1000)
+                if explicit_timing:
+                    jtl_file.write(f"{timestamp},{explicit_timing*1000},{interaction},,{error_msg},"
+                                   f",{success},0,0,0,0,,0\n")
+                else:
+                    jtl_file.write(f"{timestamp},{timing},{interaction},,{error_msg}"
+                                   f",,{success},0,0,0,0,{node_ip},0\n")
+    
+        print(f"{timestamp},{timing},{interaction},{error_msg},{success},{node_ip}")
+    
+        if not success:
+            if LOGIN_ACTION_NAME in interaction:
+                globals.login_failed = True
+>           raise Exception(error_msg, full_exception)
+E           Exception: ('Failed measure: selenium_log_out - TimeoutException', TimeoutException())
+
+selenium_ui/conftest.py:171: Exception

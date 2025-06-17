@@ -1,0 +1,268 @@
+06-13-2024, 10:16:46, 1718273806082, Action: test_1_selenium_edit_page_quick_edit, Error: confluence_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="9228becfd1f856e59413d4574be252aa")>
+confluence_datasets = {'blogs': [['37275786', 'TCFL', '1'], ['37276773', 'MWCA', '1'], ['37276442', 'SMO', '1'], ['37283001', 'LBTCS', '1'],...s-east-2.elb.amazonaws.com/confluence/login.action?logout=true', 'custom_page_id': None, ...}, 'custom_pages': [], ...}
+confluence_screen_shots = None
+
+    def test_1_selenium_edit_page_quick_edit(confluence_webdriver, confluence_datasets, confluence_screen_shots):
+>       modules.edit_confluence_page_quick_edit(confluence_webdriver, confluence_datasets)
+
+selenium_ui/confluence_ui.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+selenium_ui/confluence/modules.py:261: in edit_confluence_page_quick_edit
+    measure()
+selenium_ui/confluence/modules.py:259: in measure
+    sub_measure()
+selenium_ui/confluence/modules.py:255: in sub_measure
+    edit_page.save_edited_page()
+selenium_ui/confluence/pages/pages.py:160: in save_edited_page
+    self.wait_until_invisible(EditorLocators.save_spinner)
+selenium_ui/base_page.py:74: in wait_until_invisible
+    return self.__wait_until(expected_condition=ec.invisibility_of_element_located(selector), locator=selector,
+selenium_ui/base_page.py:132: in __wait_until
+    return WebDriverWait(self.driver, time_out).until(expected_condition, message=message)
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/support/wait.py:96: in until
+    value = method(self._driver)
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py:326: in _predicate
+    return _element_if_visible(target, visibility=False)
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/support/expected_conditions.py:179: in _element_if_visible
+    return element if element.is_displayed() == visibility else False
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/remote/webelement.py:252: in is_displayed
+    return self.parent.execute_script(f"/* isDisplayed */return ({isDisplayed_js}).apply(null, arguments);", self)
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py:407: in execute_script
+    return self.execute(command, {"script": script, "args": converted_args})["value"]
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/remote/webdriver.py:347: in execute
+    self.error_handler.check_response(response)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <selenium.webdriver.remote.errorhandler.ErrorHandler object at 0x7f0624c3ec90>
+response = {'status': 500, 'value': '{"value":{"error":"unknown error","message":"unknown error: unhandled inspector error: {\\"c...wn>\\n#24 0x5576b06112fb \\u003Cunknown>\\n#25 0x5576b0620f6c \\u003Cunknown>\\n#26 0x7f3d0bad2ea7 start_thread\\n"}}'}
+
+    def check_response(self, response: Dict[str, Any]) -> None:
+        """Checks that a JSON response from the WebDriver does not have an
+        error.
+    
+        :Args:
+         - response - The JSON response from the WebDriver server as a dictionary
+           object.
+    
+        :Raises: If the response contains an error message.
+        """
+        status = response.get("status", None)
+        if not status or status == ErrorCode.SUCCESS:
+            return
+        value = None
+        message = response.get("message", "")
+        screen: str = response.get("screen", "")
+        stacktrace = None
+        if isinstance(status, int):
+            value_json = response.get("value", None)
+            if value_json and isinstance(value_json, str):
+                import json
+    
+                try:
+                    value = json.loads(value_json)
+                    if len(value) == 1:
+                        value = value["value"]
+                    status = value.get("error", None)
+                    if not status:
+                        status = value.get("status", ErrorCode.UNKNOWN_ERROR)
+                        message = value.get("value") or value.get("message")
+                        if not isinstance(message, str):
+                            value = message
+                            message = message.get("message")
+                    else:
+                        message = value.get("message", None)
+                except ValueError:
+                    pass
+    
+        exception_class: Type[WebDriverException]
+        e = ErrorCode()
+        error_codes = [item for item in dir(e) if not item.startswith("__")]
+        for error_code in error_codes:
+            error_info = getattr(ErrorCode, error_code)
+            if isinstance(error_info, list) and status in error_info:
+                exception_class = getattr(ExceptionMapping, error_code, WebDriverException)
+                break
+        else:
+            exception_class = WebDriverException
+    
+        if not value:
+            value = response["value"]
+        if isinstance(value, str):
+            raise exception_class(value)
+        if message == "" and "message" in value:
+            message = value["message"]
+    
+        screen = None  # type: ignore[assignment]
+        if "screen" in value:
+            screen = value["screen"]
+    
+        stacktrace = None
+        st_value = value.get("stackTrace") or value.get("stacktrace")
+        if st_value:
+            if isinstance(st_value, str):
+                stacktrace = st_value.split("\n")
+            else:
+                stacktrace = []
+                try:
+                    for frame in st_value:
+                        line = frame.get("lineNumber", "")
+                        file = frame.get("fileName", "<anonymous>")
+                        if line:
+                            file = f"{file}:{line}"
+                        meth = frame.get("methodName", "<anonymous>")
+                        if "className" in frame:
+                            meth = f"{frame['className']}.{meth}"
+                        msg = "    at %s (%s)"
+                        msg = msg % (meth, file)
+                        stacktrace.append(msg)
+                except TypeError:
+                    pass
+        if exception_class == UnexpectedAlertPresentException:
+            alert_text = None
+            if "data" in value:
+                alert_text = value["data"].get("text")
+            elif "alert" in value:
+                alert_text = value["alert"].get("text")
+            raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+>       raise exception_class(message, screen, stacktrace)
+E       selenium.common.exceptions.WebDriverException: Message: unknown error: unhandled inspector error: {"code":-32000,"message":"Node with given id does not belong to the document"}
+E         (Session info: chrome-headless-shell=125.0.6422.141)
+E       Stacktrace:
+E       #0 0x5576b0621e3a <unknown>
+E       #1 0x5576b030b45c <unknown>
+E       #2 0x5576b02f1ab6 <unknown>
+E       #3 0x5576b02f01b8 <unknown>
+E       #4 0x5576b02f09af <unknown>
+E       #5 0x5576b031bcd6 <unknown>
+E       #6 0x5576b031c21a <unknown>
+E       #7 0x5576b0311555 <unknown>
+E       #8 0x5576b031c24b <unknown>
+E       #9 0x5576b0311555 <unknown>
+E       #10 0x5576b030f889 <unknown>
+E       #11 0x5576b0312bdc <unknown>
+E       #12 0x5576b039a289 <unknown>
+E       #13 0x5576b037a4b2 <unknown>
+E       #14 0x5576b03992cc <unknown>
+E       #15 0x5576b037a253 <unknown>
+E       #16 0x5576b034a1c7 <unknown>
+E       #17 0x5576b034ab3e <unknown>
+E       #18 0x5576b05e827b <unknown>
+E       #19 0x5576b05ec327 <unknown>
+E       #20 0x5576b05d4dae <unknown>
+E       #21 0x5576b05ecdf2 <unknown>
+E       #22 0x5576b05b974f <unknown>
+E       #23 0x5576b0611128 <unknown>
+E       #24 0x5576b06112fb <unknown>
+E       #25 0x5576b0620f6c <unknown>
+E       #26 0x7f3d0bad2ea7 start_thread
+
+/usr/local/lib/python3.11/site-packages/selenium/webdriver/remote/errorhandler.py:229: WebDriverException
+=============== WEBDRIVER DEBUG INFORMATION ===============
+screenshot_name: /dc-app-performance-toolkit/app/results/confluence/2024-06-13_10-12-08/errors_artifacts/test_1_selenium_edit_page_quick_edit-2024-06-13-10-16-45.986152.png
+username: performance_a480
+password: password
+page_id: 32051405
+blog_id: 37289950
+view_page: ['36727842', 'KGFAN', 'medium_text_16']
+view_page_cache: ['36727842', 'KGFAN', 'medium_text_16']
+edit_page: ['36714863', 'DHM', 'medium_text_16']
+edit_page_click: ['36714863', 'DHM', 'medium_text_16']
+create_comment_page: None
+view_blog: ['37500454', 'ERPHS', '1']
+current_url: http://a832b9406866444208c6d72648e56876-100308878.us-east-2.elb.amazonaws.com/confluence/display/DHM/Estimate+Flour+Extension+Range+Briefs
+custom_page_id: None
+session_id: 9228becfd1f856e59413d4574be252aa
+===========================================================
+06-13-2024, 10:19:04, 1718273944548, Action: test_1_selenium_cql_search, Error: confluence_webdriver = <selenium.webdriver.chrome.webdriver.WebDriver (session="9228becfd1f856e59413d4574be252aa")>
+confluence_datasets = {'blogs': [['37275786', 'TCFL', '1'], ['37276773', 'MWCA', '1'], ['37276442', 'SMO', '1'], ['37283001', 'LBTCS', '1'],...s-east-2.elb.amazonaws.com/confluence/login.action?logout=true', 'custom_page_id': None, ...}, 'custom_pages': [], ...}
+confluence_screen_shots = None
+
+    def test_1_selenium_cql_search(confluence_webdriver, confluence_datasets, confluence_screen_shots):
+>       modules.cql_search(confluence_webdriver, confluence_datasets)
+
+selenium_ui/confluence_ui.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+selenium_ui/confluence/modules.py:303: in cql_search
+    measure()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (), kwargs = {}, node_ip = '', start = 1718273924.4261942
+error_msg = "Failed measure: selenium_cql_search - TimeoutException - ('id' 'search-result-container')<function visibility_of_element_located.<locals>._predicate at 0x7f0622647100>"
+full_exception = TimeoutException(), success = False
+exc_type = <class 'selenium.common.exceptions.TimeoutException'>
+locator_debug_message = " - ('id' 'search-result-container')<function visibility_of_element_located.<locals>._predicate at 0x7f0622647100>"
+end = 1718273944.5264237, timing = '20100'
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if LOGIN_ACTION_NAME in interaction:
+            globals.login_failed = False
+        if globals.login_failed:
+            pytest.skip("login is failed")
+        node_ip = ""
+        start = time()
+        error_msg = 'Success'
+        full_exception = ''
+        if args:
+            driver = [arg for arg in args if isinstance(arg, Chrome)]
+            node_ip = "" if not driver else getattr(
+                driver[0], "node_ip", "")
+        try:
+            func(*args, **kwargs)
+            success = True
+        except Exception:
+            success = False
+            # https://docs.python.org/2/library/sys.html#sys.exc_info
+            exc_type, full_exception = sys.exc_info()[:2]
+            locator_debug_message = ""
+            if 'msg' in dir(full_exception):
+                if 'Locator' in full_exception.msg:
+                    locator_debug_message = f" - {full_exception.msg.split('Locator:')[-1].strip().replace(',','')}"
+                else:
+                    locator_debug_message = f" - {full_exception.msg.replace(',','')}"
+                    locator_debug_message = locator_debug_message.replace(
+                        '\n', ' ')
+            error_msg = f"Failed measure: {interaction} - {exc_type.__name__}{locator_debug_message}"
+        end = time()
+        timing = str(int((end - start) * 1000))
+    
+        lockfile = f'{selenium_results_file}.lock'
+    
+        with filelock.SoftFileLock(lockfile):
+            with open(selenium_results_file, "a+") as jtl_file:
+                timestamp = round(time() * 1000)
+                if explicit_timing:
+                    jtl_file.write(
+                        f"{timestamp},{explicit_timing*1000},{interaction},,{error_msg},"
+                        f",{success},0,0,0,0,,0\n")
+                else:
+                    jtl_file.write(
+                        f"{timestamp},{timing},{interaction},,{error_msg}"
+                        f",,{success},0,0,0,0,{node_ip},0\n")
+    
+        print(
+            f"{timestamp},{timing},{interaction},{error_msg},{success},{node_ip}")
+    
+        if not success:
+            if LOGIN_ACTION_NAME in interaction:
+                globals.login_failed = True
+>           raise Exception(error_msg, full_exception)
+E           Exception: ("Failed measure: selenium_cql_search - TimeoutException - ('id' 'search-result-container')<function visibility_of_element_located.<locals>._predicate at 0x7f0622647100>", TimeoutException())
+
+selenium_ui/conftest.py:200: Exception
+=============== WEBDRIVER DEBUG INFORMATION ===============
+screenshot_name: /dc-app-performance-toolkit/app/results/confluence/2024-06-13_10-12-08/errors_artifacts/test_1_selenium_cql_search-2024-06-13-10-19-04.543739.png
+username: performance_a73
+password: password
+page_id: 19721233
+blog_id: 36053221
+view_page: ['17932940', 'PEJP', 'text_formatting_21']
+view_page_cache: ['17932940', 'PEJP', 'text_formatting_21']
+edit_page: ['21714294', 'NDC', 'text_formatting_21']
+edit_page_click: ['21714294', 'NDC', 'text_formatting_21']
+create_comment_page: ['36873294', 'TITC', 'small_text_7']
+view_blog: ['35938735', 'VLTBO', '6']
+current_url: http://a832b9406866444208c6d72648e56876-100308878.us-east-2.elb.amazonaws.com/confluence/pages/viewpage.action?pageId=36873294
+custom_page_id: None
+session_id: 9228becfd1f856e59413d4574be252aa
+===========================================================

@@ -1,0 +1,885 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,success,bytes,grpThreads,allThreads,Latency,Hostname,Connect
+1686306231441,763,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306237542,6100,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306237542,6864,selenium_login,,Success,,True,0,0,0,0,,0
+1686306240749,3186,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306241068,317,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306243647,2577,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306244797,1105,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306245996,595,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306245996,1198,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306245996,2304,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306247277,1255,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306248695,632,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306248695,2673,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306249092,395,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306252661,2935,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306252661,3965,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306255346,2683,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306258363,3015,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306260853,2488,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306261788,934,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306262087,297,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306262613,524,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306285103,22488,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306305937,20367,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306326762,20388,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306327736,540,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306327954,165,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306330048,2094,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306330049,2260,selenium_login,,Success,,True,0,0,0,0,,0
+1686306330603,465,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306330932,328,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306331725,791,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306332476,699,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306333738,600,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306333738,1261,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306333738,1961,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306334172,402,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306335462,516,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306335462,1692,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306335686,222,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306337003,706,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306337003,1540,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306338015,1010,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306338895,878,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306339670,774,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306340549,877,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306340803,252,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306341369,564,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306361870,20500,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306382939,20580,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306404057,20652,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306405099,512,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306405303,152,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306407323,2019,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306407323,2172,selenium_login,,Success,,True,0,0,0,0,,0
+1686306407877,421,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306408269,390,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306409021,751,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306409917,818,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306411312,618,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306411312,1395,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306411312,2213,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306411808,453,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306413125,549,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306413125,1770,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306413351,224,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306414642,676,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306414642,1516,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306415394,750,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306416646,1251,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306417439,791,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306418302,862,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306418585,281,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306418999,413,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306439656,20655,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306460857,20743,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306482006,20698,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306482935,483,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306483158,157,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306485054,1895,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306485054,2053,selenium_login,,Success,,True,0,0,0,0,,0
+1686306485647,456,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306485957,308,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306486760,801,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306487590,763,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306488872,614,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306488872,1281,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306488872,2044,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306489392,451,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306490681,513,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306490681,1740,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306490908,226,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306492197,670,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306492198,1515,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306492980,781,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306493802,820,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306494596,793,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306495689,1092,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306495957,266,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306496469,510,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306516806,20335,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306537712,20476,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306558581,20370,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306559563,470,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306559768,158,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306561692,1923,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306561692,2081,selenium_login,,Success,,True,0,0,0,0,,0
+1686306562268,456,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306562627,357,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306563387,758,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306564173,703,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306565358,628,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306565359,1185,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306565359,1889,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306565869,428,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306567242,478,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306567242,1801,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306567473,229,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306568699,600,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306568699,1455,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306570109,1408,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306570990,879,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306571844,852,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306572634,788,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306572927,291,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306573474,546,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306594044,20568,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306615131,20632,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306636221,20636,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306637190,512,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306637389,153,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306639331,1941,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306639331,2094,selenium_login,,Success,,True,0,0,0,0,,0
+1686306639928,453,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306640261,331,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306641019,756,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306641849,730,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306643077,628,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306643077,1228,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306643077,1959,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306643591,413,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306645045,567,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306645045,1867,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306645285,238,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306646544,625,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306646544,1498,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306647958,1413,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306648765,805,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306649578,811,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306650381,801,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306650637,255,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306651112,472,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306671359,20246,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306692163,20323,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306712933,20305,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306713837,454,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306714049,165,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306715996,1947,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306715996,2113,selenium_login,,Success,,True,0,0,0,0,,0
+1686306716648,490,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306716949,300,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306717750,799,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306718623,757,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306719809,644,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306719809,1185,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306719809,1942,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306720358,430,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306721841,479,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306721841,1913,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306722091,249,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306723347,618,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306723347,1505,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306724712,1363,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306725521,807,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306726321,798,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306727130,808,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306727410,279,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306727847,434,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306748368,20519,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306769434,20569,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306790491,20538,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306791559,518,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306791767,162,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306793729,1960,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306793729,2124,selenium_login,,Success,,True,0,0,0,0,,0
+1686306794413,503,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306794789,374,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306795600,809,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306796417,679,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306797728,631,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306797728,1310,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306797728,1990,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306798268,403,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306799769,483,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306799769,1904,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306799994,223,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306801272,636,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306801273,1502,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306802698,1424,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306803912,1212,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306804716,803,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306805760,1042,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306806051,289,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306806525,473,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306827228,20701,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306848481,20790,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306869679,20714,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306870650,511,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306870859,162,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306872821,1962,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306872821,2125,selenium_login,,Success,,True,0,0,0,0,,0
+1686306873523,497,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306873891,366,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306874662,769,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306875517,722,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306876792,638,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306876792,1275,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306876792,1998,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306877425,523,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306878859,579,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306878859,1958,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306879151,291,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306880410,616,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306880410,1549,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306881857,1446,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306882684,826,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306883503,817,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306884503,999,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306884778,273,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306885266,487,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306905588,20320,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306926489,20415,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306947500,20474,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686306948447,507,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686306948684,190,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686306950597,1912,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306950597,2103,selenium_login,,Success,,True,0,0,0,0,,0
+1686306951243,438,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686306951611,366,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686306952441,828,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686306953312,718,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686306954455,644,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306954455,1142,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686306954455,1861,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686306955007,431,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306956569,508,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686306956569,1993,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686306956811,240,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686306958240,757,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686306958240,1670,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686306959655,1413,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686306960968,1311,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686306961790,820,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686306962746,955,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686306963058,311,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686306963637,577,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686306984169,20530,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307005327,20642,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307026378,20600,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307027314,502,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307027512,151,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307029433,1921,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307029433,2072,selenium_login,,Success,,True,0,0,0,0,,0
+1686307030167,508,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307030535,367,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307031332,795,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307032228,741,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307033465,655,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307033465,1237,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307033465,1978,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307034101,505,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307035417,485,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307035417,1821,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307035693,274,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307037108,756,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307037108,1689,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307038519,1410,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307039408,887,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307040233,823,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307041056,822,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307041374,316,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307041868,492,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307062610,20740,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307083972,20877,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307105332,20897,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307106326,493,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307106530,158,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307108530,1999,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307108530,2158,selenium_login,,Success,,True,0,0,0,0,,0
+1686307109253,498,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307109608,353,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307110423,813,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307111433,807,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307112760,660,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307112760,1326,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307112760,2134,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307113395,432,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307115030,632,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307115030,2067,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307115305,274,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307116638,657,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307116638,1607,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307118295,1655,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307119187,891,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307120052,864,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307120944,890,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307121209,263,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307121846,636,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307142283,20435,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307163278,20492,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307184208,20480,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307185187,496,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307185390,158,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307187344,1954,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307187345,2112,selenium_login,,Success,,True,0,0,0,0,,0
+1686307188096,504,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307188491,393,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307189301,809,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307190201,715,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307191437,661,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307191437,1235,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307191437,1951,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307192041,450,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307193362,500,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307193362,1771,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307193605,241,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307194929,642,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307194929,1565,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307196586,1656,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307197429,841,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307198282,851,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307199145,862,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307199456,309,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307200126,668,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307220771,20643,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307242006,20762,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307263226,20759,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307264205,467,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307264410,159,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307266505,2094,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307266505,2254,selenium_login,,Success,,True,0,0,0,0,,0
+1686307267150,430,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307267483,330,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307268296,812,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307269361,824,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307270654,672,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307270654,1292,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307270654,2117,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307271390,491,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307272806,489,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307272806,1907,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307273036,228,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307274490,691,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307274490,1683,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307276101,1609,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307277389,1286,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307278240,850,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307279135,893,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307279425,288,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307279892,466,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307300276,20383,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307321197,20416,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307342058,20378,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307342966,461,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307343185,171,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307345207,2021,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307345207,2192,selenium_login,,Success,,True,0,0,0,0,,0
+1686307346030,514,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307346412,380,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307347235,821,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307348169,725,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307349515,681,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307349515,1346,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307349515,2072,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307350196,499,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307351799,597,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307351799,2103,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307352038,237,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307353451,720,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307353451,1651,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307355196,1743,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307356463,1266,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307357342,877,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307358282,938,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307358595,311,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307359092,495,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307379670,20576,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307400787,20584,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307421886,20594,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307422907,536,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307423119,162,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307425090,1970,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307425090,2134,selenium_login,,Success,,True,0,0,0,0,,0
+1686307425970,534,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307426310,338,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307427175,863,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307428132,724,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307429375,686,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307429375,1243,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307429375,1968,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307430033,464,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307431537,493,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307431537,1968,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307431785,247,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307433193,684,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307433193,1655,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307435011,1817,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307435919,906,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307436802,880,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307437695,891,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307437991,295,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307438402,409,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307459105,20701,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307480415,20836,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307501706,20812,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307502728,494,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307502937,163,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307503608,670,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307503608,834,selenium_login,,Success,,True,0,0,0,0,,0
+1686307504514,525,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307504855,340,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307505693,836,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307506724,725,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307508029,705,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307508029,1305,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307508029,2030,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307508788,454,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307510317,524,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307510318,1984,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307510547,227,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307511973,627,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307511973,1654,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307513734,1758,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307514620,885,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307515496,874,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307516370,872,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307516681,310,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307517241,558,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307537726,20483,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307558594,20432,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307579480,20426,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307580503,491,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307580711,160,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307582703,1992,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307582704,2153,selenium_login,,Success,,True,0,0,0,0,,0
+1686307583530,472,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307583899,368,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307584758,857,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307585705,698,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307586952,689,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307586953,1247,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307586953,1946,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307587624,450,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307589155,487,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307589155,1982,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307589394,238,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307590879,691,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307590879,1723,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307592573,1692,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307593474,899,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307594353,878,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307595280,925,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307595538,256,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307596037,496,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307616613,20575,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307637719,20644,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307658782,20616,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307659717,478,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307659923,158,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307662199,2276,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307662199,2435,selenium_login,,Success,,True,0,0,0,0,,0
+1686307663012,468,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307663404,389,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307664245,840,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307665332,754,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307666588,705,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307666588,1256,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307666588,2011,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307667332,407,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307668864,484,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307668864,1939,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307669108,242,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307670560,633,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307670561,1695,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307672532,1970,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307673781,1247,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307674699,916,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307675608,908,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307675899,289,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307676360,460,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307697083,20721,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307718372,20808,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307739687,20825,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307740718,492,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307740910,145,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307743097,2186,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307743097,2332,selenium_login,,Success,,True,0,0,0,0,,0
+1686307743907,538,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307744269,361,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307745158,887,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307746237,734,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307747461,704,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307747461,1224,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307747462,1958,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307748228,416,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307749747,494,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307749747,1935,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307749997,249,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307751472,677,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307751472,1724,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307753245,1771,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307754171,924,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307755056,884,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307755954,896,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307756266,311,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307756811,542,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307777119,20307,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307797996,20403,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307818911,20431,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307819836,483,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307820028,147,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307822122,2093,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307822122,2241,selenium_login,,Success,,True,0,0,0,0,,0
+1686307823008,449,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307823302,293,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307824169,866,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307825184,721,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307826408,718,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307826408,1223,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307826408,1945,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307827156,487,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307828717,526,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307828717,2048,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307828946,226,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307830610,852,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307830610,1891,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307832484,1872,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307833406,920,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307834308,901,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307835275,965,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307835535,259,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307836083,546,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307856602,20517,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307877728,20652,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307898792,20579,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307899736,497,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307899962,179,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307902055,2093,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307902056,2272,selenium_login,,Success,,True,0,0,0,0,,0
+1686307902870,456,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307903219,347,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307904087,867,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307905223,751,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307906615,717,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307906615,1391,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307906615,2143,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307907448,444,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307908965,497,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307908965,1961,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307909195,229,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307910705,683,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307910705,1739,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307912520,1813,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307913809,1288,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307914756,945,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307915720,963,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307916004,282,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307916633,627,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686307937380,20746,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307958598,20770,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307979857,20783,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686307980841,492,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686307981038,150,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686307983192,2153,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307983192,2304,selenium_login,,Success,,True,0,0,0,0,,0
+1686307984050,464,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686307984417,365,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686307985318,900,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686307986493,769,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686307987767,730,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307987767,1274,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686307987768,2043,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686307988634,461,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307990128,473,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686307990128,1955,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686307990388,259,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686307991845,639,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686307991845,1716,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686307993709,1863,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686307994633,922,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686307995558,923,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686307996478,918,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686307996753,274,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686307997315,560,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308017582,20266,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308038492,20424,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308059274,20344,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308060212,472,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308060435,177,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308062474,2039,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308062474,2217,selenium_login,,Success,,True,0,0,0,0,,0
+1686308063338,499,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308063711,371,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308064615,903,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308065798,760,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308067056,730,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308067056,1258,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308067056,2018,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308067918,442,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308069419,495,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308069419,1943,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308069710,290,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308071247,707,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308071247,1827,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308073346,2097,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308074283,935,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308075220,936,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308076233,1012,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308076567,331,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308077165,596,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308097784,20617,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308118867,20602,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308139930,20593,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308140933,523,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308141136,157,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308143264,2128,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308143264,2286,selenium_login,,Success,,True,0,0,0,0,,0
+1686308144137,484,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308144458,319,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308145356,896,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308146593,777,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308147931,749,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308147931,1338,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308147931,2116,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308148828,453,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308150343,490,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308150343,1969,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308150595,250,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308152150,715,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308152150,1806,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308154075,1924,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308155338,1262,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308156263,923,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308157474,1209,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308157792,316,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308158283,490,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308179067,20782,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308200290,20728,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308221543,20777,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308222609,572,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308222826,170,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308224905,2079,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308224906,2250,selenium_login,,Success,,True,0,0,0,0,,0
+1686308225715,451,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308226061,344,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308226964,901,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308228214,777,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308229552,744,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308229552,1338,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308229552,2116,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308230557,528,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308232065,498,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308232065,2036,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308232304,238,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308233861,710,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308233861,1794,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308235831,1968,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308236954,1122,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308237978,1023,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308239377,1397,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308239679,300,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308240183,502,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308260476,20292,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308281278,20332,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308302045,20316,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308303045,508,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308303251,160,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308305412,2160,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308305412,2321,selenium_login,,Success,,True,0,0,0,0,,0
+1686308306270,466,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308306579,307,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308307505,924,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308308794,789,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308310098,759,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308310098,1303,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308310098,2093,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308311044,455,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308312542,485,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308312542,1953,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308312791,248,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308314390,756,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308314390,1847,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308316437,2045,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308317411,972,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308318469,1057,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308319561,1090,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308319824,261,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308320364,538,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308340791,20425,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308361841,20548,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308382849,20479,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308383809,481,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308384005,149,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308386210,2204,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308386210,2354,selenium_login,,Success,,True,0,0,0,0,,0
+1686308387057,439,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308387386,327,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308388297,909,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308389621,807,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308390924,764,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308390924,1303,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308390924,2111,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308391905,457,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308393488,521,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308393488,2041,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308393738,248,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308395274,720,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308395275,1785,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308396215,939,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308397312,1095,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308398377,1064,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308399602,1223,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308399873,270,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308400523,647,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308421227,20703,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308442471,20773,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308463722,20778,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308464723,525,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308464917,147,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308466981,2063,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308466981,2211,selenium_login,,Success,,True,0,0,0,0,,0
+1686308467952,497,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308468340,387,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308469275,933,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308470603,797,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308472073,767,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308472073,1469,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308472073,2267,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308473052,443,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308474626,502,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308474626,2017,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308474869,242,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308476400,690,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308476400,1773,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308477463,1061,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308478648,1183,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308479626,977,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308480579,951,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308480821,240,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308481306,484,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308502131,20823,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308523477,20891,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308544877,20941,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308545920,537,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308546123,158,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308548289,2165,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308548290,2324,selenium_login,,Success,,True,0,0,0,0,,0
+1686308549315,580,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308549750,433,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308550678,927,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308552031,799,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308553396,784,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308553396,1364,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308553396,2164,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308554372,432,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308555884,503,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308555884,1944,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308556155,269,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308557689,708,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308557689,1803,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308559757,2066,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308561068,1309,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308562056,986,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308563274,1217,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308563554,278,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308564048,492,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308584415,20365,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308605302,20423,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308626208,20415,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308627217,512,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308627441,153,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308629651,2209,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308629651,2363,selenium_login,,Success,,True,0,0,0,0,,0
+1686308630521,356,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308630899,377,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308631851,950,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308633258,837,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308634711,784,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308634711,1452,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308634711,2290,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308635701,434,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308637236,513,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308637236,1969,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308637482,245,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308638986,649,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308638986,1749,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308641090,2102,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308642433,1341,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308643429,995,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308644427,997,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308644723,295,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308645234,509,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308665792,20557,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308687074,20726,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308708283,20731,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308709243,517,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308709442,152,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308711609,2166,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308711609,2319,selenium_login,,Success,,True,0,0,0,0,,0
+1686308712585,436,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308712934,347,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308713887,951,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308715306,839,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308716722,805,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308716722,1416,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308716722,2255,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308717785,436,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308719349,527,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308719349,2000,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308719587,237,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308721097,663,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308721097,1747,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308723245,2147,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308724573,1327,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308725631,1056,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308726753,1120,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308727087,332,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308727576,488,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308748375,20797,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308769717,20904,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308791080,20838,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308792091,533,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308792300,159,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308794424,2123,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308794424,2283,selenium_login,,Success,,True,0,0,0,0,,0
+1686308795483,479,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308795820,335,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308796767,946,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308798200,820,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308799651,849,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308799651,1451,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308799651,2272,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308800802,528,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308802348,512,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308802348,2074,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308802589,240,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308804151,710,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308804151,1802,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308805231,1078,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308806376,1143,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308807414,1037,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308808662,1246,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308808938,275,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308809495,554,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308829829,20332,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308850648,20334,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308872262,21015,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308873234,497,selenium_log_out,,Success,,True,0,0,0,0,,0
+1686308873460,180,selenium_login:open_login_page,,Success,,True,0,0,0,0,,0
+1686308875617,2156,selenium_login:login_and_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308875617,2337,selenium_login,,Success,,True,0,0,0,0,,0
+1686308876606,463,selenium_project_summary,,Success,,True,0,0,0,0,,0
+1686308876962,355,selenium_browse_projects_list,,Success,,True,0,0,0,0,,0
+1686308877915,951,selenium_browse_boards_list,,Success,,True,0,0,0,0,,0
+1686308879369,834,selenium_create_issue:open_quick_create,,Success,,True,0,0,0,0,,0
+1686308880732,804,selenium_create_issue:fill_and_submit_issue_form:submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308880733,1363,selenium_create_issue:fill_and_submit_issue_form,,Success,,True,0,0,0,0,,0
+1686308880733,2198,selenium_create_issue,,Success,,True,0,0,0,0,,0
+1686308881798,440,selenium_edit_issue:open_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308883349,505,selenium_edit_issue:save_edit_issue_form,,Success,,True,0,0,0,0,,0
+1686308883349,1991,selenium_edit_issue,,Success,,True,0,0,0,0,,0
+1686308883601,250,selenium_save_comment:open_comment_form,,Success,,True,0,0,0,0,,0
+1686308885142,709,selenium_save_comment:submit_form,,Success,,True,0,0,0,0,,0
+1686308885142,1791,selenium_save_comment,,Success,,True,0,0,0,0,,0
+1686308886158,1015,selenium_search_jql,,Success,,True,0,0,0,0,,0
+1686308887319,1159,selenium_view_scrum_board_backlog,,Success,,True,0,0,0,0,,0
+1686308888403,1082,selenium_view_scrum_board,,Success,,True,0,0,0,0,,0
+1686308889587,1182,selenium_view_kanban_board,,Success,,True,0,0,0,0,,0
+1686308889867,278,selenium_view_dashboard,,Success,,True,0,0,0,0,,0
+1686308890333,464,selenium_view_issue,,Success,,True,0,0,0,0,,0
+1686308910774,20440,zephyr_scale_view_test_case_in_issue_view,,Failed measure: zephyr_scale_view_test_case_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308931719,20465,zephyr_scale_view_test_cycle_in_issue_view,,Failed measure: zephyr_scale_view_test_cycle_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308952651,20471,zephyr_scale_view_test_plan_in_issue_view,,Failed measure: zephyr_scale_view_test_plan_in_issue_view - TimeoutException,,False,0,0,0,0,,0
+1686308953600,490,selenium_log_out,,Success,,True,0,0,0,0,,0

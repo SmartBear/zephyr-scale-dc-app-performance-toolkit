@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="sample_labels" package_name="bzt">
+    <testcase classname="bzt-8739299587389" name="jmeter_comment_page"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_and_edit_page:create_page"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_and_edit_page:create_page_editor"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_and_edit_page:edit_page"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_and_edit_page:open_editor"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_blog:blog_editor"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_create_blog:feel_and_publish"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_like_page"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_login_and_view_dashboard"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_search_cql:recently_viewed"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_search_cql:search_results"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_upload_attachment"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_view_attachment"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_view_blog"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_view_dashboard"/>
+    <testcase classname="bzt-8739299587389" name="jmeter_view_page:open_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_a_login"/>
+    <testcase classname="bzt-8739299587389" name="selenium_create_comment"/>
+    <testcase classname="bzt-8739299587389" name="selenium_create_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_edit_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_view_blog"/>
+    <testcase classname="bzt-8739299587389" name="selenium_view_dashboard"/>
+    <testcase classname="bzt-8739299587389" name="selenium_view_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_z_log_out">
+      <error message="Exception: ('Failed measure: selenium_log_out - TimeoutException', TimeoutException(&quot;Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f5c17a14d00&gt;. \nLocator: ('id', 'logout-message')&quot;, None, None))" type="Error">Exception: ('Failed measure: selenium_log_out - TimeoutException', TimeoutException("Error in wait_until: Timed out after 20 sec waiting for &lt;selenium.webdriver.support.expected_conditions.visibility_of_element_located object at 0x7f5c17a14d00&gt;. \nLocator: ('id', 'logout-message')", None, None))
+(status code is 400)
+(total errors of this type: 1)</error>
+    </testcase>
+    <testcase classname="bzt-8739299587389" name="selenium_zscale_view_test_cases_by_folder_macro_in_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_zscale_view_test_cases_by_project_macro_in_page"/>
+    <testcase classname="bzt-8739299587389" name="selenium_zscale_view_test_cases_by_status_macro_in_page"/>
+  </testsuite>
+</testsuites>

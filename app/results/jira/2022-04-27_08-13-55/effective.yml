@@ -1,0 +1,303 @@
+---
+cli:
+  linter:
+    disable: false
+    ignored-warnings: []
+    lint-and-exit: false
+    warn-on-unfamiliar-fields: false
+cli-aliases:
+  cloud:
+    provisioning: cloud
+  detach:
+    modules:
+      cloud:
+        detach: true
+  func:
+    modules:
+      console:
+        disable: true
+    settings:
+      aggregator: functional-consolidator
+  gui:
+    modules:
+      jmeter:
+        gui: true
+  install-tools:
+    services:
+    - install-checker
+  lint:
+    cli:
+      linter:
+        lint-and-exit: true
+  local:
+    provisioning: local
+  locations:
+    modules:
+      cloud:
+        dump-locations: true
+    provisioning: cloud
+  nolint:
+    cli:
+      linter:
+        disable: true
+  public:
+    modules:
+      blazemeter:
+        public-report: true
+  report:
+    reporting:
+    - blazemeter
+  sequential:
+    modules:
+      local:
+        sequential: true
+execution:
+- concurrency:
+    local: '200'
+  executor: jmeter
+  hold-for: 45m
+  ramp-up: 3m
+  scenario: jmeter
+  throughput: {}
+- executor: selenium
+  files: []
+  hold-for: 45m
+  runner: pytest
+  scenario: selenium
+included-configs: []
+install-id: Docker
+modules:
+  ab:
+    class: bzt.modules.ab.ApacheBenchmarkExecutor
+  android-emulator:
+    class: bzt.modules.services.AndroidEmulatorLoader
+  apiritif:
+    class: bzt.modules._apiritif.ApiritifNoseExecutor
+  appium:
+    class: bzt.modules.services.AppiumLoader
+  blazemeter:
+    class: bzt.modules.blazemeter.BlazeMeterUploader
+  capturehar:
+    class: bzt.modules.blazemeter.ServiceStubCaptureHAR
+  cloud:
+    class: bzt.modules.blazemeter.CloudProvisioning
+    default-location: us-central1-a
+  console:
+    class: bzt.modules.console.ConsoleStatusReporter
+    disable: true
+  consolidator:
+    class: bzt.modules.aggregator.ConsolidatingAggregator
+    percentiles: []
+    rtimes-len: 0
+  external-results-loader:
+    class: bzt.modules.external.ExternalResultsLoader
+  final-stats:
+    class: bzt.modules.reporting.FinalStatus
+  final_stats:
+    class: bzt.modules.reporting.FinalStatus
+  functional-consolidator:
+    class: bzt.modules.functional.FunctionalAggregator
+  gatling:
+    class: bzt.modules.gatling.GatlingExecutor
+    properties:
+      gatling.data.file.bufferSize: 256
+  install-checker:
+    class: bzt.modules.services.InstallChecker
+  jmeter:
+    class: bzt.modules.jmeter.JMeterExecutor
+    detect-plugins: true
+    memory-xmx: 8G
+    path: /root/.bzt/jmeter-taurus/5.4.2/bin/jmeter.sh
+    plugins:
+    - jpgc-casutg
+    - jpgc-dummy
+    - jpgc-ffw
+    - jpgc-fifo
+    - jpgc-functions
+    - jpgc-json
+    - jpgc-perfmon
+    - jpgc-prmctl
+    - jpgc-tst
+    - bzm-parallel=0.4
+    - bzm-random-csv=0.6
+    - jpgc-casutg=2.5
+    - jpgc-dummy=0.2
+    - jpgc-ffw=2.0
+    - jpgc-fifo=0.2
+    - jpgc-functions=2.1
+    - jpgc-json=2.6
+    - jpgc-perfmon=2.1
+    - jpgc-prmctl=0.4
+    - jpgc-tst=2.4
+    - jpgc-wsc=0.3
+    - tilln-sshmon=1.0
+    - jpgc-synthesis=2.2
+    properties:
+      jmeter.save.saveservice.autoflush: 'true'
+      jmeter.save.saveservice.connect_time: 'true'
+      jmeterengine.force.system.exit: 'true'
+      summariser.name: ''
+    protocol-handlers:
+      http: bzt.jmx.http.HTTPProtocolHandler
+      mqtt: bzt.jmx.mqtt.MQTTProtocolHandler
+    system-properties:
+      httpsampler.ignore_failed_embedded_resources: 'true'
+      java.rmi.server.hostname: localhost
+      server.rmi.ssl.disable: true
+    version: 5.4.2
+  junit:
+    class: bzt.modules.java.JUnitTester
+  junit-xml:
+    class: bzt.modules.reporting.JUnitXMLReporter
+  k6:
+    class: bzt.modules.k6.K6Executor
+  local:
+    class: bzt.modules.provisioning.Local
+  locust:
+    class: bzt.modules._locustio.LocustIOExecutor
+  mocha:
+    class: bzt.modules.javascript.MochaTester
+  molotov:
+    class: bzt.modules._molotov.MolotovExecutor
+  monitoring:
+    class: bzt.modules.monitoring.Monitoring
+  newman:
+    class: bzt.modules.javascript.NewmanExecutor
+  nunit:
+    class: bzt.modules.csharp.NUnitExecutor
+  passfail:
+    class: bzt.modules.passfail.PassFailStatus
+  pip-install:
+    class: bzt.modules.services.PipInstaller
+  proxy2jmx:
+    class: bzt.modules.proxy2jmx.Proxy2JMX
+  pytest:
+    class: bzt.modules._pytest.PyTestExecutor
+  robot:
+    class: bzt.modules.robot.RobotExecutor
+  rspec:
+    class: bzt.modules.ruby.RSpecTester
+  screenshoter:
+    class: bzt.modules.blazemeter.ServiceStubScreenshoter
+  selenium:
+    chromedriver:
+      version: 97.0.4692.71
+    class: bzt.modules._selenium.SeleniumExecutor
+  shellexec:
+    class: bzt.modules.shellexec.ShellExecutor
+  siege:
+    class: bzt.modules.siege.SiegeExecutor
+  testng:
+    class: bzt.modules.java.TestNGTester
+  tsung:
+    class: bzt.modules.tsung.TsungExecutor
+  unpacker:
+    class: bzt.modules.services.Unpacker
+  vegeta:
+    class: bzt.modules.vegeta.VegetaExecutor
+  virtual-display:
+    class: bzt.modules.services.VirtualDisplay
+  wdio:
+    class: bzt.modules.javascript.WebdriverIOExecutor
+  xunit:
+    class: bzt.modules.csharp.XUnitExecutor
+provisioning: local
+reporting:
+- module: final-stats
+- module: console
+- data-source: sample-labels
+  filename: /dc-app-performance-toolkit/app/results/jira/2022-04-27_08-13-55-old/xunit.xml
+  module: junit-xml
+scenarios:
+  jmeter:
+    properties:
+      application_hostname: jira-performance-cluster.zephyr4jiracloud.net
+      application_port: '80'
+      application_postfix: ''
+      application_protocol: http
+      perc_add_comment: '2'
+      perc_browse_boards: '1'
+      perc_browse_projects: '9'
+      perc_create_issue: '4'
+      perc_edit_issue: '5'
+      perc_search_jql: '11'
+      perc_standalone_extension: '0'
+      perc_view_backlog: '6'
+      perc_view_dashboard: '10'
+      perc_view_issue: '34'
+      perc_view_kanban_board: '7'
+      perc_view_project_summary: '3'
+      perc_view_scrum_board: '8'
+      total_actions_per_hr: '54500'
+    script: /dc-app-performance-toolkit/app/jmeter/jira.jmx
+  locust:
+    script: locustio/jira/locustfile.py
+  selenium:
+    script: /dc-app-performance-toolkit/app/selenium_ui/jira_ui.py
+services:
+- local:
+  - metrics:
+    - cpu
+    - mem
+    - bytes-sent
+    - bytes-recv
+    - disk-read
+    - disk-write
+    - disk-space
+    - engine-loop
+    - conn-all
+  module: monitoring
+- module: shellexec
+  post-process:
+  - command: python util/analytics/analytics.py jira
+  - command: python util/post_run/cleanup_results_dir.py
+  prepare:
+  - command: python util/pre_run/environment_checker.py
+  - command: python util/pre_run/check_for_updates.py
+  - command: python util/data_preparation/jira_prepare_data.py
+  shutdown:
+  - command: python util/post_run/jmeter_post_check.py
+  - command: python util/jtl_convertor/jtls-to-csv.py kpi.jtl selenium.jtl
+- module: pip-install
+  packages:
+  - selenium==3.141.0
+settings:
+  aggregator: consolidator
+  artifacts-dir: results/jira/%Y-%m-%d_%H-%M-%S
+  default-executor: jmeter
+  env:
+    JMETER_VERSION: 5.4.2
+    LANGUAGE: en_US.utf8
+    OBJC_DISABLE_INITIALIZE_FORK_SAFETY: 'YES'
+    TAURUS_ARTIFACTS_DIR: /dc-app-performance-toolkit/app/results/jira/2022-04-27_08-13-55-old
+    WEBDRIVER_VISIBLE: 'False'
+    add_comment: '2'
+    admin_login: admin
+    admin_password: '********'
+    allow_analytics: 'True'
+    application_hostname: jira-performance-cluster.zephyr4jiracloud.net
+    application_port: '80'
+    application_postfix: null
+    application_protocol: http
+    browse_boards: '1'
+    browse_projects: '9'
+    concurrency: '200'
+    create_issue: '4'
+    custom_dataset_query: summary ~ 'AppIssue*'
+    edit_issue: '5'
+    load_executor: jmeter
+    ramp-up: 3m
+    search_jql: '11'
+    secure: 'True'
+    standalone_extension: '0'
+    test_duration: 45m
+    total_actions_per_hour: '54500'
+    view_backlog: '6'
+    view_dashboard: '10'
+    view_issue: '34'
+    view_kanban_board: '7'
+    view_project_summary: '3'
+    view_scrum_board: '8'
+  verbose: false
+version: 1.16.2
+

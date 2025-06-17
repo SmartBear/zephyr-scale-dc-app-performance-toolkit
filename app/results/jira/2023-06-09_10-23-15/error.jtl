@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<sample t="750" lt="0" ts="1686307119069" s="false" lb="jmeter_view_kanban_board" rc="400" rm="Number of samples in transaction : 10, number of failing samples : 2" tn="Jira 1-163" dt="" de="" by="29820" ng="200" na="200">
+  <httpSample t="148" lt="109" ts="1686307119069" s="true" lb="1000 /secure/RapidBoard.jspa" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="14397" ng="200" na="200">
+    <assertionResult>
+      <name>Response Assertion</name>
+      <failure>false</failure>
+      <error>false</error>
+    </assertionResult>
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, must-revalidate
+Content-Security-Policy: frame-ancestors &apos;self&apos;
+Content-Type: text/html;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Pragma: no-cache
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+Vary: User-Agent
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143056x6
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+Content-Encoding: gzip
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+Upgrade-Insecure-Requests: 1
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/secure/RapidBoard.jspa?rapidView=61</java.net.URL>
+  </httpSample>
+  <httpSample t="81" lt="81" ts="1686307119218" s="true" lb="1005 /rest/webResources/1.0/resources" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="1344" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143081x6
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+Content-Length: 793
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 331
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="75" lt="75" ts="1686307119299" s="true" lb="1010 /rest/greenhopper/1.0/xboard/config.json" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="3035" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143090x7
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+Content-Length: 2483
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+X-Atlassian-GreenHopper-Gadget: false
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+X-AUSERNAME: performance_aawodbwaeo
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/greenhopper/1.0/xboard/config.json?returnDefaultBoard=true&amp;_=1686307119299</java.net.URL>
+  </httpSample>
+  <httpSample t="84" lt="84" ts="1686307119374" s="true" lb="1015 /rest/webResources/1.0/resources" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="3045" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143097x4
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 759
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="63" lt="62" ts="1686307119459" s="true" lb="1020 /rest/greenhopper/1.0/xboard/config.json" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="3053" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143110x6
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+X-Atlassian-GreenHopper-Gadget: false
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+X-AUSERNAME: performance_aawodbwaeo
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/greenhopper/1.0/xboard/config.json?returnDefaultBoard=true&amp;_=1686307119458</java.net.URL>
+  </httpSample>
+  <httpSample t="55" lt="55" ts="1686307119522" s="true" lb="1025 /rest/analytics/1.0/publish/bulk" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="549" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143116x3
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+Content-Length: 0
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 184
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/analytics/1.0/publish/bulk</java.net.URL>
+  </httpSample>
+  <httpSample t="56" lt="56" ts="1686307119577" s="true" lb="1030 /rest/api/2/project/AANES" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="2585" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+Vary: User-Agent
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143125x5
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+Content-Encoding: gzip
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+X-AUSERNAME: admin
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept: */*
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/api/2/project/AANES?_=1686307119577</java.net.URL>
+  </httpSample>
+  <httpSample t="55" lt="55" ts="1686307119633" s="false" lb="1035 /rest/projects/1.0/project/AANES/lastVisited" rc="400" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="549" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 400 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143134x4
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+Content-Length: 0
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: */*
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 63
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <responseData class="java.lang.String"></responseData>
+    <cookies class="java.lang.String">INGRESSCOOKIE=904b6e8fca3811556d446bc5ba540172|a4aa6a3e497c70fb8ce2ddf4dcc8ec5d; JSESSIONID=39DBD6FC264A1D219F68090F53AA7E49; atlassian.xsrf.token=BCWY-XMNP-PEH6-UHNH_0cb66168e38261d1fa8d08437d2727eb7409925d_lin</cookies>
+    <method class="java.lang.String">PUT</method>
+    <queryString class="java.lang.String">{&quot;id&quot;:&quot;com.pyxis.greenhopper.jira:project-sidebar-work-kanban&quot;}</queryString>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/projects/1.0/project/AANES/lastVisited</java.net.URL>
+  </httpSample>
+  <httpSample t="80" lt="80" ts="1686307119689" s="true" lb="1040 /rest/webResources/1.0/resources" rc="200" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="623" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 200 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143142x4
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 857
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/webResources/1.0/resources</java.net.URL>
+  </httpSample>
+  <httpSample t="53" lt="53" ts="1686307119770" s="false" lb="1065 /rest/projects/1.0/project/&lt;project_key&gt;/lastVisited" rc="400" rm="" tn="Jira 1-163" dt="text" de="UTF-8" by="640" ng="200" na="200">
+    <responseHeader class="java.lang.String">HTTP/1.1 400 
+Cache-Control: no-cache, no-store, no-transform
+Content-Security-Policy: sandbox
+Content-Type: application/json;charset=UTF-8
+Date: Fri, 09 Jun 2023 10:38:39 GMT
+Referrer-Policy: strict-origin-when-cross-origin
+Strict-Transport-Security: max-age=31536000
+Vary: User-Agent
+X-ANODEID: jira-0
+X-AREQUESTID: 638x143153x3
+X-ASESSIONID: 1v6k4bv
+X-AUSERNAME: performance_edseplscvd
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Seraph-LoginReason: OK
+X-XSS-Protection: 1; mode=block
+transfer-encoding: chunked
+Connection: keep-alive
+Content-Encoding: gzip
+</responseHeader>
+    <requestHeader class="java.lang.String">Connection: keep-alive
+Accept-Language: en-US,en;q=0.5
+X-Requested-With: XMLHttpRequest
+Content-Type: application/json
+Accept-Encoding: gzip, deflate
+Accept: */*
+Origin: http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com:80
+Content-Length: 65
+Host: aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com
+User-Agent: Apache-HttpClient/4.5.12 (Java/11.0.18)
+</requestHeader>
+    <responseData class="java.lang.String"></responseData>
+    <cookies class="java.lang.String">INGRESSCOOKIE=904b6e8fca3811556d446bc5ba540172|a4aa6a3e497c70fb8ce2ddf4dcc8ec5d; JSESSIONID=39DBD6FC264A1D219F68090F53AA7E49; atlassian.xsrf.token=BCWY-XMNP-PEH6-UHNH_0cb66168e38261d1fa8d08437d2727eb7409925d_lin</cookies>
+    <method class="java.lang.String">PUT</method>
+    <queryString class="java.lang.String">{&quot;id&quot;:&quot;com.pyxis.greenhopper.jira:project-sidebar-work-kanban&quot;}&#xd;
+</queryString>
+    <java.net.URL>http://aee7a049f944748729f400fc46fd380e-382051119.us-east-2.elb.amazonaws.com/jira/rest/projects/1.0/project/AANES/lastVisited</java.net.URL>
+  </httpSample>
+  <responseHeader class="java.lang.String"></responseHeader>
+  <requestHeader class="java.lang.String"></requestHeader>
+  <responseData class="java.lang.String">Non-TEXT response data, cannot record: ()</responseData>
+</sample>
+
+</testResults>
