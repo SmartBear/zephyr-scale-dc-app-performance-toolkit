@@ -135,9 +135,15 @@ class ConfluenceRestClient(RestClient):
             error_msg='Could not get Confluence nodes count via API',
             expected_status_codes=[
                 200,
+                401,
                 403,
                 500])
-        if response.status_code == 403 and 'clustered installation' in response.text:
+        if (response.status_code in [401,403] and
+                ('clustered installation' in response.text or
+                    ('www-authenticate' in response.headers and
+                    'clustered installation' in response.headers['www-authenticate'])
+                )
+        ):
             return 'Server'
         nodes = [node['id'] for node in response.json()['nodes']]
         return nodes
@@ -190,23 +196,58 @@ class ConfluenceRestClient(RestClient):
         groups = [group['name'] for group in response.json()['results']]
         return groups
 
+    @retry()
     def get_system_info_page(self):
         login_url = f'{self.host}/dologin.action'
         auth_url = f'{self.host}/doauthenticate.action'
-        auth_body = {
-            'destination': '/admin/systeminfo.action',
-            'authenticate': 'Confirm',
-            'password': self.password
+        tsv_auth_url = f'{self.host}/rest/tsv/1.0/authenticate'
+        tsv_login_body = {
+            'username': self.user,
+            'password': self.password,
+            'rememberMe': True,
+            'targetUrl': ''
         }
-        self.post(url=login_url, error_msg='Could not get login in')
-        system_info_html = self._session.post(url=auth_url, data=auth_body)
-        return system_info_html.content.decode("utf-8")
+
+        auth_body = {
+            'authenticate': 'Confirm',
+            'destination': '/admin/systeminfo.action',
+            'password': self.password,
+        }
+
+        login_page_response = self.session.get(login_url)
+        if login_page_response.status_code == 200:
+            login_page_content = login_page_response.text
+            is_legacy_login_form = 'loginform' in login_page_content
+        else:
+            raise Exception(f"Failed to fetch login page. Status code: {login_page_response.status_code}")
+
+        if is_legacy_login_form:
+            self.session.post(url=login_url)
+        else:
+            self.session.post(url=tsv_auth_url, json=tsv_login_body)
+
+        system_info_html = self.session.post(url=auth_url, data=auth_body, headers={'X-Atlassian-Token': 'no-check'}, verify=self.verify)
+        page_decoded = system_info_html.content.decode("utf-8")
+        if page_decoded:
+            return page_decoded
+        else:
+            raise Exception(f"ERROR: System info page is empty. Content: {page_decoded}")
+
+    def get_installed_apps(self):
+        plugins_url = f'{self.host}/rest/plugins/1.0/'
+        r = self.get(plugins_url, error_msg="ERROR: Could not get installed plugins.",
+                     headers={'X-Atlassian-Token': 'no-check'})
+        return r.json()['plugins']
+
 
     def get_deployment_type(self):
-        html_pattern = 'com.atlassian.dcapt.deployment=terraform'
-        confluence_system_page = self.get_system_info_page()
-        if confluence_system_page.count(html_pattern):
-            return 'terraform'
+        try:
+            html_pattern = 'deployment=terraform'
+            confluence_system_page = self.get_system_info_page()
+            if confluence_system_page.count(html_pattern):
+                return 'terraform'
+        except Exception as e:
+            print(f"Warning: Could not get deployment type. Error: {e}")
         return 'other'
 
     def get_node_ip(self, node_id: str) -> str:
@@ -232,6 +273,26 @@ class ConfluenceRestClient(RestClient):
             url=create_user_url,
             body=payload,
             error_msg='ERROR: Could not create user')
+        return r.json()
+
+    @retry()
+    def get_status(self):
+        api_url = f'{self.host}/status'
+        status = self.get(api_url, "Could not get status")
+        if status.ok:
+            return status.text
+        else:
+            print(f"Warning: failed to get {api_url}: Error: {e}")
+            return False
+
+    def get_license_details(self):
+        api_url = f'{self.host}/rest/license/1.0/license/details'
+        r = self.get(api_url, "Could not get license details")
+        return r.json()
+
+    def get_license_remaining_seats(self):
+        api_url = f'{self.host}/rest/license/1.0/license/remainingSeats'
+        r = self.get(api_url, "Could not get license remaining seats")
         return r.json()
 
 

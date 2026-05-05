@@ -1,4 +1,5 @@
 from util.api.abstract_clients import RestClient, LOGIN_POST_HEADERS
+from selenium_ui.conftest import retry
 
 
 BATCH_SIZE_USERS = 1000
@@ -70,7 +71,7 @@ class CrowdRestClient(RestClient):
             return loop_users
 
         num_cores = cpu_count()
-        pool = ThreadPool(processes=num_cores*2)
+        pool = ThreadPool(processes=max(round(num_cores / 4), 2))
         loop_users_list = pool.map(search_users, [i for i in range(loop_count)])
         print("")  # new line
         users = [user for loop_users in loop_users_list for user in loop_users]
@@ -97,3 +98,19 @@ class CrowdRestClient(RestClient):
         api_url = self.host + '/rest/atlassian-cluster-monitoring/cluster/nodes'
         response = self.get(api_url, 'Can not get Crowd cluster nodes information')
         return response.json()
+
+    @retry()
+    def get_status(self):
+        api_url = f'{self.host}/status'
+        status = self.get(api_url, "Could not get status")
+        if status.ok:
+            return status.text
+        else:
+            print(f"Warning: failed to get {api_url}: Error: {e}")
+            return False
+
+    def get_installed_apps(self):
+        api_url = f'{self.host}/rest/plugins/1.0/'
+        r = self.get(api_url, error_msg="ERROR: Could not get installed plugins.",
+                     headers={'X-Atlassian-Token': 'no-check'})
+        return r.json()['plugins']

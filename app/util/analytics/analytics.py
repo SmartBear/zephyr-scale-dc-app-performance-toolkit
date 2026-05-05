@@ -52,6 +52,9 @@ class AnalyticsCollector:
         self.application_version = application.version
         self.nodes_count = application.nodes_count
         self.dataset_information = application.dataset_information
+        self.apps_count = application.apps_count
+        self.custom_apps_count = application.custom_app_count
+        self.custom_apps_count_enabled = application.custom_app_count_enabled
         if self.app_type != CROWD:
             self.processors = application.processors
             self.deployment = application.deployment
@@ -246,7 +249,7 @@ def send_analytics(collector: AnalyticsCollector):
                "concurrency": collector.concurrency,
                "deployment": collector.deployment
                }
-    r = requests.post(url=f'{BASE_URL}', json=payload, headers=headers)
+    r = requests.post(url=f'{BASE_URL}', json=payload, headers=headers, verify=collector.conf.secure)
     print(r.json())
     if r.status_code != 200:
         print(f'Warning: Analytics data was send unsuccessfully, status code {r.status_code}')

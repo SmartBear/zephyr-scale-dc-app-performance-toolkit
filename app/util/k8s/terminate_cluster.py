@@ -2,13 +2,12 @@ import logging
 from argparse import ArgumentParser
 from datetime import datetime, timedelta
 from time import sleep, time
+from functools import wraps
 
 import boto3
 import botocore
 from boto3.exceptions import Boto3Error
 from botocore import exceptions
-
-from retry import retry
 
 DEFAULT_RETRY_COUNT = 3
 DEFAULT_RETRY_DELAY = 10
@@ -16,6 +15,23 @@ DEFAULT_RETRY_DELAY = 10
 US_EAST_2 = "us-east-2"
 US_EAST_1 = "us-east-1"
 REGIONS = [US_EAST_2, US_EAST_1]
+
+
+def retry(exception_type=Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            for attempt in range(tries):
+                try:
+                    return func(*args, **kwargs)
+                except exception_type as e:
+                    logging.error(f"Attempt {attempt + 1} failed with error: {e}")
+                    if attempt < tries - 1:
+                        sleep(delay)
+                    else:
+                        raise
+        return wrapper
+    return decorator
 
 
 def is_float(element):
@@ -268,7 +284,7 @@ def delete_hosted_zone_record_if_exists(aws_region, cluster_name):
             logging.error(f"Unexpected error occurs: {e}")
 
 
-@retry(Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY)
+@retry()
 def delete_lb(aws_region, vpc_id):
     elb_client = boto3.client('elb', region_name=aws_region)
     try:
@@ -313,7 +329,7 @@ def wait_for_nat_gateway_delete(ec2, nat_gateway_id):
         logging.error(f"NAT gateway with id {nat_gateway_id} was not deleted in {timeout} seconds.")
 
 
-@retry(Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY)
+@retry()
 def delete_nat_gateway(aws_region, vpc_id):
     ec2_client = boto3.client('ec2', region_name=aws_region)
     filters = [{'Name': 'vpc-id', 'Values': [f'{vpc_id}', ]}, ]
@@ -333,7 +349,7 @@ def delete_nat_gateway(aws_region, vpc_id):
                 logging.error(f"Deleting NAT gateway with id {nat_gateway_id} failed with error: {e}")
 
 
-@retry(Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY)
+@retry()
 def delete_igw(ec2_resource, vpc_id):
     vpc_resource = ec2_resource.Vpc(vpc_id)
     igws = vpc_resource.internet_gateways.all()
@@ -355,7 +371,7 @@ def delete_igw(ec2_resource, vpc_id):
                     logging.error(f"Deleting igw failed with error: {e}")
 
 
-@retry(Exception, tries=12, delay=DEFAULT_RETRY_DELAY)
+@retry(tries=12)
 def delete_subnets(ec2_resource, vpc_id, aws_region):
     vpc_resource = ec2_resource.Vpc(vpc_id)
     subnets_all = vpc_resource.subnets.all()
@@ -381,7 +397,7 @@ def delete_subnets(ec2_resource, vpc_id, aws_region):
             logging.error(f"Delete of subnet failed with error: {e}")
 
 
-@retry(Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY)
+@retry()
 def delete_route_tables(ec2_resource, vpc_id):
     vpc_resource = ec2_resource.Vpc(vpc_id)
     rtbs = vpc_resource.route_tables.all()
@@ -398,7 +414,7 @@ def delete_route_tables(ec2_resource, vpc_id):
             logging.error(f"Delete of route table failed with error: {e}")
 
 
-@retry(Exception, tries=DEFAULT_RETRY_COUNT, delay=DEFAULT_RETRY_DELAY)
+@retry()
 def delete_security_groups(ec2_resource, vpc_id):
     vpc_resource = ec2_resource.Vpc(vpc_id)
     sgps = vpc_resource.security_groups.all()
@@ -440,7 +456,7 @@ def delete_network_interface(ec2_client, network_interface_id):
             if attempt == attempts:
                 raise e
             else:
-                print(f"Attempt {attempt}: {e}")
+                logging.info(f"Attempt {attempt}: {e}")
                 sleep(sleep_time)
 
 
@@ -627,12 +643,12 @@ def retrieve_ebs_volumes(aws_region, cluster_name):
 
             # Check for 'dynamic-pvc' or 'nfs-shared-home' in the name
             name = next((tag["Value"] for tag in volume.tags if tag["Key"] == "Name"), None)
-            if "dynamic-pvc" in name or "nfs-shared-home" in name:
+            if "dynamic-pvc" in name or "nfs-shared-home" in name or "local-home" in name:
                 logging.info(f"Volume {volume.id} is not in use and "
-                             f"has 'dynamic-pvc' or 'nfs-shared-home' in name: deleting...")
+                             f"has 'dynamic-pvc', 'nfs-shared-home' or 'local-home' in name: deleting...")
                 volumes.append(volume.id)
 
-    print(f"Found volumes: {volumes}")
+    logging.info(f"Found volumes: {volumes}")
     return volumes
 
 
@@ -644,12 +660,12 @@ def delete_ebs_volumes_by_id(aws_region, volumes):
         try:
             volume = ec2.Volume(volume_id)
             if volume.state == "in-use":
-                print(f"Volume {volume_id} is in use: skipping")
+                logging.info(f"Volume {volume_id} is in use: skipping")
                 continue
             volume.delete()
-            print(f"Terminated volume: {volume_id}")
+            logging.info(f"Terminated volume: {volume_id}")
         except Exception as e:
-            print(f"Failed to terminate volume {volume_id}: {e}")
+            logging.info(f"Failed to terminate volume {volume_id}: {e}")
 
 
 def get_clusters_to_terminate():
@@ -713,17 +729,17 @@ def retrieve_open_identities(cluster_name, aws_region):
         identity_provider = response["cluster"]["identity"]["oidc"]["issuer"]
         identity_id = identity_provider.split('/id/')[-1]
         open_identities.append(identity_id)
-        print(f"Open identity providers: {open_identities}")
+        logging.info(f"Open identity providers: {open_identities}")
     except Exception as e:
-        print(f"Failed to retrieve Open identity providers from {cluster_name}. Skipping...")
-        print(f"Error details: {e}")
+        logging.info(f"Failed to retrieve Open identity providers from {cluster_name}. Skipping...")
+        logging.info(f"Error details: {e}")
 
     return open_identities
 
 
 def delete_open_identities_for_cluster(open_identities):
     if not open_identities:
-        print("No OpenID Connect providers to delete.")
+        logging.info("No OpenID Connect providers to delete.")
         return
 
     iam_client = boto3.client('iam')
@@ -735,12 +751,12 @@ def delete_open_identities_for_cluster(open_identities):
                 provider_identity_id = provider['Arn'].split('/id/')[-1]
                 if provider_identity_id == identity:
                     iam_client.delete_open_id_connect_provider(OpenIDConnectProviderArn=provider['Arn'])
-                    print(f"Deleted identity provider: {identity}")
+                    logging.info(f"Deleted identity provider: {identity}")
                 else:
-                    print(f"Identity '{identity}' not found in provider '{provider['Arn']}'")
+                    logging.info(f"Identity '{identity}' not found in provider '{provider['Arn']}'")
         except Exception as e:
-            print(f"Failed to delete identity provider: {identity}")
-            print(f"Error details: {e}")
+            logging.info(f"Failed to delete identity provider: {identity}")
+            logging.info(f"Error details: {e}")
 
 
 def get_vpcs_to_terminate():
@@ -790,6 +806,7 @@ def role_filter(role):
     if role["RoleName"].startswith("atlas-"):
         tags = boto3.client("iam").list_role_tags(RoleName=role["RoleName"])
         persist_days = None
+
         for tag in tags["Tags"]:
             if tag["Key"] == "persist_days":
                 try:
@@ -799,7 +816,28 @@ def role_filter(role):
         if persist_days:
             eol_time = role['CreateDate'] + timedelta(days=float(persist_days))
             return datetime.now(role['CreateDate'].tzinfo) > eol_time
+        else:
+            # mark roles without persist_days tag and created more than TTL for termination
+            logging.warning(f"Role does NOT have 'persist_days' tag: {role['RoleName']}")
+            max_role_ttl = 90     # days
+            if datetime.now(role['CreateDate'].tzinfo) > role['CreateDate'] + timedelta(days=float(max_role_ttl)):
+                logging.info(f"OLD role for TERMINATION: {role['RoleName']} was created "
+                      f"{role['CreateDate']} > {max_role_ttl} days ago.")
+                return True
     return False
+
+
+def remove_iam_policy(policy_arn, policy_name):
+    iam_client = boto3.client("iam")
+    # list all versions of the policy
+    r = iam_client.list_policy_versions(PolicyArn=policy_arn)
+    for version in r['Versions']:
+        if not version['IsDefaultVersion']:
+            version_id = version['VersionId']
+            iam_client.delete_policy_version(PolicyArn=policy_arn, VersionId=version_id)
+            logging.info(f"Delete policy {policy_name} version: {version['VersionId']}")
+    iam_client.delete_policy(PolicyArn=policy_arn)
+    logging.info(f"Deleted policy {policy_name}")
 
 
 def remove_cluster_specific_roles_and_policies(cluster_name, aws_region):
@@ -817,16 +855,15 @@ def remove_cluster_specific_roles_and_policies(cluster_name, aws_region):
         for policy in attached_policies["AttachedPolicies"]:
             # Detach policy from the role
             iam_client.detach_role_policy(RoleName=role_name, PolicyArn=policy["PolicyArn"])
-            print(f"  Detached policy {policy['PolicyName']} from role {role_name}")
+            logging.info(f"Detached policy {policy['PolicyName']} from role {role_name}")
 
             if cluster_name in policy['PolicyName']:
                 # Delete the policy
-                iam_client.delete_policy(PolicyArn=policy["PolicyArn"])
-                print(f"  Deleted policy {policy['PolicyName']}")
+                remove_iam_policy(policy["PolicyArn"], policy['PolicyName'])
 
         # Delete the role
         iam_client.delete_role(RoleName=role_name)
-        print(f"Deleted Role: {role_name}")
+        logging.info(f"Deleted Role: {role_name}")
 
 
 def remove_role_and_policies(role_name, active_clusters):
@@ -839,9 +876,11 @@ def remove_role_and_policies(role_name, active_clusters):
     for policy in attached_policies:
         logging.info(f"Detach {policy['PolicyArn']} from {role_name}")
         iam_client.detach_role_policy(PolicyArn=policy["PolicyArn"], RoleName=role_name)
-        if policy["PolicyName"].endswith("_Fleet-Enrollment") or policy["PolicyName"].endswith("_LaaS-policy"):
-            logging.info(f"Delete policy {policy['PolicyName']}")
-            iam_client.delete_policy(PolicyArn=policy["PolicyArn"])
+        if (policy["PolicyName"].endswith("_Fleet-Enrollment") or
+                policy["PolicyName"].endswith("_LaaS-policy") or
+                policy["PolicyName"].endswith("_crowdstrike_s3") or
+                policy["PolicyName"].endswith("_crowdstrike_secret")):
+            remove_iam_policy(policy['PolicyArn'], policy["PolicyName"])
     logging.info(f"Delete role {role_name}")
     iam_client.delete_role(RoleName=role_name)
     logging.info(f"Role {role_name} deleted successfully")
@@ -892,6 +931,30 @@ def delete_unused_volumes():
                                         f"| Name tag {name}: skipping")
 
 
+def delete_bucket_by_name(s3_client, bucket):
+    objects_response = s3_client.list_objects_v2(Bucket=bucket)
+    if 'Contents' in objects_response:
+        objects = objects_response['Contents']
+        for obj in objects:
+            s3_client.delete_object(Bucket=bucket, Key=obj['Key'])
+            logging.info(f"Object '{obj['Key']}' deleted successfully from bucket {bucket}.")
+    versions = s3_client.list_object_versions(Bucket=bucket).get('Versions', [])
+    delete_markers = s3_client.list_object_versions(Bucket=bucket).get('DeleteMarkers', [])
+    if versions:
+        for version in versions:
+            s3_client.delete_object(Bucket=bucket, Key=version['Key'], VersionId=version['VersionId'])
+            logging.info(f"S3 object version '{version}' deleted successfully from bucket {bucket}.")
+    if delete_markers:
+        for delete_marker in delete_markers:
+            s3_client.delete_object(Bucket=bucket, Key=delete_marker['Key'], VersionId=delete_marker['VersionId'])
+            logging.info(f"S3 delete marker '{delete_marker['Key']}' deleted successfully from bucket {bucket}.")
+    try:
+        s3_client.delete_bucket(Bucket=bucket)
+        logging.info(f"S3 bucket '{bucket}' was successfully deleted.")
+    except Exception as e:
+        logging.warning(f"Could not delete s3 bucket '{bucket}': {e}")
+
+
 def delete_s3_bucket_tf_state(cluster_name, aws_region):
     environment_name = retrieve_environment_name(cluster_name=cluster_name)
     s3_client = boto3.client('s3', region_name=aws_region)
@@ -902,27 +965,7 @@ def delete_s3_bucket_tf_state(cluster_name, aws_region):
         logging.info(f"Could not find s3 bucket with name contains {bucket_name_template}")
         return
     for bucket in matching_buckets:
-        objects_response = s3_client.list_objects_v2(Bucket=bucket)
-        if 'Contents' in objects_response:
-            objects = objects_response['Contents']
-            for obj in objects:
-                s3_client.delete_object(Bucket=bucket, Key=obj['Key'])
-                logging.info(f"Object '{obj['Key']}' deleted successfully from bucket {bucket}.")
-        versions = s3_client.list_object_versions(Bucket=bucket).get('Versions', [])
-        delete_markers = s3_client.list_object_versions(Bucket=bucket).get('DeleteMarkers', [])
-        if versions:
-            for version in versions:
-                s3_client.delete_object(Bucket=bucket, Key=version['Key'], VersionId=version['VersionId'])
-                logging.info(f"S3 object version '{version}' deleted successfully from bucket {bucket}.")
-        if delete_markers:
-            for delete_marker in delete_markers:
-                s3_client.delete_object(Bucket=bucket, Key=delete_marker['Key'], VersionId=delete_marker['VersionId'])
-                logging.info(f"S3 delete marker '{delete_marker['Key']}' deleted successfully from bucket {bucket}.")
-        try:
-            s3_client.delete_bucket(Bucket=bucket)
-            logging.info(f"S3 bucket '{bucket}' was successfully deleted.")
-        except Exception as e:
-            logging.warning(f"Could not delete s3 bucket '{bucket}': {e}")
+        delete_bucket_by_name(s3_client, bucket)
 
 
 def delete_dynamo_bucket_tf_state(cluster_name, aws_region):
@@ -940,6 +983,172 @@ def delete_dynamo_bucket_tf_state(cluster_name, aws_region):
             logging.info(f"Dynamo db '{table}' was successfully deleted.")
         except Exception as e:
             logging.warning(f"Could not delete dynamo db '{table}': {e}")
+
+
+def dynamodb_list_tables_all(dynamodb_client):
+    table_names = []
+    paginator = dynamodb_client.get_paginator('list_tables')
+    for page in paginator.paginate():
+        table_names.extend(page.get('TableNames', []))
+    return table_names
+
+
+def delete_expired_dynamodb_tables():
+    for rgn in REGIONS:
+        logging.info(f"Region: {rgn}")
+        dynamodb_client = boto3.client('dynamodb', region_name=rgn)
+        try:
+            table_names = dynamodb_list_tables_all(dynamodb_client)
+        except exceptions.EndpointConnectionError as e:
+            logging.error(f"Could not connect to DynamoDB endpoint URL: {e}")
+            continue
+
+        for table_name in table_names:
+            if not table_name.startswith('atl_dc_'):
+                continue
+            try:
+                table_desc = dynamodb_client.describe_table(TableName=table_name).get('Table', {})
+            except botocore.exceptions.ClientError as e:
+                logging.warning(f"Could not describe DynamoDB table {table_name}: {e}")
+                continue
+
+            table_arn = table_desc.get('TableArn')
+            if not table_arn:
+                continue
+
+            try:
+                response = dynamodb_client.list_tags_of_resource(ResourceArn=table_arn)
+                tags = response.get('Tags', [])
+            except botocore.exceptions.ClientError as e:
+                raise RuntimeError(f"Could not list tags for {table_arn}: {e}")
+            persist_days = next((tag.get('Value') for tag in tags if tag.get('Key') == 'persist_days'), None)
+            if not persist_days:
+                logging.warning(f"DynamoDB table {table_name} does not have 'persist_days' tag; skipping")
+                continue
+            if not is_float(persist_days):
+                persist_days = 0
+
+            created_at = table_desc.get('CreationDateTime')
+            if not created_at:
+                logging.warning(f"DynamoDB table {table_name} has no CreationDateTime; skipping")
+                continue
+
+            created_date_timestamp = created_at.timestamp()
+            persist_seconds = float(persist_days) * 24 * 60 * 60
+            now = time()
+            if created_date_timestamp + persist_seconds > now:
+                logging.info(f"DynamoDB table {table_name} is not EOL yet; skipping")
+                continue
+
+            try:
+                logging.info(
+                    f"DynamoDB table {table_name} is EOL (created_at={created_at.isoformat()}, persist_days={persist_days}); deleting"
+                )
+                dynamodb_client.delete_table(TableName=table_name)
+            except botocore.exceptions.ClientError as e:
+                logging.warning(f"Could not delete DynamoDB table {table_name}: {e}")
+
+
+def delete_expired_tf_state_s3_buckets():
+    for rgn in REGIONS:
+        logging.info(f"Region: {rgn}")
+        s3_client = boto3.client('s3', region_name=rgn)
+        bucket_name_template = f'atl-dc-'
+        response = s3_client.list_buckets()
+        if not response["Buckets"]:
+            logging.info(f"There are no S3 buckets")
+            return
+        for bucket in response["Buckets"]:
+            if bucket_name_template in bucket["Name"]:
+                created_date = bucket["CreationDate"]
+                try:
+                    tags = s3_client.get_bucket_tagging(Bucket=bucket["Name"])["TagSet"]
+                except botocore.exceptions.ClientError as e:
+                    if e.response['Error']['Code'] == 'NoSuchTagSet':
+                        raise RuntimeError(f"S3 bucket {bucket['Name']} does not have any tags.")
+                    else:
+                        logging.error(f"Unexpected error for bucket: {bucket['Name']}")
+                        raise e
+                persist_days = next((tag["Value"] for tag in tags if tag["Key"] == "persist_days"), None)
+                if persist_days:
+                    if not is_float(persist_days):
+                        persist_days = 0
+                    created_date_timestamp = created_date.timestamp()
+                    persist_seconds = float(persist_days) * 24 * 60 * 60
+                    now = time()
+                    if created_date_timestamp + persist_seconds > now:
+                        logging.info(f"S3 bucket {bucket['Name']} is not EOL yet, skipping...")
+                    else:
+                        logging.info(f"S3 bucket {bucket['Name']} is EOL and should be deleted.")
+                        delete_bucket_by_name(s3_client, bucket['Name'])
+                else:
+                    logging.warning(f"S3 bucket {bucket['Name']} is missing persis_days tag.")
+
+
+def is_policy_attached(policy_arn):
+    iam_client = boto3.client("iam")
+    r = iam_client.list_entities_for_policy(PolicyArn=policy_arn)
+    policy_users = r['PolicyUsers']
+    policy_groups = r['PolicyGroups']
+    policy_roles = r['PolicyRoles']
+    if policy_users or policy_groups or policy_roles:
+        return True
+    else:
+        return False
+
+
+def delete_expired_iam_policies():
+    iam_client = boto3.client("iam")
+    finished = False
+    marker = None
+    policies = list()
+    while not finished:
+        if marker:
+            policies_batch = iam_client.list_policies(MaxItems=1000, Scope="Local", Marker=marker)
+        else:
+            policies_batch = iam_client.list_policies(MaxItems=1000, Scope="Local")
+        policies.extend(policies_batch["Policies"])
+        if policies_batch['IsTruncated']:
+            marker = policies_batch['Marker']
+        else:
+            finished = True
+    for policy in policies:
+        if policy['PolicyName'].startswith('atlas-'):
+            # skip attached policies
+            if is_policy_attached(policy['Arn']):
+                logging.warning(f"Policy {policy['PolicyName']} is attached. Skipping termination.")
+                continue
+
+            tags = iam_client.list_policy_tags(PolicyArn=policy['Arn'])
+            persist_days = None
+
+            # delete all expired policies
+            for tag in tags["Tags"]:
+                if tag["Key"] == "persist_days":
+                    try:
+                        persist_days = float(tag["Value"])
+                    except ValueError:
+                        ...
+            if persist_days:
+                eol_time = policy['CreateDate'] + timedelta(days=float(persist_days))
+                if datetime.now(policy['CreateDate'].tzinfo) > eol_time:
+                    logging.info(f"Policy expired {policy['PolicyName']}: "
+                                 f"create date {policy['CreateDate']}, persist_days: {persist_days}")
+
+                    remove_iam_policy(policy['Arn'], policy['PolicyName'])
+                else:
+                    logging.info(f"Policy is NOT expired {policy['PolicyName']}: "
+                                 f"create date {policy['CreateDate']}, persist_days: {persist_days}")
+            else:
+                # Delete policies without persist_days tag and created more that max policy TTL
+                max_policy_ttl = 90     # days
+                logging.warning(f"Policy does NOT have 'persist_days' tag: {policy['PolicyName']}. "
+                                f"Creation date: {policy['CreateDate']}")
+                create_date = datetime.now(policy['CreateDate'].tzinfo)
+                if create_date > policy['CreateDate'] + timedelta(days=float(max_policy_ttl)):
+                    logging.info(f"Policy {policy['PolicyName']} was created "
+                                 f"{policy['CreateDate']} > {max_policy_ttl} days ago.")
+                    remove_iam_policy(policy['Arn'], policy['PolicyName'])
 
 
 def main():
@@ -996,8 +1205,13 @@ def main():
         active_clusters.extend(eks_client.list_clusters().get("clusters"))
     for role_name in role_names:
         remove_role_and_policies(role_name, active_clusters)
+    delete_expired_iam_policies()
     logging.info("Terminate unused and expired ebs volumes")
     delete_unused_volumes()
+    logging.info("Search for abandoned S3 buckets")
+    delete_expired_tf_state_s3_buckets()
+    logging.info("Search for abandoned DynamoDB tables")
+    delete_expired_dynamodb_tables()
 
 
 if __name__ == '__main__':

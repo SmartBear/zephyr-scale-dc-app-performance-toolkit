@@ -8,6 +8,7 @@ from util.api.crowd_clients import CrowdRestClient
 from util.api.bamboo_clients import BambooClient
 import json
 from lxml import html
+from functools import cached_property
 
 JIRA = 'jira'
 CONFLUENCE = 'confluence'
@@ -31,10 +32,15 @@ class BaseApplication:
     version = None
     nodes_count = None
     dataset_information = None
+    apps_count = None
+    custom_app_count = None
+    custom_app_count_enabled = None
 
     def __init__(self, api_client, config_yml):
         self.client = api_client(host=config_yml.server_url,
-                                 user=config_yml.admin_login, password=config_yml.admin_password)
+                                 user=config_yml.admin_login,
+                                 password=config_yml.admin_password,
+                                 verify=config_yml.secure)
         self.config = config_yml
 
     def get_default_actions(self):
@@ -70,6 +76,10 @@ class BaseApplication:
     def java_version(self):
         return None  # TODO: Add Java version to results_summary.log for all supported products
 
+    @property
+    def status(self):
+        return self.client.get_status()
+
 
 class Jira(BaseApplication):
     type = JIRA
@@ -93,6 +103,36 @@ class Jira(BaseApplication):
     def dataset_information(self):
         return f"{self.__issues_count()} issues"
 
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
+
 
 class Confluence(BaseApplication):
     type = CONFLUENCE
@@ -113,11 +153,44 @@ class Confluence(BaseApplication):
 
     @property
     def java_version(self):
-        full_system_info = self.client.get_system_info_page()
-        java_versions_parsed = html.fromstring(full_system_info).xpath('//*[contains(@id, "java.version")]')
-        if java_versions_parsed:
-            return java_versions_parsed[0].text
+        try:
+            full_system_info = self.client.get_system_info_page()
+            java_versions_parsed = html.fromstring(full_system_info).xpath('//*[contains(@id, "java.version")]')
+            if java_versions_parsed:
+                return java_versions_parsed[0].text
+        except Exception as e:
+            print(f'ERROR: Could not get the Java version. Error: {e}')
         return None
+
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
 
 
 class Bitbucket(BaseApplication):
@@ -135,6 +208,37 @@ class Bitbucket(BaseApplication):
     @property
     def dataset_information(self):
         return f'{self.client.get_bitbucket_repo_count()} repositories'
+
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
+
 
 
 class Jsm(BaseApplication):
@@ -157,6 +261,37 @@ class Jsm(BaseApplication):
     @property
     def dataset_information(self):
         return f"{self.__issues_count()} issues"
+
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
+
 
 
 class Crowd(BaseApplication):
@@ -183,6 +318,36 @@ class Crowd(BaseApplication):
     def dataset_information(self):
         return f"{self.__users_count()} users"
 
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
+
 
 class Bamboo(BaseApplication):
     type = BAMBOO
@@ -203,6 +368,36 @@ class Bamboo(BaseApplication):
     @property
     def dataset_information(self):
         return f"{self.__build_plans_count()} build plans"
+
+    @property
+    def apps_count(self):
+        return len(self.__get_apps)
+
+    @cached_property
+    def __get_apps(self):
+        try:
+            return self.client.get_installed_apps()
+        except Exception as e:
+            print(f'ERROR: Could not get the installed applications. Error: {e}')
+            return []
+
+    @cached_property
+    def __get_custom_apps(self):
+        all_apps = self.__get_apps
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        return non_atlassian_apps
+
+    @property
+    def custom_app_count(self):
+        return len(self.__get_custom_apps)
+
+    @property
+    def custom_app_count_enabled(self):
+        non_atlassian_apps = self.__get_custom_apps
+        non_atlassian_apps_enabled = [app for app in non_atlassian_apps if app['enabled'] == True]
+        return len(non_atlassian_apps_enabled)
 
 
 class Insight(Jsm):

@@ -26,6 +26,7 @@ class UrlManager:
         self.dashboard_params = '/dashboard'
         self.projects_params = '/projects'
         self.branches_base_branch = f'/projects/{self.project_key}/repos/{self.repo_slug}/branches?base='
+        self.admin_system_params = '/admin'
 
     def create_pull_request_url(self, from_branch, to_branch):
         return f"{self.host}/projects/{self.project_key}/repos/{self.repo_slug}/pull-requests?create&targetBranch=" \
@@ -73,23 +74,40 @@ class UrlManager:
     def projects_url(self):
         return f"{self.host}{self.projects_params}"
 
+    def admin_system_url(self):
+        return f"{self.host}{self.admin_system_params}"
+
 
 class PopupLocators:
-    default_popup = '.feature-discovery-close'
-    popup_1 = '.css-1it7f5o'
-    popup_2 = 'button.aui-button-link.feature-discovery-close'
-    popup_3 = '.css-15p34h1'
-    popup_4 = '.css-1dqf51u'
-    popup_5 = '.css-1kflcxk'
-    popup_6 = '.css-1gh2dqy'
+    popup_selectors = [
+        (By.CSS_SELECTOR, ".feature-discovery-close"),
+        (By.CSS_SELECTOR, ".css-1it7f5o"),
+        (By.CSS_SELECTOR, "button.aui-button-link.feature-discovery-close"),
+        (By.CSS_SELECTOR, ".css-15p34h1"),
+        (By.CSS_SELECTOR, ".css-1dqf51u"),
+        (By.CSS_SELECTOR, ".css-1kflcxk"),
+        (By.CSS_SELECTOR, ".css-1gh2dqy"),
+        (By.XPATH, "//*[@data-testid='whats-new-modal']//button[@aria-label='Close modal']//span//span[@aria-hidden='true']")
+    ]
+
+
+class CommonLocators:
+    spinner = OrderedDict({"7.0.0": (By.CSS_SELECTOR, ".spinner-wrapper"),
+                            "10.0.0": (By.CSS_SELECTOR, ".centered-spinner")})
 
 
 class LoginPageLocators:
     submit_button = (By.ID, "submit")
+    footer_panel = (By.ID, "footer")
     username_textfield = (By.ID, "j_username")
     password_textfield = (By.ID, "j_password")
     application_version = (By.ID, 'product-version')
     node_id = (By.CLASS_NAME, 'footer-body')
+
+    # 2sv login form
+    login_button_2sv = (By.ID, "login-button")
+    login_username_field_2sv = (By.ID, "username-field")
+    login_password_field_2sv = (By.ID, "password-field")
 
 
 class LogoutPageLocators:
@@ -99,6 +117,7 @@ class LogoutPageLocators:
 class GetStartedLocators:
     get_started_url = UrlManager().get_started_url()
     user_profile_icon = (By.ID, 'current-user')
+    whats_new_window_close_button = (By.CSS_SELECTOR, "[data-testid='whats-new-modal'] button[aria-label='Close modal'] > span > span[aria-hidden='true']")
 
 
 class DashboardLocators:
@@ -113,7 +132,7 @@ class ProjectsLocators:
 
 class ProjectLocators:
     repositories_container = (By.ID, "repositories-container")
-    repository_name = (By.CSS_SELECTOR, "span.repository-name")
+    repository_name = (By.CSS_SELECTOR, ".repository-name")
 
 
 class RepoNavigationPanelLocators:
@@ -154,19 +173,34 @@ class PullRequestLocator:
     pull_request_modal_merge_button = (By.CSS_SELECTOR, ".merge-dialog button[type='submit']")
     del_branch_checkbox_selector = (By.NAME, 'deleteSourceRef')
     delete_branch_per_merge_checkbox = (By.CSS_SELECTOR, "input[type='checkbox']")
+    updates_info_banner = (By.CSS_SELECTOR, ".pull-request-onboarding>footer>button")
 
 
 class BranchesLocator:
 
     branches_name = (By.ID, "branch-name-column")
-    branches_action = (By.ID, "branch-actions")
-    branches_action_create_branch = (By.CSS_SELECTOR, "a.create-branch")
+    branches_action = OrderedDict({"7.0.0": (By.ID, "branch-actions"),
+                                    "10.0.0": (By.CSS_SELECTOR, ".ref-selector-more-actions > button")})
+    branches_action_create_branch = OrderedDict({"7.0.0": (By.CSS_SELECTOR, "a.create-branch"),
+                                                "10.0.0": (By.XPATH, "//span[contains(text(), 'Create branch from here')]")})
+
+    delete_branch_action = OrderedDict({"7.0.0": (By.CSS_SELECTOR, "li>a.delete-branch"),
+                                        "10.0.0": (By.XPATH, "//button[contains(@data-testid, 'delete-branch-action')]")})
     new_branch_name_textfield = (By.CSS_SELECTOR, "input.text.branch-name")
     new_branch_submit_button = (By.ID, "create-branch-submit")
     search_branch_textfield = (By.ID, 'paged-table-input-for-branch-list')
     search_branch_action = (By.CSS_SELECTOR, '.branch-actions-column>button')
-    delete_branch_dialog_submit = (By.ID, 'delete-branch-dialog-submit')
+    delete_branch_dialog_submit = OrderedDict({"7.0.0": (By.ID, 'delete-branch-dialog-submit'),
+                                                   "10.0.0": (By.XPATH, "//button[contains(@data-testid, 'delete-branch-modal-confirm-button')]")})
 
 
 class RepoCommitsLocator:
     repo_commits_graph = (By.ID, 'commits-table')
+
+
+class AdminLocators:
+    admin_system_page_url = UrlManager().admin_system_url()
+    web_sudo_password = (By.ID, 'j_password-uid1')
+    web_sudo_submit_btn = (By.XPATH, "//span[contains(text(),'Confirm')]")
+    login_form = (By.ID, 'websudo-container')
+    administration_link = (By.XPATH, "//span[contains(text(),'Administration')]")

@@ -1,11 +1,6 @@
-import json
+import csv
 import numbers
 from pathlib import Path
-import typing
-from distutils import util
-import csv
-
-import yaml
 
 
 def resolve_relative_path(str_path: str) -> Path:
@@ -50,11 +45,27 @@ def read_csv_by_line(file: Path) -> list:
     return lines
 
 
+def string_to_bool(val):
+    """
+    Convert a string representation of truth to a boolean.
+    True values are 'y', 'yes', 't', 'true', 'on', and '1';
+    False values are 'n', 'no', 'f', 'false', 'off', and '0'.
+    Raises ValueError if 'val' is anything else.
+    """
+    val = val.strip().lower()
+    if val in ('y', 'yes', 't', 'true', 'on', '1'):
+        return True
+    elif val in ('n', 'no', 'f', 'false', 'off', '0'):
+        return False
+    else:
+        raise ValueError(f"Invalid truth value: {val}")
+
+
 def get_app_specific_actions(file: Path) -> list:
     app_specific_list = []
     actions = read_csv_by_line(file)
     for action in actions:
-        if bool(util.strtobool(action['App-specific'])):
+        if string_to_bool(action['App-specific']):
             app_specific_list.append(action['Action'])
     return app_specific_list
 
@@ -80,19 +91,3 @@ def clean_str(string: str):
     string = string.replace(" ", "_")
     # Return alphanumeric characters from a string, except "_"
     return ''.join(e for e in string if e.isalnum() or e == "_")
-
-
-def save_results(results: typing.List[typing.List], filepath: str):
-    with open(filepath, 'w') as f:
-        writer = csv.writer(f)
-        writer.writerows(results)
-
-
-def read_json(filepath: str):
-    with open(filepath) as f:
-        return json.load(f)
-
-
-def read_yaml(filepath: str):
-    with open(filepath) as f:
-        return yaml.safe_load(f)

@@ -137,7 +137,8 @@ def __get_boards(jira_api, board_type):
 
 
 def __get_users(jira_api):
-    perf_users = jira_api.get_users(username=DEFAULT_USER_PREFIX, max_results=performance_users_count)
+    perf_users = jira_api.get_users_by_name_search(username=DEFAULT_USER_PREFIX, users_count=performance_users_count)
+
     users = generate_perf_users(api=jira_api, cur_perf_user=perf_users)
     if not users:
         raise SystemExit(f"There are no users in Jira accessible by a random performance user: {jira_api.user}")
@@ -169,6 +170,29 @@ def __check_for_admin_permissions(jira_api):
         raise SystemExit(f"The '{jira_api.user}' user does not have admin permissions.")
 
 
+def __check_license(client):
+    license_details = client.get_license_details()
+    license_valid, license_expired = license_details['valid'], license_details['expired']
+    if not license_valid or license_expired:
+        raise SystemExit(f'ERROR: Jira license is valid: {license_valid}, license has expired: {license_expired}.')
+
+
+def __check_number_of_custom_app(client):
+    try:
+        all_apps = client.get_installed_apps()
+        apps_with_vendor_defined = [app for app in all_apps if 'vendor' in app]
+        non_atlassian_apps = [app for app in apps_with_vendor_defined if 'Atlassian' not in
+                              app['vendor']['name'] and app['userInstalled'] == True]
+        non_atlassian_apps_names = [app['name'] for app in non_atlassian_apps]
+        print(f"Custom application count: {len(non_atlassian_apps)}")
+        if non_atlassian_apps:
+            print(f'Custom app names:')
+            print(*non_atlassian_apps_names, sep='\n')
+    except Exception as e:
+        print(f'ERROR: Could not get the installed applications. Error: {e}')
+
+
+
 def main():
     print("Started preparing data")
 
@@ -179,6 +203,8 @@ def main():
 
     __check_for_admin_permissions(client)
     __check_current_language(client)
+    __check_license(client)
+    __check_number_of_custom_app(client)
     dataset = __create_data_set(client)
     write_test_data_to_files(dataset)
 
