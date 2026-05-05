@@ -4,7 +4,7 @@ platform: platform
 product: marketplace
 category: devguide
 subcategory: build
-date: "2025-04-22"
+date: "2026-04-21"
 ---
 # Data Center App Performance Toolkit User Guide For Jira Service Management
 
@@ -112,8 +112,7 @@ Below process describes how to install low-tier Jira Service Management DC with 
    - `region` - AWS region for deployment. **Do not change default region (`us-east-2`). If specific region is required, contact support.**
 
    {{% note %}}
-   New trial license could be generated on [my atlassian](https://my.atlassian.com/license/evaluation).
-   Use `BX02-9YO1-IN86-LO5G` Server ID for generation.
+   If you don't have a license, you can request a trial one for DCAPT performance testing purposes via your open DC Annual Review ECOHELP ticket.
    {{% /note %}}
 
 6. Optional variables to override:
@@ -124,7 +123,7 @@ Below process describes how to install low-tier Jira Service Management DC with 
    -v "/$PWD/dcapt-small.tfvars:/data-center-terraform/conf.tfvars" \
    -v "/$PWD/dcapt-snapshots.json:/data-center-terraform/dcapt-snapshots.json" \
    -v "/$PWD/logs:/data-center-terraform/logs" \
-   -it atlassianlabs/terraform:2.9.8 ./install.sh -c conf.tfvars
+   -it atlassianlabs/terraform:2.9.15 ./install.sh -c conf.tfvars
    ```
 8. Copy product URL from the console output. Product url should look like `http://a1234-54321.us-east-2.elb.amazonaws.com/jira`.
 
@@ -447,8 +446,7 @@ Below process describes how to install enterprise-scale Jira Service Management 
    - `region` - AWS region for deployment.  **Do not change default region (`us-east-2`). If specific region is required, contact support.**
    
    {{% note %}}
-   New trial license could be generated on [my atlassian](https://my.atlassian.com/license/evaluation).
-   Use `BX02-9YO1-IN86-LO5G` Server ID for generation.
+   If you don't have a license, you can request a trial one for DCAPT performance testing purposes via your open DC Annual Review ECOHELP ticket.
    {{% /note %}}
 
 6. Optional variables to override:
@@ -459,7 +457,7 @@ Below process describes how to install enterprise-scale Jira Service Management 
    -v "/$PWD/dcapt.tfvars:/data-center-terraform/conf.tfvars" \
    -v "/$PWD/dcapt-snapshots.json:/data-center-terraform/dcapt-snapshots.json" \
    -v "/$PWD/logs:/data-center-terraform/logs" \
-   -it atlassianlabs/terraform:2.9.8 ./install.sh -c conf.tfvars
+   -it atlassianlabs/terraform:2.9.15 ./install.sh -c conf.tfvars
    ```
 8. Copy product URL from the console output. Product url should look like `http://a1234-54321.us-east-2.elb.amazonaws.com/jira`.
 
@@ -539,7 +537,7 @@ To receive performance baseline results **without** an app installed:
     -e ENVIRONMENT_NAME=$ENVIRONMENT_NAME \
     -v "/$PWD:/data-center-terraform/dc-app-performance-toolkit" \
     -v "/$PWD/app/util/k8s/bzt_on_pod.sh:/data-center-terraform/bzt_on_pod.sh" \
-    -it atlassianlabs/terraform:2.9.8 bash bzt_on_pod.sh jsm.yml
+    -it atlassianlabs/terraform:2.9.15 bash bzt_on_pod.sh jsm.yml
     ```
 
 1. View the following main results of the run in the `dc-app-performance-toolkit/app/results/jsm/YY-MM-DD-hh-mm-ss` folder:
@@ -594,7 +592,7 @@ Re-index information window is displayed on the **Indexing page**. If the window
     -e ENVIRONMENT_NAME=$ENVIRONMENT_NAME \
     -v "/$PWD:/data-center-terraform/dc-app-performance-toolkit" \
     -v "/$PWD/app/util/k8s/bzt_on_pod.sh:/data-center-terraform/bzt_on_pod.sh" \
-    -it atlassianlabs/terraform:2.9.8 bash bzt_on_pod.sh jsm.yml
+    -it atlassianlabs/terraform:2.9.15 bash bzt_on_pod.sh jsm.yml
     ```
 
 {{% note %}}
@@ -654,7 +652,7 @@ To receive scalability benchmark results for one-node Jira Service Management DC
     -e ENVIRONMENT_NAME=$ENVIRONMENT_NAME \
     -v "/$PWD:/data-center-terraform/dc-app-performance-toolkit" \
     -v "/$PWD/app/util/k8s/bzt_on_pod.sh:/data-center-terraform/bzt_on_pod.sh" \
-    -it atlassianlabs/terraform:2.9.8 bash bzt_on_pod.sh jsm.yml
+    -it atlassianlabs/terraform:2.9.15 bash bzt_on_pod.sh jsm.yml
     ```
 
 {{% note %}}
@@ -679,7 +677,7 @@ To receive scalability benchmark results for two-node Jira Service Management DC
    -v "/$PWD/dcapt.tfvars:/data-center-terraform/conf.tfvars" \
    -v "/$PWD/dcapt-snapshots.json:/data-center-terraform/dcapt-snapshots.json" \
    -v "/$PWD/logs:/data-center-terraform/logs" \
-   -it atlassianlabs/terraform:2.9.8 ./install.sh -c conf.tfvars
+   -it atlassianlabs/terraform:2.9.15 ./install.sh -c conf.tfvars
    ```
 1. Navigate to `dc-app-performance-toolkit` folder and start tests execution:
     ``` bash
@@ -692,7 +690,7 @@ To receive scalability benchmark results for two-node Jira Service Management DC
     -e ENVIRONMENT_NAME=$ENVIRONMENT_NAME \
     -v "/$PWD:/data-center-terraform/dc-app-performance-toolkit" \
     -v "/$PWD/app/util/k8s/bzt_on_pod.sh:/data-center-terraform/bzt_on_pod.sh" \
-    -it atlassianlabs/terraform:2.9.8 bash bzt_on_pod.sh jsm.yml
+    -it atlassianlabs/terraform:2.9.15 bash bzt_on_pod.sh jsm.yml
     ```
 
 {{% note %}}
@@ -721,7 +719,7 @@ To receive scalability benchmark results for four-node Jira Service Management D
     -e ENVIRONMENT_NAME=$ENVIRONMENT_NAME \
     -v "/$PWD:/data-center-terraform/dc-app-performance-toolkit" \
     -v "/$PWD/app/util/k8s/bzt_on_pod.sh:/data-center-terraform/bzt_on_pod.sh" \
-    -it atlassianlabs/terraform:2.9.8 bash bzt_on_pod.sh jsm.yml
+    -it atlassianlabs/terraform:2.9.15 bash bzt_on_pod.sh jsm.yml
     ```
    
 {{% note %}}
@@ -766,8 +764,8 @@ Do not forget to attach performance testing results to your ECOHELP ticket.
 2. Attach two reports folders to your ECOHELP ticket.
 
 ## <a id="support"></a> Support
-If the installation script fails on installing Helm release or any other reason, collect the logs, zip and share to [community Slack](http://bit.ly/dcapt_slack) **#data-center-app-performance-toolkit** channel.
+If the installation script fails on installing Helm release or any other reason, collect the logs, zip and share to [community Slack](https://go.atlassian.com/dcapt-community-slack) **#data-center-app-performance-toolkit** channel.
 For instructions on how to collect detailed logs, see [Collect detailed k8s logs](https://github.com/atlassian/dc-app-performance-toolkit/blob/master/app/util/k8s/README.MD#collect-detailed-k8s-logs).
 For failed cluster uninstall use [Force terminate command](https://github.com/atlassian/dc-app-performance-toolkit/blob/master/app/util/k8s/README.MD#force-terminate-cluster).
 
-In case of any technical questions or issues with DC Apps Performance Toolkit, contact us for support in the [community Slack](http://bit.ly/dcapt_slack) **#data-center-app-performance-toolkit** channel.
+In case of any technical questions or issues with DC Apps Performance Toolkit, contact us for support in the [community Slack](https://go.atlassian.com/dcapt-community-slack) **#data-center-app-performance-toolkit** channel.

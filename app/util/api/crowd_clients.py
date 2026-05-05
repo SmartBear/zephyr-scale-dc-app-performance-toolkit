@@ -71,7 +71,7 @@ class CrowdRestClient(RestClient):
             return loop_users
 
         num_cores = cpu_count()
-        pool = ThreadPool(processes=num_cores*2)
+        pool = ThreadPool(processes=max(round(num_cores / 4), 2))
         loop_users_list = pool.map(search_users, [i for i in range(loop_count)])
         print("")  # new line
         users = [user for loop_users in loop_users_list for user in loop_users]
@@ -108,3 +108,9 @@ class CrowdRestClient(RestClient):
         else:
             print(f"Warning: failed to get {api_url}: Error: {e}")
             return False
+
+    def get_installed_apps(self):
+        api_url = f'{self.host}/rest/plugins/1.0/'
+        r = self.get(api_url, error_msg="ERROR: Could not get installed plugins.",
+                     headers={'X-Atlassian-Token': 'no-check'})
+        return r.json()['plugins']
